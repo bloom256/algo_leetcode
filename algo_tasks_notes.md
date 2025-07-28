@@ -39,3 +39,9 @@
 * **Alternative:** Use two pointers, one at the beginning and one at the end of the input array. Compare the absolute values of the elements at the two pointers, square the larger one, and place it at the end of the result array. Move the corresponding pointer inward and repeat until the pointers meet.
 * Time complexity: O(n)
 * Space complexity: O(n)
+
+### Container with Most Water
+
+* Initialize two pointers, one at each end of the array. In each step, calculate the area formed by the current pointers. To find a potentially larger area, move the pointer pointing to the shorter line inward. This is because moving the taller line's pointer will not increase the height (it's limited by the shorter line), and thus cannot increase the area. Moving the shorter line's pointer might find a taller line, potentially increasing the area.
+* Time complexity: O(n)
+* Space complexity: O(1)
