@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>algo_tasks_notes</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h2 id="two-pointers">Two Pointers</h2>
+<h3
+id="moving-pointers-toward-each-other-from-opposite-directions">Moving
+pointers toward each other from opposite directions</h3>
+<h4 id="reverse-string">Reverse String</h4>
+<ul>
+<li>Move from different directions.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
+<h4 id="valid-palindrome">Valid Palindrome</h4>
+<ul>
+<li>Move from different directions. Use tolower(), skip !isalnum()</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
+<h4 id="two-sum-sorted">Two Sum Sorted</h4>
+<ul>
+<li>Go from different directions. If (sum &lt; target) - move left, if
+(sum &gt; target) - move right, if equal - add to results.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
+<h4 id="sum">3Sum</h4>
+<ul>
+<li>Sort array, iterate other each element, for other two use
+2SumSorted</li>
+<li>Time complexity: O(n^2)</li>
+<li>Space complexity: O(1) or O(n) depending on sorting
+implementation</li>
+</ul>
+<h4 id="squares-of-a-sorted-array">Squares of a Sorted Array</h4>
+<ul>
+<li><p>Iterate negative part inverting it, then std::reverse it. Now
+std::inplace_merge two sorted parts of array. Finally square
+elements.</p></li>
+<li><p>Time complexity: O(n)</p></li>
+<li><p>Space complexity: O(1)</p></li>
+<li><p><strong>Alternative:</strong> Use two pointers, one at the
+beginning and one at the end of the input array. Compare the absolute
+values of the elements at the two pointers, square the larger one, and
+place it at the end of the result array. Move the corresponding pointer
+inward and repeat until the pointers meet.</p></li>
+<li><p>Time complexity: O(n)</p></li>
+<li><p>Space complexity: O(n)</p></li>
+</ul>
+<h4 id="container-with-most-water">Container with Most Water</h4>
+<ul>
+<li>Initialize two pointers, one at each end of the array. In each step,
+calculate the area formed by the current pointers. To find a potentially
+larger area, move the pointer pointing to the shorter line inward. This
+is because moving the taller line’s pointer will not increase the height
+(it’s limited by the shorter line), and thus cannot increase the area.
+Moving the shorter line’s pointer might find a taller line, potentially
+increasing the area.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
+<h3 id="other-two-pointer-patterns">Other Two Pointer Patterns</h3>
+<h4 id="two-sum">Two Sum</h4>
+<ul>
+<li>Use visited hash map</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(n)</li>
+</ul>
+</body>
+</html>
