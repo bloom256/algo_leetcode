@@ -38,7 +38,7 @@
 
 #### Container with Most Water
 
-* Initialize two pointers, one at each end of the array. In each step, calculate the area formed by the current pointers. To find a potentially larger area, move the pointer pointing to the shorter line inward. This is because moving the taller line's pointer will not increase the height (it's limited by the shorter line), and thus cannot increase the area. Moving the shorter line's pointer might find a taller line, potentially increasing the area.
+* Move pointers from opposite directions. Always move the pointer to the shorter line. This is because the shorter line has already made its best contribution with the current or one of the previous opposite lines. Moving it to the next line, regardless of whether it's shorter or longer, is the only way to potentially find a larger area, as the height is limited by the shorter line, not the longer one.
 * Time complexity: O(n)
 * Space complexity: O(1)
 
