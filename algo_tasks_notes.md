@@ -1,36 +1,32 @@
 ## Two Pointers
 
-### Reverse String
+### Moving pointers toward each other from opposite directions
+
+#### Reverse String
 
 * Move from different directions.
 * Time complexity: O(n)
 * Space complexity: O(1)
 
-### Valid Palindrome
+#### Valid Palindrome
 
 * Move from different directions. Use tolower(), skip !isalnum()
 * Time complexity: O(n)
 * Space complexity: O(1)
 
-### Two Sum Sorted
+#### Two Sum Sorted
 
 * Go from different directions. If (sum < target) - move left, if (sum > target) - move right, if equal - add to results.
 * Time complexity: O(n)
 * Space complexity: O(1)
 
-### Two Sum
-
-* Use visited hash map
-* Time complexity: O(n)
-* Space complexity: O(n)
-
-### 3Sum
+#### 3Sum
 
 * Sort array, iterate other each element, for other two use 2SumSorted
 * Time complexity: O(n^2)
 * Space complexity: O(1) or O(n) depending on sorting implementation
 
-### Squares of a Sorted Array
+#### Squares of a Sorted Array
 
 * Iterate negative part inverting it, then std::reverse it. Now std::inplace_merge two sorted parts of array. Finally square elements.
 * Time complexity: O(n)
@@ -40,8 +36,16 @@
 * Time complexity: O(n)
 * Space complexity: O(n)
 
-### Container with Most Water
+#### Container with Most Water
 
 * Initialize two pointers, one at each end of the array. In each step, calculate the area formed by the current pointers. To find a potentially larger area, move the pointer pointing to the shorter line inward. This is because moving the taller line's pointer will not increase the height (it's limited by the shorter line), and thus cannot increase the area. Moving the shorter line's pointer might find a taller line, potentially increasing the area.
 * Time complexity: O(n)
 * Space complexity: O(1)
+
+### Other Two Pointer Patterns
+
+#### Two Sum
+
+* Use visited hash map
+* Time complexity: O(n)
+* Space complexity: O(n)
