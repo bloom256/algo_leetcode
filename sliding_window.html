@@ -27,5 +27,16 @@
 </head>
 <body>
 <h2 id="sliding-window">Sliding Window</h2>
+<h3 id="fixed-size-sliding-window">Fixed-size sliding window</h3>
+<h4 id="maximum-average-subarray-i">Maximum Average Subarray I</h4>
+<ul>
+<li>Set <code>begin</code> to 0, iterate <code>end</code> over all
+elements. On each iteration increase <code>win_sum</code>. If
+<code>win_len</code> is <code>k</code>, update <code>max_avg</code>,
+decrease <code>win_sum</code> by the <code>begin</code> element, and
+move <code>begin</code> forward.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
