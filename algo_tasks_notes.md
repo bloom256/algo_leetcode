@@ -50,6 +50,10 @@
 * Time complexity: O(n)
 * Space complexity: O(1)
 
+* **Alternative:** Use `std::unique` and `std::erase`.
+* Time complexity: O(n)
+* Space complexity: O(1)
+
 ### Other Two Pointer Patterns
 
 #### Two Sum

@@ -88,12 +88,16 @@ side</h3>
 <h4 id="remove-duplicates-from-sorted-array">Remove Duplicates from
 Sorted Array</h4>
 <ul>
-<li>Set ‘next’ and ‘curr’ pointers to the first element. Iterate ‘next’
-over all values. If it points to value not equal to value pointed by
-‘curr’, we found next ‘curr’, move ‘curr’ to next element and write
-‘next’ value to it.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><p>Set ‘next’ and ‘curr’ pointers to the first element. Iterate
+‘next’ over all values. If it points to value not equal to value pointed
+by ‘curr’, we found next ‘curr’, move ‘curr’ to next element and write
+‘next’ value to it.</p></li>
+<li><p>Time complexity: O(n)</p></li>
+<li><p>Space complexity: O(1)</p></li>
+<li><p><strong>Alternative:</strong> Use <code>std::unique</code> and
+<code>std::erase</code>.</p></li>
+<li><p>Time complexity: O(n)</p></li>
+<li><p>Space complexity: O(1)</p></li>
 </ul>
 <h3 id="other-two-pointer-patterns">Other Two Pointer Patterns</h3>
 <h4 id="two-sum">Two Sum</h4>
