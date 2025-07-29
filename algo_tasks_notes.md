@@ -28,7 +28,7 @@
 
 #### Squares of a Sorted Array
 
-* Iterate negative part inverting it, then std::reverse it. Now std::inplace_merge two sorted parts of array. Finally square elements.
+* Iterate negative part inverting it (change sing), then std::reverse it. Now std::inplace_merge two sorted parts of array. Finally square elements.
 * Time complexity: O(n)
 * Space complexity: O(1)
 
