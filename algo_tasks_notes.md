@@ -54,6 +54,16 @@
 * Time complexity: O(n)
 * Space complexity: O(1)
 
+#### Move Zeros
+
+* Set two pointers "writer" and "reader" to beginning. Iterate reader over all elements. If it points to non-zero, swap elements and move writer to next position. Basically we rewrite each non-zero element, even if it was on the same place, skipping zero elements.
+* Time complexity: O(n)
+* Space complexity: O(1)
+
+* **Alternative:** Use `std::remove` to move non-zero elements to the beginning, then `std::fill` the remaining elements at the end with zeros.
+* Time complexity: O(n)
+* Space complexity: O(1)
+
 ### Other Two Pointer Patterns
 
 #### Two Sum

@@ -99,6 +99,21 @@ by ‘curr’, we found next ‘curr’, move ‘curr’ to next element and wri
 <li><p>Time complexity: O(n)</p></li>
 <li><p>Space complexity: O(1)</p></li>
 </ul>
+<h4 id="move-zeros">Move Zeros</h4>
+<ul>
+<li><p>Set two pointers “writer” and “reader” to beginning. Iterate
+reader over all elements. If it points to non-zero, swap elements and
+move writer to next position. Basically we rewrite each non-zero
+element, even if it was on the same place, skipping zero
+elements.</p></li>
+<li><p>Time complexity: O(n)</p></li>
+<li><p>Space complexity: O(1)</p></li>
+<li><p><strong>Alternative:</strong> Use <code>std::remove</code> to
+move non-zero elements to the beginning, then <code>std::fill</code> the
+remaining elements at the end with zeros.</p></li>
+<li><p>Time complexity: O(n)</p></li>
+<li><p>Space complexity: O(1)</p></li>
+</ul>
 <h3 id="other-two-pointer-patterns">Other Two Pointer Patterns</h3>
 <h4 id="two-sum">Two Sum</h4>
 <ul>
