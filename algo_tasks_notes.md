@@ -70,6 +70,16 @@
 * Time complexity: O(N) where N is the length of the main string.
 * Space complexity: O(1)
 
+#### Backspace String Compare
+
+* **Classic Solution:** Use two pointers and scan strings backward, skipping backspaces and removed characters. You need to be very careful with edge cases.
+* Time complexity: O(N + M) where N and M are lengths of the strings.
+* Space complexity: O(1)
+
+* **Alternative Solution:** Create a helper function `applyBackspaces` which actually removes characters from the string, moving them to the end of the string, similar to "Move Zeros" with writer and reader pointers (move writer back if a backspace is encountered). This is simpler and more elegant, but not optimal as you have to change the string in-place, which might not be desired.
+* Time complexity: O(N + M)
+* Space complexity: O(1) (if in-place modification is allowed, otherwise O(N+M) for new strings)
+
 ### Other Two Pointer Patterns
 
 #### Two Sum

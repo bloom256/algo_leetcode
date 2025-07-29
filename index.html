@@ -126,6 +126,24 @@ false.</li>
 <li>Time complexity: O(N) where N is the length of the main string.</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h4 id="backspace-string-compare">Backspace String Compare</h4>
+<ul>
+<li><p><strong>Classic Solution:</strong> Use two pointers and scan
+strings backward, skipping backspaces and removed characters. You need
+to be very careful with edge cases.</p></li>
+<li><p>Time complexity: O(N + M) where N and M are lengths of the
+strings.</p></li>
+<li><p>Space complexity: O(1)</p></li>
+<li><p><strong>Alternative Solution:</strong> Create a helper function
+<code>applyBackspaces</code> which actually removes characters from the
+string, moving them to the end of the string, similar to “Move Zeros”
+with writer and reader pointers (move writer back if a backspace is
+encountered). This is simpler and more elegant, but not optimal as you
+have to change the string in-place, which might not be desired.</p></li>
+<li><p>Time complexity: O(N + M)</p></li>
+<li><p>Space complexity: O(1) (if in-place modification is allowed,
+otherwise O(N+M) for new strings)</p></li>
+</ul>
 <h3 id="other-two-pointer-patterns">Other Two Pointer Patterns</h3>
 <h4 id="two-sum">Two Sum</h4>
 <ul>
