@@ -114,6 +114,18 @@ remaining elements at the end with zeros.</p></li>
 <li><p>Time complexity: O(n)</p></li>
 <li><p>Space complexity: O(1)</p></li>
 </ul>
+<h4 id="is-subsequence">Is Subsequence</h4>
+<ul>
+<li>Set one pointer to the beginning of the subsequence. Iterate another
+pointer through the main string. If the main string pointer matches the
+character at the subsequence pointer, advance the subsequence pointer.
+If the subsequence pointer reaches the end of the subsequence, it means
+all characters were found in order, so return true. If the main string
+is exhausted before the subsequence pointer reaches its end, return
+false.</li>
+<li>Time complexity: O(N) where N is the length of the main string.</li>
+<li>Space complexity: O(1)</li>
+</ul>
 <h3 id="other-two-pointer-patterns">Other Two Pointer Patterns</h3>
 <h4 id="two-sum">Two Sum</h4>
 <ul>

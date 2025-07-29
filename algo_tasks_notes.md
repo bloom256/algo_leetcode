@@ -64,6 +64,12 @@
 * Time complexity: O(n)
 * Space complexity: O(1)
 
+#### Is Subsequence
+
+* Set one pointer to the beginning of the subsequence. Iterate another pointer through the main string. If the main string pointer matches the character at the subsequence pointer, advance the subsequence pointer. If the subsequence pointer reaches the end of the subsequence, it means all characters were found in order, so return true. If the main string is exhausted before the subsequence pointer reaches its end, return false.
+* Time complexity: O(N) where N is the length of the main string.
+* Space complexity: O(1)
+
 ### Other Two Pointer Patterns
 
 #### Two Sum
