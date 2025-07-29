@@ -42,6 +42,14 @@
 * Time complexity: O(n)
 * Space complexity: O(1)
 
+### Moving pointers from same side
+
+#### Remove Duplicates from Sorted Array
+
+* Set 'next' and 'curr' pointers to the first element. Iterate 'next' over all values. If it points to value not equal to value pointed by 'curr', we found next 'curr', move 'curr' to next element and write 'next' value to it.
+* Time complexity: O(n)
+* Space complexity: O(1)
+
 ### Other Two Pointer Patterns
 
 #### Two Sum
