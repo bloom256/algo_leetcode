@@ -144,6 +144,15 @@ have to change the string in-place, which might not be desired.</p></li>
 <li><p>Space complexity: O(1) (if in-place modification is allowed,
 otherwise O(N+M) for new strings)</p></li>
 </ul>
+<h4 id="merge-sorted-array">Merge Sorted Array</h4>
+<ul>
+<li>Use two pointers moving filled parts of arrays backward, and pointer
+‘w’ pointing to the end of the first array (unfilled part). Move all 3
+pointers backward. Don’t forget to finish iteration over the second
+array after the main cycle to finish filling of the 1st array.</li>
+<li>Time complexity: O(N + M)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 <h3 id="other-two-pointer-patterns">Other Two Pointer Patterns</h3>
 <h4 id="two-sum">Two Sum</h4>
 <ul>

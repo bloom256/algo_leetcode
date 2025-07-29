@@ -80,6 +80,12 @@
 * Time complexity: O(N + M)
 * Space complexity: O(1) (if in-place modification is allowed, otherwise O(N+M) for new strings)
 
+#### Merge Sorted Array
+
+* Use two pointers moving filled parts of arrays backward, and pointer 'w' pointing to the end of the first array (unfilled part). Move all 3 pointers backward. Don't forget to finish iteration over the second array after the main cycle to finish filling of the 1st array.
+* Time complexity: O(N + M)
+* Space complexity: O(1)
+
 ### Other Two Pointer Patterns
 
 #### Two Sum
