@@ -46,6 +46,6 @@
 
 #### Two Sum
 
-* Use visited hash map
+* Use 'visited' hash map
 * Time complexity: O(n)
 * Space complexity: O(n)
