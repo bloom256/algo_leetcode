@@ -15,3 +15,9 @@
 * Use a classical sliding window. When the window sum is greater than or equal to the target, update the minimum length and shrink the window from the beginning in a loop.
 * Time complexity: O(n)
 * Space complexity: O(1)
+
+#### Max Consecutive Ones III
+
+* Sliding window where the window state is the number of flipped zeros. Iterate `end` over all elements, and if needed, move `begin` in a loop to maintain the window state. Update `max_len` at the end of each `end` iteration.
+* Time complexity: O(n)
+* Space complexity: O(1)

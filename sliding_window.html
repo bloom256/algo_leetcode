@@ -47,5 +47,14 @@ from the beginning in a loop.</li>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h4 id="max-consecutive-ones-iii">Max Consecutive Ones III</h4>
+<ul>
+<li>Sliding window where the window state is the number of flipped
+zeros. Iterate <code>end</code> over all elements, and if needed, move
+<code>begin</code> in a loop to maintain the window state. Update
+<code>max_len</code> at the end of each <code>end</code> iteration.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
