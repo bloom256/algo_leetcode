@@ -27,5 +27,18 @@
 </head>
 <body>
 <h2 id="linked-list">Linked list</h2>
+<h3 id="design-linked-list">Design Linked List</h3>
+<ul>
+<li>Implement a singly linked list using a <code>dummyHead</code> and a
+<code>size</code> counter. The <code>dummyHead</code> simplifies edge
+cases. Key methods <code>addAtHead</code> and <code>addAtTail</code> can
+be efficiently implemented by calling the more general
+<code>addAtIndex(0, val)</code> and <code>addAtIndex(size, val)</code>
+respectively.</li>
+<li>Time complexity: <code>get</code>, <code>addAtIndex</code>,
+<code>deleteAtIndex</code> are O(n). <code>addAtHead</code> is O(1),
+<code>addAtTail</code> is O(n).</li>
+<li>Space complexity: O(n) to store the list elements.</li>
+</ul>
 </body>
 </html>
