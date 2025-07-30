@@ -48,5 +48,16 @@ at the middle.</li>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h3 id="delete-the-middle-of-the-linked-list">Delete the Middle of the
+Linked List</h3>
+<ul>
+<li>Use slow and fast pointers, keeping a <code>prevSlow</code> pointer.
+When <code>fast</code> reaches the end, <code>slow</code> is the middle.
+To delete the middle node, set <code>prevSlow.next = slow.next</code>.
+Handle the edge case where the list has only one node, in which case
+<code>prevSlow</code> would be null.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
