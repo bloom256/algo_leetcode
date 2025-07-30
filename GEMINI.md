@@ -13,9 +13,10 @@
     - Never edit html, only .md and .css and other files, web pages should be generated from markdown files.
     - Follow google materail desing style guide
     - Changing chapters look to the previous chapters and follow its style.
-    - Before commit always check git diff and make brief meaningful commit message, ask me if it good enough. Use two line commit with -m "line" -m "line2".
+    - Before commit always check git diff and make brief and meaningful one line commit message like "tast ... added to chapter ...".
 
     ## Special Instructions for Gemini
     - Adding task, look at tasks from previous chapters and follow its style. Each task should contain list of 3 points: description, time complexity, space complexity.
     - Task description should as brief as possible, so I can remember it at one glance, and you must always edit it, to make it more breif readable and understandable.
     - after update .md files always render them into html using render_notes.sh script.
+    - after adding or removing task to chapter update the tasks count on the main page.
