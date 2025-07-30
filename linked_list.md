@@ -35,3 +35,9 @@
 *   Iterate with a `curr` pointer while `curr` and `curr.next` exist. If `curr.val == curr.next.val`, set `curr.next = curr.next.next` (skipping the duplicate) and do not advance `curr`. Otherwise, move `curr` forward (`curr = curr.next`).
 *   Time complexity: O(n)
 *   Space complexity: O(1)
+
+### Remove Nth Node From End of List
+
+*   Use two pointers, `p1` and `prev`. Initialize `p1 = head`. Move `p1` forward `n` times. Create a `dummyHead` and initialize `prev = dummyHead`. Then, move both `p1` and `prev` forward one step at a time until `p1` reaches the end of the list. At this point, `prev` will be pointing to the node *before* the one to be deleted. Delete the node by setting `prev.next = prev.next.next`. Return `dummyHead.next`.
+*   Time complexity: O(n)
+*   Space complexity: O(1)

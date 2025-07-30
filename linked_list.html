@@ -92,5 +92,20 @@ forward (<code>curr = curr.next</code>).</li>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h3 id="remove-nth-node-from-end-of-list">Remove Nth Node From End of
+List</h3>
+<ul>
+<li>Use two pointers, <code>p1</code> and <code>prev</code>. Initialize
+<code>p1 = head</code>. Move <code>p1</code> forward <code>n</code>
+times. Create a <code>dummyHead</code> and initialize
+<code>prev = dummyHead</code>. Then, move both <code>p1</code> and
+<code>prev</code> forward one step at a time until <code>p1</code>
+reaches the end of the list. At this point, <code>prev</code> will be
+pointing to the node <em>before</em> the one to be deleted. Delete the
+node by setting <code>prev.next = prev.next.next</code>. Return
+<code>dummyHead.next</code>.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
