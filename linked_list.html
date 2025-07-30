@@ -40,5 +40,13 @@ respectively.</li>
 <code>addAtTail</code> is O(n).</li>
 <li>Space complexity: O(n) to store the list elements.</li>
 </ul>
+<h3 id="middle-of-the-linked-list">Middle of the Linked List</h3>
+<ul>
+<li>Use slow and fast pointers. Move slow by one step and fast by two
+(<code>fast = fast.next.next</code>). When fast reaches the end, slow is
+at the middle.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
