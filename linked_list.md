@@ -23,3 +23,9 @@
 *   Initialize `curr = head` and `prev = null`. Iterate through the list, at each step, store `curr.next` in a temporary variable, set `curr.next = prev`, then update `prev = curr` and `curr = temp`. Return `prev` at the end.
 *   Time complexity: O(n)
 *   Space complexity: O(1)
+
+### Palindrome Linked List
+
+*   First, implement `findMiddle(head)` using slow and fast pointers. Then, implement `reverseList(head)` (as described above). Use these to find the middle of the original list and reverse its second half. Finally, compare the first half of the original list with the reversed second half. Iterate only as long as the reversed second half has elements, as the first half might be longer for odd-length lists.
+*   Time complexity: O(n)
+*   Space complexity: O(1)
