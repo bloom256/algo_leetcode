@@ -1,7 +1,7 @@
 # Algorithm Notes
 
 ::: {.chapter-grid}
-## [Two Pointers](two_pointers.html)
+## [Two Pointers (13)](two_pointers.html)
 
-## [Sliding Window](sliding_window.html)
+## [Sliding Window (5)](sliding_window.html)
 :::
