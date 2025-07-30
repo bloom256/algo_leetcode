@@ -17,3 +17,9 @@
 *   Use slow and fast pointers, keeping a `prevSlow` pointer. When `fast` reaches the end, `slow` is the middle. To delete the middle node, set `prevSlow.next = slow.next`. Handle the edge case where the list has only one node, in which case `prevSlow` would be null.
 *   Time complexity: O(n)
 *   Space complexity: O(1)
+
+### Reverse Linked List
+
+*   Initialize `curr = head` and `prev = null`. Iterate through the list, at each step, store `curr.next` in a temporary variable, set `curr.next = prev`, then update `prev = curr` and `curr = temp`. Return `prev` at the end.
+*   Time complexity: O(n)
+*   Space complexity: O(1)

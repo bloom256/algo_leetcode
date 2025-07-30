@@ -59,5 +59,15 @@ Handle the edge case where the list has only one node, in which case
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h3 id="reverse-linked-list">Reverse Linked List</h3>
+<ul>
+<li>Initialize <code>curr = head</code> and <code>prev = null</code>.
+Iterate through the list, at each step, store <code>curr.next</code> in
+a temporary variable, set <code>curr.next = prev</code>, then update
+<code>prev = curr</code> and <code>curr = temp</code>. Return
+<code>prev</code> at the end.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
