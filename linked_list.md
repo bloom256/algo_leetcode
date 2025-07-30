@@ -47,3 +47,9 @@
 *   Create a `dummyHead` and set `curr = dummyHead`. Iterate while `curr`, `curr.next`, and `curr.next.next` exist. Carefully re-link `curr`, `curr.next`, and `curr.next.next` to swap the pair, then move `curr` two steps forward.
 *   Time complexity: O(n)
 *   Space complexity: O(1)
+
+### Merge Two Sorted Lists
+
+*   Initialize `curr = dummyHead(0, nullptr)`. Iterate while both `list1` and `list2` exist. In each step, choose the smaller node from `list1` or `list2`, append it to `curr.next`, and then advance `curr` and the pointer of the list from which the node was taken. After the loop, append the remaining part of `list1` or `list2` to `curr.next` (no additional loop is needed for this step). Return `dummyHead.next`.
+*   Time complexity: O(m+n)
+*   Space complexity: O(1)
