@@ -67,5 +67,14 @@ on each iteration.</li>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(k) where k is the number of baskets</li>
 </ul>
+<h4 id="longest-subarray-of-1s-after-deleting-one-element">Longest
+Subarray of 1s After Deleting One Element</h4>
+<ul>
+<li>The window state is the number of zeros. On each iteration, update
+the state. If needed, shrink the window in a cycle. Update
+<code>maxOnes</code> using <code>winLen</code> - 1.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
