@@ -56,5 +56,16 @@ zeros. Iterate <code>end</code> over all elements, and if needed, move
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h4 id="fruit-into-baskets">Fruit into Baskets</h4>
+<ul>
+<li>Use an unordered map to count fruit types in the window. On each
+iteration, add the new fruit to the map. If the map size exceeds the
+allowed number of baskets, shrink the window from the beginning in a
+loop, decrementing fruit counts until a fruit type is removed from the
+map. Update the maximum number of fruits with the current window length
+on each iteration.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(k) where k is the number of baskets</li>
+</ul>
 </body>
 </html>

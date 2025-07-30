@@ -21,3 +21,9 @@
 * Sliding window where the window state is the number of flipped zeros. Iterate `end` over all elements, and if needed, move `begin` in a loop to maintain the window state. Update `max_len` at the end of each `end` iteration.
 * Time complexity: O(n)
 * Space complexity: O(1)
+
+#### Fruit into Baskets
+
+* Use an unordered map to count fruit types in the window. On each iteration, add the new fruit to the map. If the map size exceeds the allowed number of baskets, shrink the window from the beginning in a loop, decrementing fruit counts until a fruit type is removed from the map. Update the maximum number of fruits with the current window length on each iteration.
+* Time complexity: O(n)
+* Space complexity: O(k) where k is the number of baskets
