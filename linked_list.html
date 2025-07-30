@@ -107,5 +107,16 @@ node by setting <code>prev.next = prev.next.next</code>. Return
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h3 id="swap-nodes-in-pairs">Swap Nodes in Pairs</h3>
+<ul>
+<li>Create a <code>dummyHead</code> and set
+<code>curr = dummyHead</code>. Iterate while <code>curr</code>,
+<code>curr.next</code>, and <code>curr.next.next</code> exist. Carefully
+re-link <code>curr</code>, <code>curr.next</code>, and
+<code>curr.next.next</code> to swap the pair, then move
+<code>curr</code> two steps forward.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>

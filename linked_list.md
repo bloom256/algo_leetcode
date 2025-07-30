@@ -41,3 +41,9 @@
 *   Use two pointers, `p1` and `prev`. Initialize `p1 = head`. Move `p1` forward `n` times. Create a `dummyHead` and initialize `prev = dummyHead`. Then, move both `p1` and `prev` forward one step at a time until `p1` reaches the end of the list. At this point, `prev` will be pointing to the node *before* the one to be deleted. Delete the node by setting `prev.next = prev.next.next`. Return `dummyHead.next`.
 *   Time complexity: O(n)
 *   Space complexity: O(1)
+
+### Swap Nodes in Pairs
+
+*   Create a `dummyHead` and set `curr = dummyHead`. Iterate while `curr`, `curr.next`, and `curr.next.next` exist. Carefully re-link `curr`, `curr.next`, and `curr.next.next` to swap the pair, then move `curr` two steps forward.
+*   Time complexity: O(n)
+*   Space complexity: O(1)
