@@ -29,3 +29,9 @@
 *   First, implement `findMiddle(head)` using slow and fast pointers. Then, implement `reverseList(head)` (as described above). Use these to find the middle of the original list and reverse its second half. Finally, compare the first half of the original list with the reversed second half. Iterate only as long as the reversed second half has elements, as the first half might be longer for odd-length lists.
 *   Time complexity: O(n)
 *   Space complexity: O(1)
+
+### Remove Duplicates from Sorted List
+
+*   Iterate with a `curr` pointer while `curr` and `curr.next` exist. If `curr.val == curr.next.val`, set `curr.next = curr.next.next` (skipping the duplicate) and do not advance `curr`. Otherwise, move `curr` forward (`curr = curr.next`).
+*   Time complexity: O(n)
+*   Space complexity: O(1)

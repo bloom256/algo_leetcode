@@ -81,5 +81,16 @@ odd-length lists.</li>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h3 id="remove-duplicates-from-sorted-list">Remove Duplicates from
+Sorted List</h3>
+<ul>
+<li>Iterate with a <code>curr</code> pointer while <code>curr</code> and
+<code>curr.next</code> exist. If <code>curr.val == curr.next.val</code>,
+set <code>curr.next = curr.next.next</code> (skipping the duplicate) and
+do not advance <code>curr</code>. Otherwise, move <code>curr</code>
+forward (<code>curr = curr.next</code>).</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
