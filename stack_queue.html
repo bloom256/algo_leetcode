@@ -55,5 +55,18 @@ from the characters remaining in the vector.</li>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(n)</li>
 </ul>
+<h3 id="removing-stars-from-a-string">Removing Stars from a String</h3>
+<ul>
+<li><strong>Stack-based:</strong> Use <code>std::vector</code> as a
+stack. Iterate through the string, pushing non-<code>*</code> characters
+onto the stack and popping for <code>*</code>. Time: O(N), Space:
+O(N).</li>
+<li><strong>Two-pointers:</strong> Use <code>reader</code> and
+<code>writer</code> pointers. <code>reader</code> iterates through the
+string. If <code>s[reader]</code> is not <code>*</code>, copy it to
+<code>s[writer++]</code>. If it is <code>*</code>, decrement
+<code>writer</code>. Finally, resize the string to <code>writer</code>.
+Time: O(N), Space: O(1).</li>
+</ul>
 </body>
 </html>
