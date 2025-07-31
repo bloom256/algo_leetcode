@@ -7,5 +7,5 @@
 
 ## [Linked list (10)](linked_list.html)
 
-## [Hash Map (0)](hash_map.html)
+## [Hash Map (1)](hash_map.html)
 :::

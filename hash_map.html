@@ -27,5 +27,18 @@
 </head>
 <body>
 <h2 id="hash-map">Hash Map</h2>
+<h3 id="implement-lru-cache">Implement LRU Cache</h3>
+<ul>
+<li>Use <code>std::list&lt;int&gt;</code> to maintain the key access
+order (most recently used at the front). Use
+<code>std::unordered_map&lt;int, std::tuple&lt;int, std::list&lt;int&gt;::iterator&gt;&gt;</code>
+to store keys, their corresponding values, and an iterator to their
+position in the <code>std::list</code>. On access, move the key to the
+front of the list. On insertion when capacity is full, remove the least
+recently used item (back of the list) and its entry from the map.</li>
+<li>Time complexity: <code>get</code> and <code>put</code> are
+O(1).</li>
+<li>Space complexity: O(capacity)</li>
+</ul>
 </body>
 </html>
