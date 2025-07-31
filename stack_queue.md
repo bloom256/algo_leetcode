@@ -8,9 +8,8 @@
 
 ### Remove All Adjacent Duplicates In String
 
-*   Use a `std::vector<char>` to simulate a stack. Iterate through the input string character by character. If the vector is not empty and the current character `c` is equal to the last character in the vector (`stack.back()`), then pop the last character from the vector. Otherwise, push the current character `c` onto the vector. Finally, construct the result string from the characters remaining in the vector.
-*   Time complexity: O(n)
-*   Space complexity: O(n)
+*   **Stack-based:** Use a `std::vector<char>` to simulate a stack. Iterate through the input string character by character. If the vector is not empty and the current character `c` is equal to the last character in the vector (`stack.back()`), then pop the last character from the vector. Otherwise, push the current character `c` onto the vector. Finally, construct the result string from the characters remaining in the vector. Time: O(N), Space: O(N).
+*   **Two-pointers:** Use `reader` and `writer` pointers. `writer` starts at 0. `reader` iterates through the string. If `writer > 0` and `s[reader]` is the same as `s[writer - 1]`, decrement `writer`. Otherwise, copy `s[reader]` to `s[writer++]`. Finally, resize the string to `writer`. Time: O(N), Space: O(1).
 
 ### Removing Stars from a String
 

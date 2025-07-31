@@ -45,15 +45,22 @@ invalid.</li>
 <h3 id="remove-all-adjacent-duplicates-in-string">Remove All Adjacent
 Duplicates In String</h3>
 <ul>
-<li>Use a <code>std::vector&lt;char&gt;</code> to simulate a stack.
-Iterate through the input string character by character. If the vector
-is not empty and the current character <code>c</code> is equal to the
-last character in the vector (<code>stack.back()</code>), then pop the
-last character from the vector. Otherwise, push the current character
+<li><strong>Stack-based:</strong> Use a
+<code>std::vector&lt;char&gt;</code> to simulate a stack. Iterate
+through the input string character by character. If the vector is not
+empty and the current character <code>c</code> is equal to the last
+character in the vector (<code>stack.back()</code>), then pop the last
+character from the vector. Otherwise, push the current character
 <code>c</code> onto the vector. Finally, construct the result string
-from the characters remaining in the vector.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(n)</li>
+from the characters remaining in the vector. Time: O(N), Space:
+O(N).</li>
+<li><strong>Two-pointers:</strong> Use <code>reader</code> and
+<code>writer</code> pointers. <code>writer</code> starts at 0.
+<code>reader</code> iterates through the string. If
+<code>writer &gt; 0</code> and <code>s[reader]</code> is the same as
+<code>s[writer - 1]</code>, decrement <code>writer</code>. Otherwise,
+copy <code>s[reader]</code> to <code>s[writer++]</code>. Finally, resize
+the string to <code>writer</code>. Time: O(N), Space: O(1).</li>
 </ul>
 <h3 id="removing-stars-from-a-string">Removing Stars from a String</h3>
 <ul>
