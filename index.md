@@ -5,5 +5,5 @@
 
 ## [Sliding Window (5)](sliding_window.html)
 
-## [Linked list (9)](linked_list.html)
+## [Linked list (10)](linked_list.html)
 :::

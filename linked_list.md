@@ -53,3 +53,9 @@
 *   Initialize `curr = dummyHead(0, nullptr)`. Iterate while both `list1` and `list2` exist. In each step, choose the smaller node from `list1` or `list2`, append it to `curr.next`, and then advance `curr` and the pointer of the list from which the node was taken. After the loop, append the remaining part of `list1` or `list2` to `curr.next` (no additional loop is needed for this step). Return `dummyHead.next`.
 *   Time complexity: O(m+n)
 *   Space complexity: O(1)
+
+### Linked List Cycle
+
+*   Use fast and slow pointers. Move `fast` by one step in each iteration. Move `slow` by one step on every second iteration. If `fast` and `slow` meet, a cycle exists.
+*   Time complexity: O(n)
+*   Space complexity: O(1)
