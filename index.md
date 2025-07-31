@@ -9,5 +9,5 @@
 
 ## [4. Hash Map (1)](chapter_4_hash_map.html)
 
-## [5. Stack/Queue (3)](chapter_5_stack_queue.html)
+## [5. Stack/Queue (4)](chapter_5_stack_queue.html)
 :::

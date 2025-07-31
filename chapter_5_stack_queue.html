@@ -75,5 +75,19 @@ string. If <code>s[reader]</code> is not <code>*</code>, copy it to
 <code>writer</code>. Finally, resize the string to <code>writer</code>.
 Time: O(N), Space: O(1).</li>
 </ul>
+<h4 id="simplify-path">Simplify Path</h4>
+<ul>
+<li><strong>Stack with Manual Parsing:</strong> Use a
+<code>std::vector&lt;std::string&gt;</code> as a stack. Iterate through
+the path character by character to build directory names. When a
+<code>/</code> is encountered, it signals the end of a component. This
+component is then processed: if it is <code>..</code>, pop an element
+from the stack. If it is not empty or <code>.</code>, push the component
+onto the stack. After the loop, there might be a final component to
+process. Finally, join the elements in the stack with <code>/</code> to
+construct the final simplified path, ensuring it starts with a
+<code>/</code>. If the stack is empty, the result is simply
+<code>/</code>. Time: O(N), Space: O(N).</li>
+</ul>
 </body>
 </html>

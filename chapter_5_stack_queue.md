@@ -14,3 +14,7 @@
 
 *   **Stack-based:** Use `std::vector` as a stack. Iterate through the string, pushing non-`*` characters onto the stack and popping for `*`. Time: O(N), Space: O(N).
 *   **Two-pointers:** Use `reader` and `writer` pointers. `reader` iterates through the string. If `s[reader]` is not `*`, copy it to `s[writer++]`. If it is `*`, decrement `writer`. Finally, resize the string to `writer`. Time: O(N), Space: O(1).
+
+#### Simplify Path
+
+*   **Stack with Manual Parsing:** Use a `std::vector<std::string>` as a stack. Iterate through the path character by character to build directory names. When a `/` is encountered, it signals the end of a component. This component is then processed: if it is `..`, pop an element from the stack. If it is not empty or `.`, push the component onto the stack. After the loop, there might be a final component to process. Finally, join the elements in the stack with `/` to construct the final simplified path, ensuring it starts with a `/`. If the stack is empty, the result is simply `/`. Time: O(N), Space: O(N).
