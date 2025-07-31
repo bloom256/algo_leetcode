@@ -46,6 +46,14 @@ h1::after {
     border-radius: 3px;
 }
 
+.total-tasks {
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--text-light);
+    margin-top: -1em;
+    margin-bottom: 2em;
+}
+
 h2 {
     font-size: 2.8em;
     font-weight: 600;

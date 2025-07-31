@@ -1,5 +1,9 @@
 # Algorithm Notes
 
+::: {.total-tasks}
+Total tasks: 33
+:::
+
 ::: {.chapter-grid}
 ## [1. Two Pointers (13)](chapter_1_two_pointers.html)
 
