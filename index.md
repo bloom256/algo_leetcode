@@ -6,4 +6,6 @@
 ## [Sliding Window (5)](sliding_window.html)
 
 ## [Linked list (10)](linked_list.html)
+
+## [Hash Map (0)](hash_map.html)
 :::
