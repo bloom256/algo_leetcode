@@ -14,6 +14,7 @@
     - Follow google materail desing style guide
     - Changing chapters look to the previous chapters and follow its style.
     - Before commit always check git diff and make brief and meaningful one line commit message like "tast ... added to chapter ...".
+    - in chapter.md chapter title should be h2 tag (like ## Sliding Window), subchapter title should be h3 tag (like ### Moving pointers toward each other from opposite directions), and task should always be h4 tag (like #### Reverse String) even if there is no subchapter.
 
     ## Special Instructions for Gemini
     - Adding task, look at tasks from previous chapters and follow its style. Each task should contain list of 3 points: description, time complexity, space complexity.
