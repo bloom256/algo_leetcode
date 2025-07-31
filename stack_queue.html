@@ -42,5 +42,18 @@ invalid.</li>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(n)</li>
 </ul>
+<h3 id="remove-all-adjacent-duplicates-in-string">Remove All Adjacent
+Duplicates In String</h3>
+<ul>
+<li>Use a <code>std::vector&lt;char&gt;</code> to simulate a stack.
+Iterate through the input string character by character. If the vector
+is not empty and the current character <code>c</code> is equal to the
+last character in the vector (<code>stack.back()</code>), then pop the
+last character from the vector. Otherwise, push the current character
+<code>c</code> onto the vector. Finally, construct the result string
+from the characters remaining in the vector.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(n)</li>
+</ul>
 </body>
 </html>
