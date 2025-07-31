@@ -1,13 +1,13 @@
 # Algorithm Notes
 
 ::: {.chapter-grid}
-## [Two Pointers (13)](two_pointers.html)
+## [1. Two Pointers (13)](chapter_1_two_pointers.html)
 
-## [Sliding Window (5)](sliding_window.html)
+## [2. Sliding Window (5)](chapter_2_sliding_window.html)
 
-## [Linked list (10)](linked_list.html)
+## [3. Linked list (10)](chapter_3_linked_list.html)
 
-## [Hash Map (1)](hash_map.html)
+## [4. Hash Map (1)](chapter_4_hash_map.html)
 
-## [Stack/Queue (3)](stack_queue.html)
+## [5. Stack/Queue (3)](chapter_5_stack_queue.html)
 :::
