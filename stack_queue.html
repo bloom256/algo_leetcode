@@ -27,5 +27,20 @@
 </head>
 <body>
 <h2 id="stackqueue">Stack/Queue</h2>
+<h3 id="valid-parentheses">Valid Parentheses</h3>
+<ul>
+<li>Use a <code>std::stack</code>. Iterate through the input string. If
+an opening parenthesis is encountered, use <code>push()</code> to add it
+to the stack. If a closing parenthesis is encountered, use
+<code>empty()</code> to check if the stack is empty or
+<code>top()</code> to check if the top of the stack does not match the
+corresponding opening parenthesis. If either is true, the string is
+invalid. Otherwise, use <code>pop()</code> to remove the top element.
+After iterating through the string, use <code>empty()</code> to check if
+the stack is empty. If it is, the string is valid; otherwise, it is
+invalid.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(n)</li>
+</ul>
 </body>
 </html>

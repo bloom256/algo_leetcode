@@ -9,5 +9,5 @@
 
 ## [Hash Map (1)](hash_map.html)
 
-## [Stack/Queue (0)](stack_queue.html)
+## [Stack/Queue (1)](stack_queue.html)
 :::
