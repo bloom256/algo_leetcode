@@ -2,9 +2,8 @@
 
 ### Valid Parentheses
 
-*   Use a `std::stack`. Iterate through the input string. If an opening parenthesis is encountered, use `push()` to add it to the stack. If a closing parenthesis is encountered, use `empty()` to check if the stack is empty or `top()` to check if the top of the stack does not match the corresponding opening parenthesis. If either is true, the string is invalid. Otherwise, use `pop()` to remove the top element. After iterating through the string, use `empty()` to check if the stack is empty. If it is, the string is valid; otherwise, it is invalid.
-*   Time complexity: O(n)
-*   Space complexity: O(n)
+*   **Stack-based:** Use a `std::stack`. For an opening bracket, push it onto the stack. For a closing bracket, if the stack is empty or its top doesn't match, the string is invalid; otherwise, pop the stack. The string is valid if the stack is empty after the loop. Time: O(N), Space: O(N).
+*   **Two-pointers:** Use `reader` and `writer` pointers. For an opening bracket, copy it to `s[writer++]`. For a closing bracket, decrement `writer`. If `writer` becomes negative or `s[writer]` doesn't match the closing bracket, the string is invalid. Finally, the string is valid if `writer` is 0. Time: O(N), Space: O(1).
 
 ### Remove All Adjacent Duplicates In String
 
