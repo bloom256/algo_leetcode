@@ -20,4 +20,4 @@
     - Adding task, look at tasks from previous chapters and follow its style. Each task should contain list of 3 points: description, time complexity, space complexity.
     - Task description should as brief as possible, so I can remember it at one glance, and you must always edit it, to make it more breif readable and understandable.
     - after update .md files always render them into html using render_notes.sh script.
-    - after adding or removing task to chapter update the tasks count on the main page.
+    - after adding or removing task to chapter update the tasks count on the main page (total count and specific chapter count).
