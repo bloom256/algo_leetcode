@@ -41,5 +41,15 @@ the stack is not empty, pop a node, update the maximum depth found so
 far, and push its children with an incremented depth. Time: O(N). Space:
 O(H), for the stack.</li>
 </ul>
+<h4 id="invert-binary-tree">Invert Binary Tree</h4>
+<ul>
+<li><strong>Recursive DFS:</strong> For each node, swap its left and
+right children, then recursively call the function for the left and
+right children. The base case is a null node. Time: O(N), Space:
+O(H).</li>
+<li><strong>Iterative DFS:</strong> Use a stack. Push the root. While
+the stack is not empty, pop a node, swap its children, then push the new
+right and left children if they exist. Time: O(N), Space: O(H).</li>
+</ul>
 </body>
 </html>
