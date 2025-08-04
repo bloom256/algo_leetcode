@@ -14,4 +14,6 @@ Total tasks: 34
 ## [4. Hash Map (1)](chapter_4_hash_map.html)
 
 ## [5. Stack/Queue (5)](chapter_5_stack_queue.html)
+
+## [6. Binary Tree (0)](chapter_6_binary_tree.html)
 :::
