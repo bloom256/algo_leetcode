@@ -1,7 +1,7 @@
 # Algorithm Notes
 
 ::: {.total-tasks}
-Total tasks: 37
+Total tasks: 38
 :::
 
 ::: {.chapter-grid}
@@ -15,5 +15,5 @@ Total tasks: 37
 
 ## [5. Stack/Queue (5)](chapter_5_stack_queue.html)
 
-## [6. Binary Tree (3)](chapter_6_binary_tree.html)
+## [6. Binary Tree (4)](chapter_6_binary_tree.html)
 :::

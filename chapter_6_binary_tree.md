@@ -15,3 +15,7 @@
 #### Same Tree
 
 *   **Iterative DFS:** Use two stacks, one for each tree. Push the roots onto their respective stacks. While both stacks are not empty, pop a node from each. If one node is null and the other isn't, or if their values are different, the trees are not the same. Then, push the left and right children of both nodes onto their stacks. If the stacks are both empty at the end, the trees are the same. Time: O(N), Space: O(H).
+
+#### Symmetric Tree
+
+*   **Iterative DFS with Two Stacks:** Use two stacks. Push the root onto both stacks. While the stacks are not empty, pop a node from each. If one node is null and the other isn't, or if their values are different, the tree is not symmetric. For the first stack, push the left then the right child. For the second stack, push the right then the left child. If the stacks are both empty at the end, the tree is symmetric. Time: O(N), Space: O(H).
