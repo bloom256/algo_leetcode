@@ -31,4 +31,3 @@ jobs:
           publish_dir: .
           publish_branch: gh-pages
           cname: ''
-          ignore_paths: []
