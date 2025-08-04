@@ -89,5 +89,18 @@ construct the final simplified path, ensuring it starts with a
 <code>/</code>. If the stack is empty, the result is simply
 <code>/</code>. Time: O(N), Space: O(N).</li>
 </ul>
+<h4 id="number-of-recent-calls">Number of Recent Calls</h4>
+<ul>
+<li><strong>Description:</strong> Use a <code>deque</code> to store
+timestamps of recent requests. When a new request arrives, remove all
+timestamps from the front of the deque that are older than 3000
+milliseconds. Then, add the new request’s timestamp to the back and
+return the size of the deque.</li>
+<li><strong>Time Complexity:</strong> O(W) where W is the window size
+(3000 in this case). In the worst case, we might have to remove all
+elements from the previous window.</li>
+<li><strong>Space Complexity:</strong> O(W) where W is the maximum
+number of requests in the 3000ms window.</li>
+</ul>
 </body>
 </html>

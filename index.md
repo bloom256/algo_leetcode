@@ -1,7 +1,7 @@
 # Algorithm Notes
 
 ::: {.total-tasks}
-Total tasks: 33
+Total tasks: 34
 :::
 
 ::: {.chapter-grid}
@@ -13,5 +13,5 @@ Total tasks: 33
 
 ## [4. Hash Map (1)](chapter_4_hash_map.html)
 
-## [5. Stack/Queue (4)](chapter_5_stack_queue.html)
+## [5. Stack/Queue (5)](chapter_5_stack_queue.html)
 :::

@@ -18,3 +18,9 @@
 #### Simplify Path
 
 *   **Stack with Manual Parsing:** Use a `std::vector<std::string>` as a stack. Iterate through the path character by character to build directory names. When a `/` is encountered, it signals the end of a component. This component is then processed: if it is `..`, pop an element from the stack. If it is not empty or `.`, push the component onto the stack. After the loop, there might be a final component to process. Finally, join the elements in the stack with `/` to construct the final simplified path, ensuring it starts with a `/`. If the stack is empty, the result is simply `/`. Time: O(N), Space: O(N).
+
+#### Number of Recent Calls
+
+*   **Description:** Use a `deque` to store timestamps of recent requests. When a new request arrives, remove all timestamps from the front of the deque that are older than 3000 milliseconds. Then, add the new request's timestamp to the back and return the size of the deque.
+*   **Time Complexity:** O(W) where W is the window size (3000 in this case). In the worst case, we might have to remove all elements from the previous window.
+*   **Space Complexity:** O(W) where W is the maximum number of requests in the 3000ms window.
