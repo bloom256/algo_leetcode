@@ -11,3 +11,7 @@
 
 *   **Recursive DFS:** For each node, swap its left and right children, then recursively call the function for the left and right children. The base case is a null node. Time: O(N), Space: O(H).
 *   **Iterative DFS:** Use a stack. Push the root. While the stack is not empty, pop a node, swap its children, then push the new right and left children if they exist. Time: O(N), Space: O(H).
+
+#### Same Tree
+
+*   **Iterative DFS:** Use two stacks, one for each tree. Push the roots onto their respective stacks. While both stacks are not empty, pop a node from each. If one node is null and the other isn't, or if their values are different, the trees are not the same. Then, push the left and right children of both nodes onto their stacks. If the stacks are both empty at the end, the trees are the same. Time: O(N), Space: O(H).
