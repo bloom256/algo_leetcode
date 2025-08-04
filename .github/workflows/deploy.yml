@@ -1,0 +1,31 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Run render script
+        run: |
+          chmod +x render_notes.sh
+          ./render_notes.sh
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          cname: ''
