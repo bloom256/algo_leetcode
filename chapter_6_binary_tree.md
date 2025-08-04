@@ -1,5 +1,7 @@
 ## Binary Tree
 
+### DFS
+
 #### Maximum Depth of Binary Tree
 
 *   **Recursive DFS:** The depth of a node is `1 + max(left_depth, right_depth)`. The base case is a null node, which has a depth of 0. Time: O(N), where N is the number of nodes, as we visit each node once. Space: O(H), where H is the height of the tree, due to the recursion stack. In the worst case (a skewed tree), this can be O(N).
