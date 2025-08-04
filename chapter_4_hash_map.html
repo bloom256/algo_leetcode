@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>chapter_4_hash_map</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <base href="/algo_leetcode/">
+</head>
+<body>
+<h2 id="hash-map">Hash Map</h2>
+<h4 id="implement-lru-cache">Implement LRU Cache</h4>
+<ul>
+<li>Use <code>std::list&lt;int&gt;</code> to maintain the key access
+order (most recently used at the front). Use
+<code>std::unordered_map&lt;int, std::tuple&lt;int, std::list&lt;int&gt;::iterator&gt;&gt;</code>
+to store keys, their corresponding values, and an iterator to their
+position in the <code>std::list</code>. On access, move the key to the
+front of the list. On insertion when capacity is full, remove the least
+recently used item (back of the list) and its entry from the map.</li>
+<li>Time complexity: <code>get</code> and <code>put</code> are
+O(1).</li>
+<li>Space complexity: O(capacity)</li>
+</ul>
+</body>
+</html>

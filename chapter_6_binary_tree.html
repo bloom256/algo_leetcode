@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>chapter_6_binary_tree</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <base href="/algo_leetcode/">
+</head>
+<body>
+<h2 id="binary-tree">Binary Tree</h2>
+<h3 id="dfs">DFS</h3>
+<h4 id="maximum-depth-of-binary-tree">Maximum Depth of Binary Tree</h4>
+<ul>
+<li><strong>Recursive DFS:</strong> The depth of a node is
+<code>1 + max(left_depth, right_depth)</code>. The base case is a null
+node, which has a depth of 0. Time: O(N), where N is the number of
+nodes, as we visit each node once. Space: O(H), where H is the height of
+the tree, due to the recursion stack. In the worst case (a skewed tree),
+this can be O(N).</li>
+<li><strong>Iterative DFS:</strong> Use a stack to store pairs of
+<code>(node, depth)</code>. Start with the root and a depth of 1. While
+the stack is not empty, pop a node, update the maximum depth found so
+far, and push its children with an incremented depth. Time: O(N). Space:
+O(H), for the stack.</li>
+</ul>
+<h4 id="invert-binary-tree">Invert Binary Tree</h4>
+<ul>
+<li><strong>Recursive DFS:</strong> For each node, swap its left and
+right children, then recursively call the function for the left and
+right children. The base case is a null node. Time: O(N), Space:
+O(H).</li>
+<li><strong>Iterative DFS:</strong> Use a stack. Push the root. While
+the stack is not empty, pop a node, swap its children, then push the new
+right and left children if they exist. Time: O(N), Space: O(H).</li>
+</ul>
+<h4 id="same-tree">Same Tree</h4>
+<ul>
+<li><strong>Iterative DFS:</strong> Use two stacks, one for each tree.
+Push the roots onto their respective stacks. While both stacks are not
+empty, pop a node from each. If one node is null and the other isn’t, or
+if their values are different, the trees are not the same. Then, push
+the left and right children of both nodes onto their stacks. If the
+stacks are both empty at the end, the trees are the same. Time: O(N),
+Space: O(H).</li>
+</ul>
+<h4 id="symmetric-tree">Symmetric Tree</h4>
+<ul>
+<li><strong>Iterative DFS with Two Stacks:</strong> Use two stacks. Push
+the root onto both stacks. While the stacks are not empty, pop a node
+from each. If one node is null and the other isn’t, or if their values
+are different, the tree is not symmetric. For the first stack, push the
+left then the right child. For the second stack, push the right then the
+left child. If the stacks are both empty at the end, the tree is
+symmetric. Time: O(N), Space: O(H).</li>
+</ul>
+</body>
+</html>

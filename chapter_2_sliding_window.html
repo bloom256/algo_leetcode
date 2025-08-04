@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>chapter_2_sliding_window</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <base href="/algo_leetcode/">
+</head>
+<body>
+<h2 id="sliding-window">Sliding Window</h2>
+<h3 id="fixed-size-sliding-window">Fixed-size sliding window</h3>
+<h4 id="maximum-average-subarray-i">Maximum Average Subarray I</h4>
+<ul>
+<li>Set <code>begin</code> to 0, iterate <code>end</code> over all
+elements. On each iteration increase <code>win_sum</code>. If
+<code>win_len</code> is <code>k</code>, update <code>max_avg</code>,
+decrease <code>win_sum</code> by the <code>begin</code> element, and
+move <code>begin</code> forward.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
+<h3 id="variable-size-sliding-window">Variable-size sliding window</h3>
+<h4 id="minimum-size-subarray-sum">Minimum Size Subarray Sum</h4>
+<ul>
+<li>Use a classical sliding window. When the window sum is greater than
+or equal to the target, update the minimum length and shrink the window
+from the beginning in a loop.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
+<h4 id="max-consecutive-ones-iii">Max Consecutive Ones III</h4>
+<ul>
+<li>Sliding window where the window state is the number of flipped
+zeros. Iterate <code>end</code> over all elements, and if needed, move
+<code>begin</code> in a loop to maintain the window state. Update
+<code>max_len</code> at the end of each <code>end</code> iteration.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
+<h4 id="fruit-into-baskets">Fruit into Baskets</h4>
+<ul>
+<li>Use an unordered map to count fruit types in the window. On each
+iteration, add the new fruit to the map. If the map size exceeds the
+allowed number of baskets, shrink the window from the beginning in a
+loop, decrementing fruit counts until a fruit type is removed from the
+map. Update the maximum number of fruits with the current window length
+on each iteration.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(k) where k is the number of baskets</li>
+</ul>
+<h4 id="longest-subarray-of-1s-after-deleting-one-element">Longest
+Subarray of 1s After Deleting One Element</h4>
+<ul>
+<li>The window state is the number of zeros. On each iteration, update
+the state. If needed, shrink the window in a cycle. Update
+<code>maxOnes</code> using <code>winLen</code> - 1.</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+</ul>
+</body>
+</html>
