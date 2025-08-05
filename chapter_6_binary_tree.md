@@ -27,3 +27,9 @@
 *   **Space Complexity:** O(H) in a balanced tree, where H is the height. In the worst case of a skewed tree, this can be O(N).
 
 ### BST
+
+#### Search in a Binary Search Tree
+
+*   **Description:** Start at the root. While the current node is not null, compare its value with the target. If they match, return the node. If the target is smaller, move to the left child; otherwise, move to the right child. If the loop finishes, the value is not in the tree.
+*   **Time Complexity:** O(H), where H is the height of the tree. For a balanced tree, this is O(log N). In the worst case of a skewed tree, it's O(N).
+*   **Space Complexity:** O(1) for the iterative approach.
