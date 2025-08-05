@@ -121,5 +121,22 @@ skewed tree, it’s O(N).</li>
 <li><strong>Space Complexity:</strong> O(1) for the iterative
 approach.</li>
 </ul>
+<h4 id="validate-binary-search-tree">Validate Binary Search Tree</h4>
+<ul>
+<li><strong>Description:</strong> Use an iterative DFS approach with a
+stack. The stack stores tuples of <code>(node, min_val, max_val)</code>.
+Start by pushing the root onto the stack with negative and positive
+infinity as the initial min and max bounds. While the stack is not
+empty, pop a node. If the node is null, continue. Check if the node’s
+value is outside its valid range (<code>&lt;= min</code> or
+<code>&gt;= max</code>); if so, the tree is invalid. Then, push the left
+child onto the stack with an updated max bound of the current node’s
+value, and push the right child with an updated min bound of the current
+node’s value. If the loop completes, the tree is a valid BST.</li>
+<li><strong>Time Complexity:</strong> O(N), as we visit each node
+once.</li>
+<li><strong>Space Complexity:</strong> O(H), where H is the height of
+the tree, for the stack.</li>
+</ul>
 </body>
 </html>
