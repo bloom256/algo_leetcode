@@ -103,5 +103,23 @@ skewed tree, it’s O(N).</li>
 <li><strong>Space Complexity:</strong> O(1) for the iterative
 approach.</li>
 </ul>
+<h4 id="insert-into-a-binary-search-tree">Insert into a Binary Search
+Tree</h4>
+<ul>
+<li><strong>Description:</strong> If the root is null, create a new node
+and return it. Otherwise, start with <code>curr = root</code>. Loop as
+long as <code>curr</code> is not null. If the new value is less than
+<code>curr</code>’s value, check if <code>curr</code>’s left child is
+null. If it is, insert the new node there and break the loop. Otherwise,
+move to the left child. If the new value is greater than
+<code>curr</code>’s value, check if the right child is null. If it is,
+insert the new node there and break. Otherwise, move to the right child.
+Return the original root.</li>
+<li><strong>Time Complexity:</strong> O(H), where H is the height of the
+tree. For a balanced tree, this is O(log N). In the worst case of a
+skewed tree, it’s O(N).</li>
+<li><strong>Space Complexity:</strong> O(1) for the iterative
+approach.</li>
+</ul>
 </body>
 </html>
