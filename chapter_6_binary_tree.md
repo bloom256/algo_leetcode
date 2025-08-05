@@ -26,6 +26,12 @@
 *   **Time Complexity:** O(N), as each node is visited once.
 *   **Space Complexity:** O(H) in a balanced tree, where H is the height. In the worst case of a skewed tree, this can be O(N).
 
+#### Balanced Binary Tree
+
+*   **Description:** Use a recursive helper function `checkHeight(node)` that returns the height of the subtree rooted at `node` if it's balanced, or -1 if it's unbalanced. The base case is a null node, which has a height of 0. For a non-null node, recursively call `checkHeight` on its left and right children. If either call returns -1, or if the absolute difference between the left and right heights is greater than 1, return -1 (unbalanced). Otherwise, return `1 + max(left_height, right_height)`. The main function calls `checkHeight(root)` and returns `true` if the result is not -1, `false` otherwise.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(H), where H is the height of the tree, due to the recursion stack.
+
 ### BST
 
 #### Search in a Binary Search Tree
