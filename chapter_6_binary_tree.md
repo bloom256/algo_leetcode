@@ -33,3 +33,9 @@
 *   **Description:** Start at the root. While the current node is not null, compare its value with the target. If they match, return the node. If the target is smaller, move to the left child; otherwise, move to the right child. If the loop finishes, the value is not in the tree.
 *   **Time Complexity:** O(H), where H is the height of the tree. For a balanced tree, this is O(log N). In the worst case of a skewed tree, it's O(N).
 *   **Space Complexity:** O(1) for the iterative approach.
+
+#### Insert into a Binary Search Tree
+
+*   **Description:** If the root is null, create a new node and return it. Otherwise, start with `curr = root`. Loop as long as `curr` is not null. If the new value is less than `curr`'s value, check if `curr`'s left child is null. If it is, insert the new node there and break the loop. Otherwise, move to the left child. If the new value is greater than `curr`'s value, check if the right child is null. If it is, insert the new node there and break. Otherwise, move to the right child. Return the original root.
+*   **Time Complexity:** O(H), where H is the height of the tree. For a balanced tree, this is O(log N). In the worst case of a skewed tree, it's O(N).
+*   **Space Complexity:** O(1) for the iterative approach.
