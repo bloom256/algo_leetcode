@@ -76,5 +76,26 @@ the state. If needed, shrink the window in a cycle. Update
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 </ul>
+<h4 id="permutation-in-string">Permutation in String</h4>
+<ul>
+<li><strong>Description:</strong> Use a sliding window of size
+<code>s1.size()</code>. Initialize a character count structure (an array
+of size 26 for small alphabets like lowercase English, or a hash map for
+larger character sets) with character counts from <code>s1</code>.
+Iterate through <code>s2</code> with a sliding window. For each
+character entering the window, decrement its count in the structure. For
+each character leaving the window, increment its count. Maintain a
+<code>zeroCount</code> variable to track how many characters in the
+structure have a count of zero. If <code>zeroCount</code> equals the
+number of unique characters in <code>s1</code> (or 26 for the array
+approach), a permutation is found. The counts can be negative if a
+character appears more times in the window (from <code>s2</code>) than
+in <code>s1</code>.</li>
+<li><strong>Time Complexity:</strong> O(L1 + L2), where L1 is the length
+of s1 and L2 is the length of s2.</li>
+<li><strong>Space Complexity:</strong> O(1) (constant space for the
+array/hash map, as it stores at most 26 characters or unique characters
+from s1).</li>
+</ul>
 </body>
 </html>
