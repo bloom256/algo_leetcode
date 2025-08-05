@@ -88,5 +88,20 @@ once.</li>
 is the height. In the worst case of a skewed tree, this can be
 O(N).</li>
 </ul>
+<h3 id="bst">BST</h3>
+<h4 id="search-in-a-binary-search-tree">Search in a Binary Search
+Tree</h4>
+<ul>
+<li><strong>Description:</strong> Start at the root. While the current
+node is not null, compare its value with the target. If they match,
+return the node. If the target is smaller, move to the left child;
+otherwise, move to the right child. If the loop finishes, the value is
+not in the tree.</li>
+<li><strong>Time Complexity:</strong> O(H), where H is the height of the
+tree. For a balanced tree, this is O(log N). In the worst case of a
+skewed tree, it’s O(N).</li>
+<li><strong>Space Complexity:</strong> O(1) for the iterative
+approach.</li>
+</ul>
 </body>
 </html>
