@@ -72,5 +72,21 @@ left then the right child. For the second stack, push the right then the
 left child. If the stacks are both empty at the end, the tree is
 symmetric. Time: O(N), Space: O(H).</li>
 </ul>
+<h4 id="path-sum">Path Sum</h4>
+<ul>
+<li><strong>Description:</strong> Iterative DFS. Use a
+<code>std::vector</code> as a stack to store pairs of
+<code>(node, prev_sum)</code>. A leaf is a node where both its left and
+right children are null. In each iteration, calculate
+<code>curr_sum = prev_sum + node-&gt;val</code>. If the current node is
+a leaf, compare <code>curr_sum</code> to the <code>targetSum</code>. If
+they are equal, a path is found. If the loop finishes without finding a
+path, return false.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(H) in a balanced tree, where H
+is the height. In the worst case of a skewed tree, this can be
+O(N).</li>
+</ul>
 </body>
 </html>

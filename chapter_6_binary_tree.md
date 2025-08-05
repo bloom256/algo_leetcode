@@ -19,3 +19,9 @@
 #### Symmetric Tree
 
 *   **Iterative DFS with Two Stacks:** Use two stacks. Push the root onto both stacks. While the stacks are not empty, pop a node from each. If one node is null and the other isn't, or if their values are different, the tree is not symmetric. For the first stack, push the left then the right child. For the second stack, push the right then the left child. If the stacks are both empty at the end, the tree is symmetric. Time: O(N), Space: O(H).
+
+#### Path Sum
+
+*   **Description:** Iterative DFS. Use a `std::vector` as a stack to store pairs of `(node, prev_sum)`. A leaf is a node where both its left and right children are null. In each iteration, calculate `curr_sum = prev_sum + node->val`. If the current node is a leaf, compare `curr_sum` to the `targetSum`. If they are equal, a path is found. If the loop finishes without finding a path, return false.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(H) in a balanced tree, where H is the height. In the worst case of a skewed tree, this can be O(N).
