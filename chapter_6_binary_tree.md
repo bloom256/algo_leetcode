@@ -39,3 +39,9 @@
 *   **Description:** If the root is null, create a new node and return it. Otherwise, start with `curr = root`. Loop as long as `curr` is not null. If the new value is less than `curr`'s value, check if `curr`'s left child is null. If it is, insert the new node there and break the loop. Otherwise, move to the left child. If the new value is greater than `curr`'s value, check if the right child is null. If it is, insert the new node there and break. Otherwise, move to the right child. Return the original root.
 *   **Time Complexity:** O(H), where H is the height of the tree. For a balanced tree, this is O(log N). In the worst case of a skewed tree, it's O(N).
 *   **Space Complexity:** O(1) for the iterative approach.
+
+#### Validate Binary Search Tree
+
+*   **Description:** Use an iterative DFS approach with a stack. The stack stores tuples of `(node, min_val, max_val)`. Start by pushing the root onto the stack with negative and positive infinity as the initial min and max bounds. While the stack is not empty, pop a node. If the node is null, continue. Check if the node's value is outside its valid range (`<= min` or `>= max`); if so, the tree is invalid. Then, push the left child onto the stack with an updated max bound of the current node's value, and push the right child with an updated min bound of the current node's value. If the loop completes, the tree is a valid BST.
+*   **Time Complexity:** O(N), as we visit each node once.
+*   **Space Complexity:** O(H), where H is the height of the tree, for the stack.
