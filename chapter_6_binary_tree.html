@@ -88,24 +88,6 @@ once.</li>
 is the height. In the worst case of a skewed tree, this can be
 O(N).</li>
 </ul>
-<h4 id="balanced-binary-tree">Balanced Binary Tree</h4>
-<ul>
-<li><strong>Description:</strong> Use a recursive helper function
-<code>checkHeight(node)</code> that returns the height of the subtree
-rooted at <code>node</code> if it’s balanced, or -1 if it’s unbalanced.
-The base case is a null node, which has a height of 0. For a non-null
-node, recursively call <code>checkHeight</code> on its left and right
-children. If either call returns -1, or if the absolute difference
-between the left and right heights is greater than 1, return -1
-(unbalanced). Otherwise, return
-<code>1 + max(left_height, right_height)</code>. The main function calls
-<code>checkHeight(root)</code> and returns <code>true</code> if the
-result is not -1, <code>false</code> otherwise.</li>
-<li><strong>Time Complexity:</strong> O(N), as each node is visited
-once.</li>
-<li><strong>Space Complexity:</strong> O(H), where H is the height of
-the tree, due to the recursion stack.</li>
-</ul>
 <h3 id="bst">BST</h3>
 <h4 id="search-in-a-binary-search-tree">Search in a Binary Search
 Tree</h4>
@@ -152,7 +134,7 @@ invalid. Then, push the left child onto the stack with an updated max
 bound of the current node’s value, and push the right child with an
 updated min bound of the current node’s value. If the loop completes,
 the tree is a valid BST.</li>
-<li><strong>Description (In-order Traversal):</strong> An in-order
+<li><strong>Description (In-order Traversal):</strong> An in-order DFS
 traversal of a valid BST visits nodes in sorted order. Use a recursive
 in-order helper function that keeps track of the previously visited
 node’s value (<code>prev</code>). To enable early termination, the
@@ -166,6 +148,25 @@ once.</li>
 <li><strong>Space Complexity:</strong> O(H) for both the iterative stack
 and the recursive in-order traversal stack, where H is the height of the
 tree.</li>
+</ul>
+<h4 id="balanced-binary-tree">Balanced Binary Tree</h4>
+<ul>
+<li><strong>Description:</strong> Use post-order DFS to check if a
+binary tree is balanced. Implement a recursive helper function
+<code>checkHeight(node)</code> that returns the height of the subtree
+rooted at <code>node</code> if it’s balanced, or -1 if it’s unbalanced.
+The base case is a null node, which has a height of 0. For a non-null
+node, recursively call <code>checkHeight</code> on its left and right
+children. If either call returns -1, or if the absolute difference
+between the left and right heights is greater than 1, return -1
+(unbalanced). Otherwise, return
+<code>1 + max(left_height, right_height)</code>. The main function calls
+<code>checkHeight(root)</code> and returns <code>true</code> if the
+result is not -1, <code>false</code> otherwise.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(H), where H is the height of
+the tree, due to the recursion stack.</li>
 </ul>
 </body>
 </html>

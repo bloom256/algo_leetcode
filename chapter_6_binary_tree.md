@@ -26,12 +26,6 @@
 *   **Time Complexity:** O(N), as each node is visited once.
 *   **Space Complexity:** O(H) in a balanced tree, where H is the height. In the worst case of a skewed tree, this can be O(N).
 
-#### Balanced Binary Tree
-
-*   **Description:** Use a recursive helper function `checkHeight(node)` that returns the height of the subtree rooted at `node` if it's balanced, or -1 if it's unbalanced. The base case is a null node, which has a height of 0. For a non-null node, recursively call `checkHeight` on its left and right children. If either call returns -1, or if the absolute difference between the left and right heights is greater than 1, return -1 (unbalanced). Otherwise, return `1 + max(left_height, right_height)`. The main function calls `checkHeight(root)` and returns `true` if the result is not -1, `false` otherwise.
-*   **Time Complexity:** O(N), as each node is visited once.
-*   **Space Complexity:** O(H), where H is the height of the tree, due to the recursion stack.
-
 ### BST
 
 #### Search in a Binary Search Tree
@@ -49,6 +43,12 @@
 #### Validate Binary Search Tree
 
 *   **Description (Iterative DFS with bounds):** Use an iterative DFS approach with a stack. The stack stores tuples of `(node, min_val, max_val)`. Start by pushing the root onto the stack with negative and positive infinity as the initial min and max bounds. While the stack is not empty, pop a node. If the node is null, continue. Check if the node's value is outside its valid range (`<= min` or `>= max`); if so, the tree is invalid. Then, push the left child onto the stack with an updated max bound of the current node's value, and push the right child with an updated min bound of the current node's value. If the loop completes, the tree is a valid BST.
-*   **Description (In-order Traversal):** An in-order traversal of a valid BST visits nodes in sorted order. Use a recursive in-order helper function that keeps track of the previously visited node's value (`prev`). To enable early termination, the helper function must return a boolean. The logic is: 1) Recurse on the left subtree. If it returns `false`, propagate `false` up. 2) Check if the current node's value is less than or equal to `prev`. If so, return `false`. 3) Update `prev` and recurse on the right subtree.
+*   **Description (In-order Traversal):** An in-order DFS traversal of a valid BST visits nodes in sorted order. Use a recursive in-order helper function that keeps track of the previously visited node's value (`prev`). To enable early termination, the helper function must return a boolean. The logic is: 1) Recurse on the left subtree. If it returns `false`, propagate `false` up. 2) Check if the current node's value is less than or equal to `prev`. If so, return `false`. 3) Update `prev` and recurse on the right subtree.
 *   **Time Complexity:** O(N), as we visit each node once.
 *   **Space Complexity:** O(H) for both the iterative stack and the recursive in-order traversal stack, where H is the height of the tree.
+
+#### Balanced Binary Tree
+
+*   **Description:** Use post-order DFS to check if a binary tree is balanced. Implement a recursive helper function `checkHeight(node)` that returns the height of the subtree rooted at `node` if it's balanced, or -1 if it's unbalanced. The base case is a null node, which has a height of 0. For a non-null node, recursively call `checkHeight` on its left and right children. If either call returns -1, or if the absolute difference between the left and right heights is greater than 1, return -1 (unbalanced). Otherwise, return `1 + max(left_height, right_height)`. The main function calls `checkHeight(root)` and returns `true` if the result is not -1, `false` otherwise.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(H), where H is the height of the tree, due to the recursion stack.
