@@ -26,6 +26,13 @@
 *   **Time Complexity:** O(N), as each node is visited once.
 *   **Space Complexity:** O(H) in a balanced tree, where H is the height. In the worst case of a skewed tree, this can be O(N).
 
+#### Delete Leaves With a Given Value
+
+*   **Solution 1 (Post-order DFS):** Use a recursive post-order traversal. For each node, recursively call the function on its left and right children and assign the results back to `node->left` and `node->right`. After the recursive calls, check if the current node is a leaf and its value matches the target. If so, return `nullptr` to delete it. Otherwise, return the node itself.
+*   **Solution 2 (BFS-like):** Use a `std::deque` to store pairs of `(parent, node)`. Traverse the tree to populate the deque with all nodes from all levels (without removing anything). Then, iterate through the deque in reverse. For each `(parent, node)` pair, if `node` is a leaf with the target value, set the parent's corresponding child pointer (`parent->left` or `parent->right`) to `nullptr`.
+*   **Time Complexity:** O(N) for both solutions, as each node is visited.
+*   **Space Complexity:** O(H) for the recursive DFS due to the call stack (where H is the tree height), and O(N) for the BFS-like solution to store all nodes.
+
 ### BST
 
 #### Search in a Binary Search Tree
