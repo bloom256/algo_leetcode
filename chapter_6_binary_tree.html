@@ -168,5 +168,34 @@ once.</li>
 <li><strong>Space Complexity:</strong> O(H), where H is the height of
 the tree, due to the recursion stack.</li>
 </ul>
+<h3 id="bfs">BFS</h3>
+<h4 id="binary-tree-level-order-traversal">Binary Tree Level Order
+Traversal</h4>
+<ul>
+<li><strong>Description:</strong> Use a <code>std::deque</code> for a
+breadth-first search (BFS). Start by pushing the root node into the
+deque. While the deque is not empty, get the number of nodes at the
+current level. Iterate that many times, processing each node: pop it
+from the front, add its value to the current level’s results, and push
+its non-null children to the back of the deque. After the inner loop,
+add the current level’s results to the final answer.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(W), where W is the maximum
+width of the tree. In the worst case (a complete binary tree), the last
+level can contain up to N/2 nodes, so space is O(N).</li>
+</ul>
+<h4 id="find-largest-value-in-each-tree-row">Find Largest Value in Each
+Tree Row</h4>
+<ul>
+<li><strong>Description:</strong> Use BFS with a
+<code>std::deque</code>. In each level of the traversal, keep track of
+the maximum value seen so far. After iterating through all nodes at a
+level, add the maximum value for that level to the result vector.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(W), where W is the maximum
+width of the tree.</li>
+</ul>
 </body>
 </html>

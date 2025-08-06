@@ -52,3 +52,17 @@
 *   **Description:** Use post-order DFS to check if a binary tree is balanced. Implement a recursive helper function `checkHeight(node)` that returns the height of the subtree rooted at `node` if it's balanced, or -1 if it's unbalanced. The base case is a null node, which has a height of 0. For a non-null node, recursively call `checkHeight` on its left and right children. If either call returns -1, or if the absolute difference between the left and right heights is greater than 1, return -1 (unbalanced). Otherwise, return `1 + max(left_height, right_height)`. The main function calls `checkHeight(root)` and returns `true` if the result is not -1, `false` otherwise.
 *   **Time Complexity:** O(N), as each node is visited once.
 *   **Space Complexity:** O(H), where H is the height of the tree, due to the recursion stack.
+
+### BFS
+
+#### Binary Tree Level Order Traversal
+
+*   **Description:** Use a `std::deque` for a breadth-first search (BFS). Start by pushing the root node into the deque. While the deque is not empty, get the number of nodes at the current level. Iterate that many times, processing each node: pop it from the front, add its value to the current level's results, and push its non-null children to the back of the deque. After the inner loop, add the current level's results to the final answer.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(W), where W is the maximum width of the tree. In the worst case (a complete binary tree), the last level can contain up to N/2 nodes, so space is O(N).
+
+#### Find Largest Value in Each Tree Row
+
+*   **Description:** Use BFS with a `std::deque`. In each level of the traversal, keep track of the maximum value seen so far. After iterating through all nodes at a level, add the maximum value for that level to the result vector.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(W), where W is the maximum width of the tree.
