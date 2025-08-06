@@ -277,5 +277,20 @@ once.</li>
 <li><strong>Space Complexity:</strong> O(W), where W is the maximum
 width of the tree.</li>
 </ul>
+<h4 id="binary-tree-zigzag-level-order-traversal">Binary Tree Zigzag
+Level Order Traversal</h4>
+<ul>
+<li><strong>Description:</strong> Use BFS with a
+<code>std::deque</code>. Iterate nodes as usual in BFS. For each level,
+initialize an array of values
+<code>vector&lt;int&gt; values(levelLen)</code>. During iteration, fill
+it from left to right or from right to left depending on the level,
+using
+<code>int val_idx = (level % 2 == 0) ? i : levelLen - 1 - i</code>.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(W), where W is the maximum
+width of the tree.</li>
+</ul>
 </body>
 </html>

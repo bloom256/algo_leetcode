@@ -97,3 +97,9 @@
 *   **Description:** Use BFS with a `std::deque`. Initialize `lastLevelSum = 0`. For each level, calculate the sum of its nodes. After processing all nodes in a level, update `lastLevelSum` with the current level's sum. The final `lastLevelSum` will be the sum of the deepest leaves.
 *   **Time Complexity:** O(N), as each node is visited once.
 *   **Space Complexity:** O(W), where W is the maximum width of the tree.
+
+#### Binary Tree Zigzag Level Order Traversal
+
+*   **Description:** Use BFS with a `std::deque`. Iterate nodes as usual in BFS. For each level, initialize an array of values `vector<int> values(levelLen)`. During iteration, fill it from left to right or from right to left depending on the level, using `int val_idx = (level % 2 == 0) ? i : levelLen - 1 - i`.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(W), where W is the maximum width of the tree.
