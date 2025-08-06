@@ -197,5 +197,30 @@ once.</li>
 <li><strong>Space Complexity:</strong> O(W), where W is the maximum
 width of the tree.</li>
 </ul>
+<h4 id="binary-tree-right-side-view">Binary Tree Right Side View</h4>
+<ul>
+<li><strong>Description:</strong> Use BFS with a
+<code>std::deque</code>. For each level, the rightmost node is the last
+one processed in that level’s loop. Store the value of this node in the
+result vector.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(W), where W is the maximum
+width of the tree.</li>
+</ul>
+<h4 id="populating-next-right-pointers-in-each-node-ii">Populating Next
+Right Pointers in Each Node II</h4>
+<ul>
+<li><strong>Description:</strong> Use BFS with a
+<code>std::deque</code>, without storing nulls. For each level, iterate
+through the nodes. For each node, if it’s not the last one in the level,
+set its <code>next</code> pointer to the next node in the deque
+(<code>q.front()</code>). Add non-null children to the queue for the
+next level’s processing.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(W), where W is the maximum
+width of the tree.</li>
+</ul>
 </body>
 </html>
