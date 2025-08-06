@@ -16,6 +16,12 @@
 
 ### Variable-size sliding window
 
+#### Longest Substring Without Repeating Characters
+
+*   **Description:** Use a variable-size sliding window. Maintain a `std::array<char, 256> counts{}` to store character frequencies within the current window. Iterate with `right` pointer. For each character `s[right]`, increment its count. If `counts[s[right]]` becomes greater than 1, indicating a duplicate, shrink the window from the `left` by decrementing `counts[s[left]]` and incrementing `left` until the duplicate is removed. After each `right` iteration, update `maxLen = max(maxLen, right - left + 1)`.
+*   **Time Complexity:** O(N), where N is the length of the string, as each character is visited at most twice (once by `right` and once by `left`).
+*   **Space Complexity:** O(1), as the `counts` array size is fixed (256 for ASCII characters).
+
 #### Minimum Size Subarray Sum
 
 * Use a classical sliding window. When the window sum is greater than or equal to the target, update the minimum length and shrink the window from the beginning in a loop.
