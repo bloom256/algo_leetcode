@@ -85,3 +85,9 @@
 *   **Description:** Use BFS with a `std::deque`, without storing nulls. For each level, iterate through the nodes. For each node, if it's not the last one in the level, set its `next` pointer to the next node in the deque (`q.front()`). Add non-null children to the queue for the next level's processing.
 *   **Time Complexity:** O(N), as each node is visited once.
 *   **Space Complexity:** O(W), where W is the maximum width of the tree.
+
+#### Deepest Leaves Sum
+
+*   **Description:** Use BFS with a `std::deque`. Initialize `lastLevelSum = 0`. For each level, calculate the sum of its nodes. After processing all nodes in a level, update `lastLevelSum` with the current level's sum. The final `lastLevelSum` will be the sum of the deepest leaves.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(W), where W is the maximum width of the tree.

@@ -246,5 +246,18 @@ once.</li>
 <li><strong>Space Complexity:</strong> O(W), where W is the maximum
 width of the tree.</li>
 </ul>
+<h4 id="deepest-leaves-sum">Deepest Leaves Sum</h4>
+<ul>
+<li><strong>Description:</strong> Use BFS with a
+<code>std::deque</code>. Initialize <code>lastLevelSum = 0</code>. For
+each level, calculate the sum of its nodes. After processing all nodes
+in a level, update <code>lastLevelSum</code> with the current level’s
+sum. The final <code>lastLevelSum</code> will be the sum of the deepest
+leaves.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(W), where W is the maximum
+width of the tree.</li>
+</ul>
 </body>
 </html>
