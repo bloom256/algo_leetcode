@@ -60,6 +60,25 @@ array/hash map, as it stores at most 26 characters or unique characters
 from s1).</li>
 </ul>
 <h3 id="variable-size-sliding-window">Variable-size sliding window</h3>
+<h4 id="longest-substring-without-repeating-characters">Longest
+Substring Without Repeating Characters</h4>
+<ul>
+<li><strong>Description:</strong> Use a variable-size sliding window.
+Maintain a <code>std::array&lt;char, 256&gt; counts{}</code> to store
+character frequencies within the current window. Iterate with
+<code>right</code> pointer. For each character <code>s[right]</code>,
+increment its count. If <code>counts[s[right]]</code> becomes greater
+than 1, indicating a duplicate, shrink the window from the
+<code>left</code> by decrementing <code>counts[s[left]]</code> and
+incrementing <code>left</code> until the duplicate is removed. After
+each <code>right</code> iteration, update
+<code>maxLen = max(maxLen, right - left + 1)</code>.</li>
+<li><strong>Time Complexity:</strong> O(N), where N is the length of the
+string, as each character is visited at most twice (once by
+<code>right</code> and once by <code>left</code>).</li>
+<li><strong>Space Complexity:</strong> O(1), as the <code>counts</code>
+array size is fixed (256 for ASCII characters).</li>
+</ul>
 <h4 id="minimum-size-subarray-sum">Minimum Size Subarray Sum</h4>
 <ul>
 <li>Use a classical sliding window. When the window sum is greater than
