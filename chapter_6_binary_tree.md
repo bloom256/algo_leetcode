@@ -66,3 +66,9 @@
 *   **Description:** Use BFS with a `std::deque`. In each level of the traversal, keep track of the maximum value seen so far. After iterating through all nodes at a level, add the maximum value for that level to the result vector.
 *   **Time Complexity:** O(N), as each node is visited once.
 *   **Space Complexity:** O(W), where W is the maximum width of the tree.
+
+#### Binary Tree Right Side View
+
+*   **Description:** Use BFS with a `std::deque`. For each level, the rightmost node is the last one processed in that level's loop. Store the value of this node in the result vector.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(W), where W is the maximum width of the tree.
