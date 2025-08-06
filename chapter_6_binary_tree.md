@@ -54,3 +54,9 @@
 *   **Space Complexity:** O(H), where H is the height of the tree, due to the recursion stack.
 
 ### BFS
+
+#### Binary Tree Level Order Traversal
+
+*   **Description:** Use a `std::deque` for a breadth-first search (BFS). Start by pushing the root node into the deque. While the deque is not empty, get the number of nodes at the current level. Iterate that many times, processing each node: pop it from the front, add its value to the current level's results, and push its non-null children to the back of the deque. After the inner loop, add the current level's results to the final answer.
+*   **Time Complexity:** O(N), as each node is visited once.
+*   **Space Complexity:** O(W), where W is the maximum width of the tree. In the worst case (a complete binary tree), the last level can contain up to N/2 nodes, so space is O(N).
