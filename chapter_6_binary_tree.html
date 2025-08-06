@@ -192,6 +192,24 @@ once.</li>
 <li><strong>Space Complexity:</strong> O(H), where H is the height of
 the tree, due to the recursion stack.</li>
 </ul>
+<h4 id="diameter-of-binary-tree">Diameter of Binary Tree</h4>
+<ul>
+<li><strong>Description:</strong> Use a recursive post-order DFS
+approach. Define a helper function
+<code>checkMaxDiameter(node, maxDiameter)</code> that returns the height
+of the subtree rooted at <code>node</code>. Inside the helper,
+recursively call <code>checkMaxDiameter</code> on the left and right
+children to get their heights (<code>lHeight</code>,
+<code>rHeight</code>). Update
+<code>maxDiameter = max(maxDiameter, lHeight + rHeight)</code>. The
+height of the current node is <code>1 + max(lHeight, rHeight)</code>.
+The main function initializes <code>maxDiameter</code> to 0 and calls
+the helper on the root.</li>
+<li><strong>Time Complexity:</strong> O(N), as each node is visited
+once.</li>
+<li><strong>Space Complexity:</strong> O(H), where H is the height of
+the tree, due to the recursion stack.</li>
+</ul>
 <h3 id="bfs">BFS</h3>
 <h4 id="binary-tree-level-order-traversal">Binary Tree Level Order
 Traversal</h4>
