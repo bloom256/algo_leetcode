@@ -40,5 +40,23 @@ recently used item (back of the list) and its entry from the map.</li>
 O(1).</li>
 <li>Space complexity: O(capacity)</li>
 </ul>
+<h4 id="strings-making-anagrams-hackerrank">Strings: Making Anagrams
+(HackerRank)</h4>
+<ul>
+<li>Use two hash maps, <code>dict1</code> and <code>dict2</code>.
+Iterate through <code>s1</code>: for each character <code>c</code>,
+<code>dict1[c]++</code> and <code>dict2[c] += 0</code>. Then, iterate
+through <code>s2</code>: for each character <code>c</code>,
+<code>dict2[c]++</code> and <code>dict1[c] += 0</code>. After these
+operations, both <code>dict1</code> and <code>dict2</code> will contain
+all unique characters present in either string, but counter for only one
+correspndent string. Then iterate dict1. In each iteration get count1
+and count2 for character. To equalize occurrences in both strings, we
+need to delete <code>abs(dict1[c] - dict2[c])</code> for each character
+<code>c</code>. Sum these absolute differences to get the total
+deletions required.</li>
+<li>Time complexity: O(n + m)</li>
+<li>Space complexity: O(1)</li>
+</ul>
 </body>
 </html>
