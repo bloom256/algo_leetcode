@@ -112,6 +112,24 @@ node is visited.</li>
 the call stack (where H is the tree height), and O(N) for the BFS-like
 solution to store all nodes.</li>
 </ul>
+<h4 id="lowest-common-ancestor-of-a-binary-tree">Lowest Common Ancestor
+of a Binary Tree</h4>
+<ul>
+<li><strong>Description:</strong> Use a post-order recursive DFS. The
+function
+<code>TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)</code>
+returns the LCA. If the current node is <code>null</code>,
+<code>p</code>, or <code>q</code>, return the current node. Recursively
+call <code>lowestCommonAncestor</code> on the left and right children.
+If both recursive calls return non-null nodes, it means <code>p</code>
+is in one subtree and <code>q</code> is in the other, so the current
+node is the LCA. Otherwise, return the non-null result from the left or
+right subtree.</li>
+<li><strong>Time Complexity:</strong> O(N), where N is the number of
+nodes, as we visit each node once.</li>
+<li><strong>Space Complexity:</strong> O(H), where H is the height of
+the tree, due to the recursion stack.</li>
+</ul>
 <h3 id="bst">BST</h3>
 <h4 id="search-in-a-binary-search-tree">Search in a Binary Search
 Tree</h4>
