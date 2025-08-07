@@ -33,6 +33,12 @@
 *   **Time Complexity:** O(N) for both solutions, as each node is visited.
 *   **Space Complexity:** O(H) for the recursive DFS due to the call stack (where H is the tree height), and O(N) for the BFS-like solution to store all nodes.
 
+#### Lowest Common Ancestor of a Binary Tree
+
+*   **Description:** Use a post-order recursive DFS. The function `TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)` returns the LCA. If the current node is `null`, `p`, or `q`, return the current node. Recursively call `lowestCommonAncestor` on the left and right children. If both recursive calls return non-null nodes, it means `p` is in one subtree and `q` is in the other, so the current node is the LCA. Otherwise, return the non-null result from the left or right subtree.
+*   **Time Complexity:** O(N), where N is the number of nodes, as we visit each node once.
+*   **Space Complexity:** O(H), where H is the height of the tree, due to the recursion stack.
+
 ### BST
 
 #### Search in a Binary Search Tree
