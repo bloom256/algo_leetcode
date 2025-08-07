@@ -7,3 +7,4 @@ pandoc -s chapter_3_linked_list.md -o chapter_3_linked_list.html --css style.css
 pandoc -s chapter_4_hash_map.md -o chapter_4_hash_map.html --css style.css --include-in-header header.html
 pandoc -s chapter_5_stack_queue.md -o chapter_5_stack_queue.html --css style.css --include-in-header header.html
 pandoc -s chapter_6_binary_tree.md -o chapter_6_binary_tree.html --css style.css --include-in-header header.html
+pandoc -s chapter_7_trie.md -o chapter_7_trie.html --css style.css --include-in-header header.html

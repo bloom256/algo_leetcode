@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>chapter_7_trie</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <base href="/algo_leetcode/">
+</head>
+<body>
+<h2 id="trie">Trie</h2>
+<h4 id="implement-trie">Implement Trie</h4>
+<ul>
+<li><strong>Description:</strong> Implement a Trie (prefix tree) with
+<code>insert</code>, <code>search</code>, and <code>startsWith</code>
+methods. Use a <code>struct Node</code> with a boolean
+<code>isEnd</code> and an array of 26
+<code>shared_ptr&lt;Node&gt;</code> children. Map characters to indices
+using <code>idx = c - 'a'</code>.</li>
+<li><strong>Time Complexity:</strong> <code>insert</code>: O(L),
+<code>search</code>: O(L), <code>startsWith</code>: O(L), where L is the
+length of the word/prefix.</li>
+<li><strong>Space Complexity:</strong> O(N*L) in the worst case, where N
+is the number of words and L is the average length of words, as each
+character might create a new node.</li>
+</ul>
+<h4 id="search-suggestions-system">Search Suggestions System</h4>
+<ul>
+<li><strong>Description:</strong> Use a Trie to store the products.
+Implement a
+<code>suggest(const string &amp; prefix, const int maxSuggestions)</code>
+function within the Trie structure to return a vector of suggested
+words.</li>
+<li><strong>Time Complexity:</strong> Building the Trie: O(N*L), where N
+is the number of products and L is the average length of a product. For
+each character typed: O(L + M), where L is the length of the current
+prefix and M is the number of characters in the suggested words.</li>
+<li><strong>Space Complexity:</strong> O(N*L) for storing the Trie.</li>
+</ul>
+</body>
+</html>
