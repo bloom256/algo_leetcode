@@ -1,4 +1,4 @@
-# Algorithm Notes
+# Algorithm Notes (LeetCode & HackerRank)
 
 ::: {.total-tasks}
 Total tasks: 56
