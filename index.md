@@ -1,7 +1,7 @@
 # Algorithm Notes (LeetCode & HackerRank)
 
 ::: {.total-tasks}
-Total tasks: 56
+Total tasks: 57
 :::
 
 ::: {.chapter-grid}
@@ -11,7 +11,7 @@ Total tasks: 56
 
 ## [3. Linked list (10)](chapter_3_linked_list.html)
 
-## [4. Hash Map (1)](chapter_4_hash_map.html)
+## [4. Hash Map (2)](chapter_4_hash_map.html)
 
 ## [5. Stack/Queue (5)](chapter_5_stack_queue.html)
 
