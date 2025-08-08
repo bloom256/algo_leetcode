@@ -18,4 +18,6 @@ Total tasks: 56
 ## [6. Binary Tree (18)](chapter_6_binary_tree.html)
 
 ## [7. Trie (2)](chapter_7_trie.html)
+
+## [8. Heap (0)](chapter_8_heap.html)
 :::
