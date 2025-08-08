@@ -2,6 +2,7 @@
 
 #### Kth Largest Element in an Array
 
+* *Given an integer array nums and an integer k, return the kth largest element in the array. Note that it is the kth largest element in the sorted order, not the kth distinct element.*
 *   Find the k-th largest element in an unsorted array.
 *   **Solution 1:** `std::nth_element(nums.begin(), nums.begin() + nums.size() - k, nums.end())` - best solution.
     *   Time complexity: O(N) average, O(N^2) worst case.
