@@ -29,6 +29,13 @@
 <h2 id="linked-list">Linked list</h2>
 <h4 id="design-linked-list">Design Linked List</h4>
 <ul>
+<li><em>Design your implementation of the linked list. You can choose to
+use a singly or doubly linked list. A node in a singly linked list
+should have two attributes: val and next. val is the value of the
+current node, and next is a pointer/reference to the next node. If you
+want to use the doubly linked list, you will need one more attribute
+prev to indicate the previous node in the linked list. Assume all nodes
+in the linked list are 0-indexed.</em></li>
 <li>Implement a singly linked list using a <code>dummyHead</code> and a
 <code>size</code> counter. The <code>dummyHead</code> simplifies edge
 cases. Key methods <code>addAtHead</code> and <code>addAtTail</code> can
@@ -42,6 +49,9 @@ respectively.</li>
 </ul>
 <h4 id="middle-of-the-linked-list">Middle of the Linked List</h4>
 <ul>
+<li><em>Given the head of a singly linked list, return the middle node
+of the linked list. If there are two middle nodes, return the second
+middle node.</em></li>
 <li>Use slow and fast pointers. Move slow by one step and fast by two
 (<code>fast = fast.next.next</code>). When fast reaches the end, slow is
 at the middle.</li>
@@ -51,6 +61,11 @@ at the middle.</li>
 <h4 id="delete-the-middle-of-the-linked-list">Delete the Middle of the
 Linked List</h4>
 <ul>
+<li><em>You are given the head of a linked list. Delete the middle node,
+and return the head of the modified linked list. The middle node of a
+linked list of size n is the ⌊n / 2⌋th node from the start using 0-based
+indexing. If n is even, there are two middle nodes, and we consider the
+first one as the middle.</em></li>
 <li>Use slow and fast pointers, keeping a <code>prevSlow</code> pointer.
 When <code>fast</code> reaches the end, <code>slow</code> is the middle.
 To delete the middle node, set <code>prevSlow.next = slow.next</code>.
@@ -61,6 +76,8 @@ Handle the edge case where the list has only one node, in which case
 </ul>
 <h4 id="reverse-linked-list">Reverse Linked List</h4>
 <ul>
+<li><em>Given the head of a singly linked list, reverse the list, and
+return the reversed list.</em></li>
 <li>Initialize <code>curr = head</code> and <code>prev = null</code>.
 Iterate through the list, at each step, store <code>curr.next</code> in
 a temporary variable, set <code>curr.next = prev</code>, then update
@@ -71,6 +88,8 @@ a temporary variable, set <code>curr.next = prev</code>, then update
 </ul>
 <h4 id="palindrome-linked-list">Palindrome Linked List</h4>
 <ul>
+<li><em>Given the head of a singly linked list, return true if it is a
+palindrome or false otherwise.</em></li>
 <li>First, implement <code>findMiddle(head)</code> using slow and fast
 pointers. Then, implement <code>reverseList(head)</code> (as described
 above). Use these to find the middle of the original list and reverse
@@ -84,6 +103,9 @@ odd-length lists.</li>
 <h4 id="remove-duplicates-from-sorted-list">Remove Duplicates from
 Sorted List</h4>
 <ul>
+<li><em>Given the head of a sorted linked list, delete all duplicates
+such that each element appears only once. Return the linked list sorted
+as well.</em></li>
 <li>Iterate with a <code>curr</code> pointer while <code>curr</code> and
 <code>curr.next</code> exist. If <code>curr.val == curr.next.val</code>,
 set <code>curr.next = curr.next.next</code> (skipping the duplicate) and
@@ -95,6 +117,8 @@ forward (<code>curr = curr.next</code>).</li>
 <h4 id="remove-nth-node-from-end-of-list">Remove Nth Node From End of
 List</h4>
 <ul>
+<li><em>Given the head of a linked list, remove the nth node from the
+end of the list and return its head.</em></li>
 <li>Use two pointers, <code>p1</code> and <code>prev</code>. Initialize
 <code>p1 = head</code>. Move <code>p1</code> forward <code>n</code>
 times. Create a <code>dummyHead</code> and initialize
@@ -109,6 +133,9 @@ node by setting <code>prev.next = prev.next.next</code>. Return
 </ul>
 <h4 id="swap-nodes-in-pairs">Swap Nodes in Pairs</h4>
 <ul>
+<li><em>Given a linked list, swap every two adjacent nodes and return
+its head. You must solve the problem without modifying the values in the
+list’s nodes (i.e., only nodes themselves may be changed).</em></li>
 <li>Create a <code>dummyHead</code> and set
 <code>curr = dummyHead</code>. Iterate while <code>curr</code>,
 <code>curr.next</code>, and <code>curr.next.next</code> exist. Carefully
@@ -120,6 +147,10 @@ re-link <code>curr</code>, <code>curr.next</code>, and
 </ul>
 <h4 id="merge-two-sorted-lists">Merge Two Sorted Lists</h4>
 <ul>
+<li><em>You are given the heads of two sorted linked lists list1 and
+list2. Merge the two lists in a one sorted list. The list should be made
+by splicing together the nodes of the first two lists. Return the head
+of the merged linked list.</em></li>
 <li>Initialize <code>curr = dummyHead(0, nullptr)</code>. Iterate while
 both <code>list1</code> and <code>list2</code> exist. In each step,
 choose the smaller node from <code>list1</code> or <code>list2</code>,
@@ -133,6 +164,13 @@ needed for this step). Return <code>dummyHead.next</code>.</li>
 </ul>
 <h4 id="linked-list-cycle">Linked List Cycle</h4>
 <ul>
+<li><em>Given head, the head of a linked list, determine if the linked
+list has a cycle in it. There is a cycle in a linked list if some node
+in the list can be reached again by continuously following the next
+pointer. Internally, pos is used to denote the index of the node that
+tail’s next pointer is connected to. Note that pos is not passed as a
+parameter. Return true if there is a cycle in the linked list.
+Otherwise, return false.</em></li>
 <li>Use fast and slow pointers. Move <code>fast</code> by one step in
 each iteration. Move <code>slow</code> by one step on every second
 iteration. If <code>fast</code> and <code>slow</code> meet, a cycle

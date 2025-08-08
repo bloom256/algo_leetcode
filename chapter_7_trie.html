@@ -29,6 +29,16 @@
 <h2 id="trie">Trie</h2>
 <h4 id="implement-trie">Implement Trie</h4>
 <ul>
+<li><em>A trie (pronounced as “try”) or prefix tree is a tree data
+structure used to efficiently store and retrieve keys in a dataset of
+strings. There are various applications of this data structure, such as
+autocomplete and spellchecker. Implement the Trie class: Trie()
+Initializes the trie object. void insert(String word) Inserts the string
+word into the trie. boolean search(String word) Returns true if the
+string word is in the trie (i.e., was inserted before), and false
+otherwise. boolean startsWith(String prefix) Returns true if there is a
+previously inserted string that has the prefix, and false
+otherwise.</em></li>
 <li><strong>Description:</strong> Implement a Trie (prefix tree) with
 <code>insert</code>, <code>search</code>, and <code>startsWith</code>
 methods. Use a <code>struct Node</code> with a boolean
@@ -44,6 +54,13 @@ character might create a new node.</li>
 </ul>
 <h4 id="search-suggestions-system">Search Suggestions System</h4>
 <ul>
+<li><em>You are given an array of strings products and a string
+searchWord. Design a system that suggests at most three product names
+from products after each character of searchWord is typed. Suggested
+products should have a common prefix with searchWord. If there are more
+than three products with a common prefix, return the three products that
+are lexicographically smallest. Return a list of lists of the suggested
+products after each character of searchWord is typed.</em></li>
 <li><strong>Description:</strong> Use a Trie to store the products.
 Implement a
 <code>suggest(const string &amp; prefix, const int maxSuggestions)</code>

@@ -29,6 +29,15 @@
 <h2 id="hash-map">Hash Map</h2>
 <h4 id="implement-lru-cache">Implement LRU Cache</h4>
 <ul>
+<li><em>Design a data structure that follows the constraints of a Least
+Recently Used (LRU) cache. Implement the LRUCache class: LRUCache(int
+capacity) initializes the LRU cache with the given positive capacity.
+int get(int key) Returns the value of the key if the key exists,
+otherwise return -1. void put(int key, int value) Update the value of
+the key if the key exists. Otherwise, add the key-value pair to the
+cache. If the number of keys exceeds the capacity from this operation,
+evict the least recently used key. The functions get and put must each
+run in O(1) average time complexity.</em></li>
 <li>Use <code>std::list&lt;int&gt;</code> to maintain the key access
 order (most recently used at the front). Use
 <code>std::unordered_map&lt;int, std::tuple&lt;int, std::list&lt;int&gt;::iterator&gt;&gt;</code>
@@ -43,6 +52,11 @@ O(1).</li>
 <h4 id="strings-making-anagrams-hackerrank">Strings: Making Anagrams
 (HackerRank)</h4>
 <ul>
+<li><em>Given two strings, a and b, that may or may not be of the same
+length, determine the minimum number of character deletions required to
+make a and b anagrams. Any characters can be deleted from either of the
+strings. Anagrams are strings that contain the same exact letters with
+the same exact frequencies.</em></li>
 <li>Use two hash maps, <code>dict1</code> and <code>dict2</code>.
 Iterate through <code>s1</code>: for each character <code>c</code>,
 <code>dict1[c]++</code> and <code>dict2[c] += 0</code>. Then, iterate

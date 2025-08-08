@@ -29,6 +29,11 @@
 <h2 id="stackqueue">Stack/Queue</h2>
 <h4 id="valid-parentheses">Valid Parentheses</h4>
 <ul>
+<li><em>Given a string s containing just the characters ‘(’, ‘)’, ‘{’,
+‘}’, ‘[’ and ’]’, determine if the input string is valid. An input
+string is valid if: Open brackets must be closed by the same type of
+brackets. Open brackets must be closed in the correct order. Every close
+bracket has a corresponding open bracket of the same type.</em></li>
 <li><strong>Stack-based:</strong> Use a <code>std::stack</code>. For an
 opening bracket, push it onto the stack. For a closing bracket, if the
 stack is empty or its top doesn’t match, the string is invalid;
@@ -45,6 +50,12 @@ O(N), Space: O(1).</li>
 <h4 id="remove-all-adjacent-duplicates-in-string">Remove All Adjacent
 Duplicates In String</h4>
 <ul>
+<li><em>You are given a string s consisting of lowercase English
+letters. A duplicate removal consists of choosing two adjacent and equal
+letters and removing them. We repeatedly make duplicate removals on s
+until we no longer can. Return the final string after all such duplicate
+removals have been made. It can be proven that the answer is
+unique.</em></li>
 <li><strong>Stack-based:</strong> Use a
 <code>std::vector&lt;char&gt;</code> to simulate a stack. Iterate
 through the input string character by character. If the vector is not
@@ -64,6 +75,10 @@ the string to <code>writer</code>. Time: O(N), Space: O(1).</li>
 </ul>
 <h4 id="removing-stars-from-a-string">Removing Stars from a String</h4>
 <ul>
+<li><em>You are given a string s, which contains stars </em>. In one
+operation, you can: Choose a star in s. Remove the closest non-star
+character to its left, as well as remove the star itself. Return the
+string after all stars have been removed.*</li>
 <li><strong>Stack-based:</strong> Use <code>std::vector</code> as a
 stack. Iterate through the string, pushing non-<code>*</code> characters
 onto the stack and popping for <code>*</code>. Time: O(N), Space:
@@ -77,6 +92,18 @@ Time: O(N), Space: O(1).</li>
 </ul>
 <h4 id="simplify-path">Simplify Path</h4>
 <ul>
+<li><em>Given a string path, which is an absolute path (starting with a
+slash ‘/’) to a file or directory in a Unix-style file system, convert
+it to the simplified canonical path. In a Unix-style file system, a
+period ‘.’ refers to the current directory, a double period ‘..’ refers
+to the directory up a level, and multiple consecutive slashes (e.g.,
+“//”) are treated as a single slash. For this problem, any other format
+of periods (e.g., “…”) are treated as file/directory names. The
+canonical path should have the following format: The path starts with a
+single slash ‘/’. Any two directories are separated by a single slash
+‘/’. The path does not end with a trailing ‘/’. The path only contains
+the directories on the path from the root directory to the target file
+or directory (i.e., no ‘.’ or ‘..’)</em></li>
 <li><strong>Stack with Manual Parsing:</strong> Use a
 <code>std::vector&lt;std::string&gt;</code> as a stack. Iterate through
 the path character by character to build directory names. When a
@@ -91,6 +118,13 @@ construct the final simplified path, ensuring it starts with a
 </ul>
 <h4 id="number-of-recent-calls">Number of Recent Calls</h4>
 <ul>
+<li><em>You have a RecentCounter class which counts the number of recent
+requests within a certain time frame. Implement the RecentCounter class:
+RecentCounter() Initializes the counter with zero recent requests. int
+ping(int t) Adds a new request at time t, where t represents some time
+in milliseconds, and returns the number of requests that happened in the
+inclusive time range [t - 3000, t]. It is guaranteed that every call to
+ping uses a strictly larger value of t than the previous call.</em></li>
 <li><strong>Description:</strong> Use a <code>deque</code> to store
 timestamps of recent requests. When a new request arrives, remove all
 timestamps from the front of the deque that are older than 3000

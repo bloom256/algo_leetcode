@@ -30,6 +30,10 @@
 <h3 id="fixed-size-sliding-window">Fixed-size sliding window</h3>
 <h4 id="maximum-average-subarray-i">Maximum Average Subarray I</h4>
 <ul>
+<li><em>You are given an integer array nums consisting of n elements,
+and an integer k. Find a contiguous subarray whose length is equal to k
+that has the maximum average value and you return this value. Any answer
+with a calculation error less than 10-5 will be accepted.</em></li>
 <li>Set <code>begin</code> to 0, iterate <code>end</code> over all
 elements. On each iteration increase <code>win_sum</code>. If
 <code>win_len</code> is <code>k</code>, update <code>max_avg</code>,
@@ -40,6 +44,12 @@ move <code>begin</code> forward.</li>
 </ul>
 <h4 id="permutation-in-string">Permutation in String</h4>
 <ul>
+<li><em>Given two strings s1 and s2, return true if s2 contains a
+permutation of s1, or false otherwise. In other words, given two strings
+s1 and s2, write a function to return true if s2 contains the
+permutation of s1 as a substring. This means that the characters in s1
+must be present in s2 in the same quantity, but their order can be
+different.</em></li>
 <li><strong>Description:</strong> Use a sliding window of size
 <code>s1.size()</code>. Initialize a character count structure (an array
 of size 26 for small alphabets like lowercase English, or a hash map for
@@ -63,6 +73,8 @@ from s1).</li>
 <h4 id="longest-substring-without-repeating-characters">Longest
 Substring Without Repeating Characters</h4>
 <ul>
+<li><em>Given a string s, find the length of the longest substring
+without repeating characters.</em></li>
 <li><strong>Description:</strong> Use a variable-size sliding window.
 Maintain a <code>std::array&lt;char, 256&gt; counts{}</code> to store
 character frequencies within the current window. Iterate with
@@ -81,6 +93,10 @@ array size is fixed (256 for ASCII characters).</li>
 </ul>
 <h4 id="minimum-size-subarray-sum">Minimum Size Subarray Sum</h4>
 <ul>
+<li><em>Given an array of positive integers nums and a positive integer
+target, return the minimal length of a subarray whose sum is greater
+than or equal to target. If there is no such subarray, return 0
+instead.</em></li>
 <li>Use a classical sliding window. When the window sum is greater than
 or equal to the target, update the minimum length and shrink the window
 from the beginning in a loop.</li>
@@ -89,6 +105,9 @@ from the beginning in a loop.</li>
 </ul>
 <h4 id="max-consecutive-ones-iii">Max Consecutive Ones III</h4>
 <ul>
+<li><em>Given a binary array nums and an integer k, return the maximum
+number of consecutive 1’s in the array if you can flip at most k
+0’s.</em></li>
 <li>Sliding window where the window state is the number of flipped
 zeros. Iterate <code>end</code> over all elements, and if needed, move
 <code>begin</code> in a loop to maintain the window state. Update
@@ -98,6 +117,13 @@ zeros. Iterate <code>end</code> over all elements, and if needed, move
 </ul>
 <h4 id="fruit-into-baskets">Fruit into Baskets</h4>
 <ul>
+<li><em>You are given an integer array fruits where fruits[i] is the
+type of the ith fruit you would pick. You have two baskets, and each
+basket can only hold a single type of fruit. There is no limit on the
+amount of fruit each basket can hold. You can start at any tree you
+want, but you must not skip a tree once you have started. You will
+continue picking fruits from trees when you move to the right. Return
+the maximum number of fruits you can pick.</em></li>
 <li>Use an unordered map to count fruit types in the window. On each
 iteration, add the new fruit to the map. If the map size exceeds the
 allowed number of baskets, shrink the window from the beginning in a
@@ -110,6 +136,9 @@ on each iteration.</li>
 <h4 id="longest-subarray-of-1s-after-deleting-one-element">Longest
 Subarray of 1s After Deleting One Element</h4>
 <ul>
+<li><em>Given a binary array nums, you should delete one element from
+it. Return the size of the longest subarray containing only 1’s in the
+resulting array.</em></li>
 <li>The window state is the number of zeros. On each iteration, update
 the state. If needed, shrink the window in a cycle. Update
 <code>maxOnes</code> using <code>winLen</code> - 1.</li>
