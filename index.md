@@ -1,11 +1,11 @@
 # Algorithm Notes (LeetCode & HackerRank)
 
 ::: {.total-tasks}
-Total tasks: 57
+Total tasks: 56
 :::
 
 ::: {.chapter-grid}
-## [1. Two Pointers (13)](chapter_1_two_pointers.html)
+## [1. Two Pointers (12)](chapter_1_two_pointers.html)
 
 ## [2. Sliding Window (7)](chapter_2_sliding_window.html)
 
