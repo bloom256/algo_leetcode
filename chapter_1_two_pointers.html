@@ -32,171 +32,201 @@ id="moving-pointers-toward-each-other-from-opposite-directions">Moving
 pointers toward each other from opposite directions</h3>
 <h4 id="reverse-string">Reverse String</h4>
 <ul>
-<li><em>Write a function that reverses a string. The input string is
-given as an array of characters s.</em></li>
-<li>Move from different directions.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> Write a function that reverses a string. The
+input string is given as an array of characters s.</li>
+<li><strong>Task summary:</strong> Reverse a given string.</li>
+<li><strong>Solution:</strong> Move from different directions.</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="valid-palindrome">Valid Palindrome</h4>
 <ul>
-<li><em>A phrase is a palindrome if, after converting all uppercase
-letters into lowercase letters and removing all non-alphanumeric
-characters, it reads the same forward and backward. Alphanumeric
-characters include letters and numbers.</em></li>
-<li>Move from different directions. Use tolower(), skip !isalnum()</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> A phrase is a palindrome if, after converting
+all uppercase letters into lowercase letters and removing all
+non-alphanumeric characters, it reads the same forward and backward.
+Alphanumeric characters include letters and numbers.</li>
+<li><strong>Task summary:</strong> Check if a string is a palindrome,
+ignoring non-alphanumeric characters and case.</li>
+<li><strong>Solution:</strong> Move from different directions. Use
+tolower(), skip !isalnum()</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="two-sum-sorted">Two Sum Sorted</h4>
 <ul>
-<li><em>Given a 1-indexed array of integers numbers that is already
-sorted in non-decreasing order, find two numbers such that they add up
-to a specific target number. Let these two numbers be numbers[index1]
-and numbers[index2] where 1 &lt;= index1 &lt; index2 &lt;
-numbers.length. Return the indices of the two numbers, index1 and
+<li><strong>Task:</strong> Given a 1-indexed array of integers numbers
+that is already sorted in non-decreasing order, find two numbers such
+that they add up to a specific target number. Let these two numbers be
+numbers[index1] and numbers[index2] where 1 &lt;= index1 &lt; index2
+&lt; numbers.length. Return the indices of the two numbers, index1 and
 index2, added by one as an integer array [index1, index2] of length
-2.</em></li>
-<li>Go from different directions. If (sum &lt; target) - move left, if
-(sum &gt; target) - move right, if equal - add to results.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+2.</li>
+<li><strong>Task summary:</strong> Find two numbers in a sorted array
+that sum to a target.</li>
+<li><strong>Solution:</strong> Go from different directions. If (sum
+&lt; target) - move left, if (sum &gt; target) - move right, if equal -
+add to results.</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="sum">3Sum</h4>
 <ul>
-<li><em>Given an integer array nums, return all the triplets [nums[i],
-nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] +
-nums[j] + nums[k] == 0. Notice that the solution set must not contain
-duplicate triplets.</em></li>
-<li>Sort array, iterate other each element, for other two use
-2SumSorted</li>
-<li>Time complexity: O(n^2)</li>
-<li>Space complexity: O(1) or O(n) depending on sorting
+<li><strong>Task:</strong> Given an integer array nums, return all the
+triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j !=
+k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set
+must not contain duplicate triplets.</li>
+<li><strong>Task summary:</strong> Find all unique triplets in an array
+that sum to zero.</li>
+<li><strong>Solution:</strong> Sort array, iterate other each element,
+for other two use 2SumSorted</li>
+<li><strong>Time complexity:</strong> O(n^2)</li>
+<li><strong>Space complexity:</strong> O(1) or O(n) depending on sorting
 implementation</li>
 </ul>
 <h4 id="squares-of-a-sorted-array">Squares of a Sorted Array</h4>
 <ul>
-<li><p><em>Given an integer array nums sorted in non-decreasing order,
-return an array of the squares of each number sorted in non-decreasing
-order.</em></p></li>
-<li><p>Iterate negative part inverting it (change sing), then
-std::reverse it. Now std::inplace_merge two sorted parts of array.
-Finally square elements.</p></li>
-<li><p>Time complexity: O(n)</p></li>
-<li><p>Space complexity: O(1)</p></li>
-<li><p><strong>Alternative:</strong> Use two pointers, one at the
+<li><p><strong>Task:</strong> Given an integer array nums sorted in
+non-decreasing order, return an array of the squares of each number
+sorted in non-decreasing order.</p></li>
+<li><p><strong>Task summary:</strong> Square each number in a sorted
+array and return the result sorted.</p></li>
+<li><p><strong>Solution 1:</strong> Iterate negative part inverting it
+(change sing), then std::reverse it. Now std::inplace_merge two sorted
+parts of array. Finally square elements.</p></li>
+<li><p><strong>Time complexity:</strong> O(n)</p></li>
+<li><p><strong>Space complexity:</strong> O(1)</p></li>
+<li><p><strong>Solution 2:</strong> Use two pointers, one at the
 beginning and one at the end of the input array. Compare the absolute
 values of the elements at the two pointers, square the larger one, and
 place it at the end of the result array. Move the corresponding pointer
 inward and repeat until the pointers meet.</p></li>
-<li><p>Time complexity: O(n)</p></li>
-<li><p>Space complexity: O(n)</p></li>
+<li><p><strong>Time complexity:</strong> O(n)</p></li>
+<li><p><strong>Space complexity:</strong> O(n)</p></li>
 </ul>
 <h4 id="container-with-most-water">Container with Most Water</h4>
 <ul>
-<li><em>You are given an integer array height of length n. There are n
-vertical lines drawn such that the two endpoints of the ith line are (i,
-0) and (i, height[i]). Find two lines that together with the x-axis form
-a container, such that the container contains the most water.</em></li>
-<li>Move pointers from opposite directions. Always move the pointer to
-the shorter line. This is because the shorter line has already made its
-best contribution with the current or one of the previous opposite
-lines. Moving it to the next line, regardless of whether it’s shorter or
-longer, is the only way to potentially find a larger area, as the height
-is limited by the shorter line, not the longer one.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> You are given an integer array height of
+length n. There are n vertical lines drawn such that the two endpoints
+of the ith line are (i, 0) and (i, height[i]). Find two lines that
+together with the x-axis form a container, such that the container
+contains the most water.</li>
+<li><strong>Task summary:</strong> Find two lines that form a container
+with the most water.</li>
+<li><strong>Solution:</strong> Move pointers from opposite directions.
+Always move the pointer to the shorter line. This is because the shorter
+line has already made its best contribution with the current or one of
+the previous opposite lines. Moving it to the next line, regardless of
+whether it’s shorter or longer, is the only way to potentially find a
+larger area, as the height is limited by the shorter line, not the
+longer one.</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h3 id="moving-pointers-from-same-side">Moving pointers from same
 side</h3>
 <h4 id="remove-duplicates-from-sorted-array">Remove Duplicates from
 Sorted Array</h4>
 <ul>
-<li><p><em>Given an integer array nums sorted in non-decreasing order,
-remove the duplicates in-place such that each unique element appears
-only once. The relative order of the elements should be kept the same.
-Then return the number of unique elements in nums.</em></p></li>
-<li><p>Set ‘next’ and ‘curr’ pointers to the first element. Iterate
-‘next’ over all values. If it points to value not equal to value pointed
-by ‘curr’, we found next ‘curr’, move ‘curr’ to next element and write
-‘next’ value to it.</p></li>
-<li><p>Time complexity: O(n)</p></li>
-<li><p>Space complexity: O(1)</p></li>
-<li><p><strong>Alternative:</strong> Use <code>std::unique</code> and
+<li><p><strong>Task:</strong> Given an integer array nums sorted in
+non-decreasing order, remove the duplicates in-place such that each
+unique element appears only once. The relative order of the elements
+should be kept the same. Then return the number of unique elements in
+nums.</p></li>
+<li><p><strong>Task summary:</strong> Remove duplicates from a sorted
+array in-place.</p></li>
+<li><p><strong>Solution 1:</strong> Set ‘next’ and ‘curr’ pointers to
+the first element. Iterate ‘next’ over all values. If it points to value
+not equal to value pointed by ‘curr’, we found next ‘curr’, move ‘curr’
+to next element and write ‘next’ value to it.</p></li>
+<li><p><strong>Time complexity:</strong> O(n)</p></li>
+<li><p><strong>Space complexity:</strong> O(1)</p></li>
+<li><p><strong>Solution 2:</strong> Use <code>std::unique</code> and
 <code>std::erase</code>.</p></li>
-<li><p>Time complexity: O(n)</p></li>
-<li><p>Space complexity: O(1)</p></li>
+<li><p><strong>Time complexity:</strong> O(n)</p></li>
+<li><p><strong>Space complexity:</strong> O(1)</p></li>
 </ul>
 <h4 id="move-zeros">Move Zeros</h4>
 <ul>
-<li><p><em>Given an integer array nums, move all 0’s to the end of it
-while maintaining the relative order of the non-zero
-elements.</em></p></li>
-<li><p>Set two pointers “writer” and “reader” to beginning. Iterate
-reader over all elements. If it points to non-zero, swap elements and
-move writer to next position. Basically we rewrite each non-zero
-element, even if it was on the same place, skipping zero
+<li><p><strong>Task:</strong> Given an integer array nums, move all 0’s
+to the end of it while maintaining the relative order of the non-zero
 elements.</p></li>
-<li><p>Time complexity: O(n)</p></li>
-<li><p>Space complexity: O(1)</p></li>
-<li><p><strong>Alternative:</strong> Use <code>std::remove</code> to
-move non-zero elements to the beginning, then <code>std::fill</code> the
+<li><p><strong>Task summary:</strong> Move all zeros to the end of an
+array while maintaining the order of non-zero elements.</p></li>
+<li><p><strong>Solution 1:</strong> Set two pointers “writer” and
+“reader” to beginning. Iterate reader over all elements. If it points to
+non-zero, swap elements and move writer to next position. Basically we
+rewrite each non-zero element, even if it was on the same place,
+skipping zero elements.</p></li>
+<li><p><strong>Time complexity:</strong> O(n)</p></li>
+<li><p><strong>Space complexity:</strong> O(1)</p></li>
+<li><p><strong>Solution 2:</strong> Use <code>std::remove</code> to move
+non-zero elements to the beginning, then <code>std::fill</code> the
 remaining elements at the end with zeros.</p></li>
-<li><p>Time complexity: O(n)</p></li>
-<li><p>Space complexity: O(1)</p></li>
+<li><p><strong>Time complexity:</strong> O(n)</p></li>
+<li><p><strong>Space complexity:</strong> O(1)</p></li>
 </ul>
 <h4 id="is-subsequence">Is Subsequence</h4>
 <ul>
-<li><em>Given two strings s and t, return true if s is a subsequence of
-t, or false otherwise.</em></li>
-<li>Set one pointer to the beginning of the subsequence. Iterate another
-pointer through the main string. If the main string pointer matches the
-character at the subsequence pointer, advance the subsequence pointer.
-If the subsequence pointer reaches the end of the subsequence, it means
-all characters were found in order, so return true. If the main string
-is exhausted before the subsequence pointer reaches its end, return
-false.</li>
-<li>Time complexity: O(N) where N is the length of the main string.</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> Given two strings s and t, return true if s
+is a subsequence of t, or false otherwise.</li>
+<li><strong>Task summary:</strong> Check if one string is a subsequence
+of another.</li>
+<li><strong>Solution:</strong> Set one pointer to the beginning of the
+subsequence. Iterate another pointer through the main string. If the
+main string pointer matches the character at the subsequence pointer,
+advance the subsequence pointer. If the subsequence pointer reaches the
+end of the subsequence, it means all characters were found in order, so
+return true. If the main string is exhausted before the subsequence
+pointer reaches its end, return false.</li>
+<li><strong>Time complexity:</strong> O(N) where N is the length of the
+main string.</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="backspace-string-compare">Backspace String Compare</h4>
 <ul>
-<li><p><em>Given two strings s and t, return true if they are equal when
-both are typed into empty text editors. ‘#’ means a backspace character.
-Note that after backspacing an empty text, the text will still be
-empty.</em></p></li>
-<li><p><strong>Classic Solution:</strong> Use two pointers and scan
-strings backward, skipping backspaces and removed characters. You need
-to be very careful with edge cases.</p></li>
-<li><p>Time complexity: O(N + M) where N and M are lengths of the
-strings.</p></li>
-<li><p>Space complexity: O(1)</p></li>
-<li><p><strong>Alternative Solution:</strong> Create a helper function
-<code>applyBackspaces</code> which actually removes characters from the
-string, moving them to the end of the string, similar to “Move Zeros”
-with writer and reader pointers (move writer back if a backspace is
-encountered). This is simpler and more elegant, but not optimal as you
-have to change the string in-place, which might not be desired.</p></li>
-<li><p>Time complexity: O(N + M)</p></li>
-<li><p>Space complexity: O(1) (if in-place modification is allowed,
-otherwise O(N+M) for new strings)</p></li>
+<li><p><strong>Task:</strong> Given two strings s and t, return true if
+they are equal when both are typed into empty text editors. ‘#’ means a
+backspace character. Note that after backspacing an empty text, the text
+will still be empty.</p></li>
+<li><p><strong>Task summary:</strong> Compare two strings after
+processing backspaces.</p></li>
+<li><p><strong>Solution 1 (Classic Solution):</strong> Use two pointers
+and scan strings backward, skipping backspaces and removed characters.
+You need to be very careful with edge cases.</p></li>
+<li><p><strong>Time complexity:</strong> O(N + M) where N and M are
+lengths of the strings.</p></li>
+<li><p><strong>Space complexity:</strong> O(1)</p></li>
+<li><p><strong>Solution 2 (Alternative Solution):</strong> Create a
+helper function <code>applyBackspaces</code> which actually removes
+characters from the string, moving them to the end of the string,
+similar to “Move Zeros” with writer and reader pointers (move writer
+back if a backspace is encountered). This is simpler and more elegant,
+but not optimal as you have to change the string in-place, which might
+not be desired.</p></li>
+<li><p><strong>Time complexity:</strong> O(N + M)</p></li>
+<li><p><strong>Space complexity:</strong> O(1) (if in-place modification
+is allowed, otherwise O(N+M) for new strings)</p></li>
 </ul>
 <h4 id="merge-sorted-array">Merge Sorted Array</h4>
 <ul>
-<li><em>You are given two integer arrays nums1 and nums2, sorted in
-non-decreasing order, and two integers m and n, representing the number
-of elements in nums1 and nums2 respectively. Merge nums2 into nums1 as
-one sorted array. The final sorted array should not be returned by the
-function, but instead be stored inside the array nums1. To accommodate
-this, nums1 has a length of m + n, where the first m elements denote the
-elements that should be merged, and the last n elements are set to 0 and
-should be ignored. nums2 has a length of n.</em></li>
-<li>Use two pointers moving filled parts of arrays backward, and pointer
-‘w’ pointing to the end of the first array (unfilled part). Move all 3
-pointers backward. Don’t forget to finish iteration over the second
-array after the main cycle to finish filling of the 1st array.</li>
-<li>Time complexity: O(N + M)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> You are given two integer arrays nums1 and
+nums2, sorted in non-decreasing order, and two integers m and n,
+representing the number of elements in nums1 and nums2 respectively.
+Merge nums2 into nums1 as one sorted array. The final sorted array
+should not be returned by the function, but instead be stored inside the
+array nums1. To accommodate this, nums1 has a length of m + n, where the
+first m elements denote the elements that should be merged, and the last
+n elements are set to 0 and should be ignored. nums2 has a length of
+n.</li>
+<li><strong>Task summary:</strong> Merge two sorted arrays into the
+first array.</li>
+<li><strong>Solution:</strong> Use two pointers moving filled parts of
+arrays backward, and pointer ‘w’ pointing to the end of the first array
+(unfilled part). Move all 3 pointers backward. Don’t forget to finish
+iteration over the second array after the main cycle to finish filling
+of the 1st array.</li>
+<li><strong>Time complexity:</strong> O(N + M)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 </body>
 </html>

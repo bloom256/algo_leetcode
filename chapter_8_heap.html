@@ -30,36 +30,34 @@
 <h4 id="kth-largest-element-in-an-array">Kth Largest Element in an
 Array</h4>
 <ul>
-<li><em>Given an integer array nums and an integer k, return the kth
-largest element in the array. Note that it is the kth largest element in
-the sorted order, not the kth distinct element.</em></li>
-<li>Find the k-th largest element in an unsorted array.</li>
+<li><strong>Task:</strong> <em>Given an integer array nums and an
+integer k, return the kth largest element in the array. Note that it is
+the kth largest element in the sorted order, not the kth distinct
+element.</em></li>
+<li><strong>Task summary:</strong> Find the k-th largest element in an
+unsorted array.</li>
 <li><strong>Solution 1:</strong>
 <code>std::nth_element(nums.begin(), nums.begin() + nums.size() - k, nums.end())</code>
-- best solution.
-<ul>
-<li>Time complexity: O(N) average, O(N^2) worst case.</li>
-<li>Space complexity: O(1).</li>
-</ul></li>
+- best solution.</li>
+<li><strong>Time complexity:</strong> O(N) average, O(N^2) worst
+case.</li>
+<li><strong>Space complexity:</strong> O(1).</li>
 <li><strong>Solution 2:</strong> Run <code>std::make_heap</code> on
 input array - to make it max heap. Then K-1 times do
 <code>std::pop_heap(nums.begin(), nums.end() - i)</code> (notice -i).
-After this the first element will be K largest.
-<ul>
-<li>Time complexity: O(N) for <code>make_heap</code>, O(K log N) for K-1
-<code>pop_heap</code> operations. Total: O(N + K log N).</li>
-<li>Space complexity: O(1).</li>
-</ul></li>
+After this the first element will be K largest.</li>
+<li><strong>Time complexity:</strong> O(N) for <code>make_heap</code>,
+O(K log N) for K-1 <code>pop_heap</code> operations. Total: O(N + K log
+N).</li>
+<li><strong>Space complexity:</strong> O(1).</li>
 <li><strong>Solution 3:</strong> Create
 <code>std::priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt;&gt; minPriorityQueue</code>
 - empty minHeap. Then iterate over all elements in input array, push
 them to heap. If heap grows larger than k elements, pop min element from
 it. In the end the first element in heap will be K largest. This
-solution is good if we don’t want to change input array.
-<ul>
-<li>Time complexity: O(N log K).</li>
-<li>Space complexity: O(K).</li>
-</ul></li>
+solution is good if we don’t want to change input array.</li>
+<li><strong>Time complexity:</strong> O(N log K).</li>
+<li><strong>Space complexity:</strong> O(K).</li>
 </ul>
 </body>
 </html>

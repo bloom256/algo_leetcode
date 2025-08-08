@@ -29,154 +29,179 @@
 <h2 id="linked-list">Linked list</h2>
 <h4 id="design-linked-list">Design Linked List</h4>
 <ul>
-<li><em>Design your implementation of the linked list. You can choose to
-use a singly or doubly linked list. A node in a singly linked list
-should have two attributes: val and next. val is the value of the
-current node, and next is a pointer/reference to the next node. If you
-want to use the doubly linked list, you will need one more attribute
-prev to indicate the previous node in the linked list. Assume all nodes
-in the linked list are 0-indexed.</em></li>
-<li>Implement a singly linked list using a <code>dummyHead</code> and a
-<code>size</code> counter. The <code>dummyHead</code> simplifies edge
-cases. Key methods <code>addAtHead</code> and <code>addAtTail</code> can
-be efficiently implemented by calling the more general
-<code>addAtIndex(0, val)</code> and <code>addAtIndex(size, val)</code>
-respectively.</li>
-<li>Time complexity: <code>get</code>, <code>addAtIndex</code>,
-<code>deleteAtIndex</code> are O(n). <code>addAtHead</code> is O(1),
-<code>addAtTail</code> is O(n).</li>
-<li>Space complexity: O(n) to store the list elements.</li>
+<li><strong>Task:</strong> Design your implementation of the linked
+list. You can choose to use a singly or doubly linked list. A node in a
+singly linked list should have two attributes: val and next. val is the
+value of the current node, and next is a pointer/reference to the next
+node. If you want to use the doubly linked list, you will need one more
+attribute prev to indicate the previous node in the linked list. Assume
+all nodes in the linked list are 0-indexed.</li>
+<li><strong>Task summary:</strong> Implement a linked list data
+structure.</li>
+<li><strong>Solution:</strong> Implement a singly linked list using a
+<code>dummyHead</code> and a <code>size</code> counter. The
+<code>dummyHead</code> simplifies edge cases. Key methods
+<code>addAtHead</code> and <code>addAtTail</code> can be efficiently
+implemented by calling the more general <code>addAtIndex(0, val)</code>
+and <code>addAtIndex(size, val)</code> respectively.</li>
+<li><strong>Time complexity:</strong> <code>get</code>,
+<code>addAtIndex</code>, <code>deleteAtIndex</code> are O(n).
+<code>addAtHead</code> is O(1), <code>addAtTail</code> is O(n).</li>
+<li><strong>Space complexity:</strong> O(n) to store the list
+elements.</li>
 </ul>
 <h4 id="middle-of-the-linked-list">Middle of the Linked List</h4>
 <ul>
-<li><em>Given the head of a singly linked list, return the middle node
-of the linked list. If there are two middle nodes, return the second
-middle node.</em></li>
-<li>Use slow and fast pointers. Move slow by one step and fast by two
-(<code>fast = fast.next.next</code>). When fast reaches the end, slow is
-at the middle.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> Given the head of a singly linked list,
+return the middle node of the linked list. If there are two middle
+nodes, return the second middle node.</li>
+<li><strong>Task summary:</strong> Find the middle node of a singly
+linked list.</li>
+<li><strong>Solution:</strong> Use slow and fast pointers. Move slow by
+one step and fast by two (<code>fast = fast.next.next</code>). When fast
+reaches the end, slow is at the middle.</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="delete-the-middle-of-the-linked-list">Delete the Middle of the
 Linked List</h4>
 <ul>
-<li><em>You are given the head of a linked list. Delete the middle node,
-and return the head of the modified linked list. The middle node of a
-linked list of size n is the ⌊n / 2⌋th node from the start using 0-based
-indexing. If n is even, there are two middle nodes, and we consider the
-first one as the middle.</em></li>
-<li>Use slow and fast pointers, keeping a <code>prevSlow</code> pointer.
-When <code>fast</code> reaches the end, <code>slow</code> is the middle.
-To delete the middle node, set <code>prevSlow.next = slow.next</code>.
-Handle the edge case where the list has only one node, in which case
-<code>prevSlow</code> would be null.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> You are given the head of a linked list.
+Delete the middle node, and return the head of the modified linked list.
+The middle node of a linked list of size n is the ⌊n / 2⌋th node from
+the start using 0-based indexing. If n is even, there are two middle
+nodes, and we consider the first one as the middle.</li>
+<li><strong>Task summary:</strong> Delete the middle node of a linked
+list.</li>
+<li><strong>Solution:</strong> Use slow and fast pointers, keeping a
+<code>prevSlow</code> pointer. When <code>fast</code> reaches the end,
+<code>slow</code> is the middle. To delete the middle node, set
+<code>prevSlow.next = slow.next</code>. Handle the edge case where the
+list has only one node, in which case <code>prevSlow</code> would be
+null.</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="reverse-linked-list">Reverse Linked List</h4>
 <ul>
-<li><em>Given the head of a singly linked list, reverse the list, and
-return the reversed list.</em></li>
-<li>Initialize <code>curr = head</code> and <code>prev = null</code>.
-Iterate through the list, at each step, store <code>curr.next</code> in
-a temporary variable, set <code>curr.next = prev</code>, then update
-<code>prev = curr</code> and <code>curr = temp</code>. Return
-<code>prev</code> at the end.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> Given the head of a singly linked list,
+reverse the list, and return the reversed list.</li>
+<li><strong>Task summary:</strong> Reverse a singly linked list.</li>
+<li><strong>Solution:</strong> Initialize <code>curr = head</code> and
+<code>prev = null</code>. Iterate through the list, at each step, store
+<code>curr.next</code> in a temporary variable, set
+<code>curr.next = prev</code>, then update <code>prev = curr</code> and
+<code>curr = temp</code>. Return <code>prev</code> at the end.</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="palindrome-linked-list">Palindrome Linked List</h4>
 <ul>
-<li><em>Given the head of a singly linked list, return true if it is a
-palindrome or false otherwise.</em></li>
-<li>First, implement <code>findMiddle(head)</code> using slow and fast
-pointers. Then, implement <code>reverseList(head)</code> (as described
-above). Use these to find the middle of the original list and reverse
-its second half. Finally, compare the first half of the original list
-with the reversed second half. Iterate only as long as the reversed
-second half has elements, as the first half might be longer for
-odd-length lists.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> Given the head of a singly linked list,
+return true if it is a palindrome or false otherwise.</li>
+<li><strong>Task summary:</strong> Check if a singly linked list is a
+palindrome.</li>
+<li><strong>Solution:</strong> First, implement
+<code>findMiddle(head)</code> using slow and fast pointers. Then,
+implement <code>reverseList(head)</code> (as described above). Use these
+to find the middle of the original list and reverse its second half.
+Finally, compare the first half of the original list with the reversed
+second half. Iterate only as long as the reversed second half has
+elements, as the first half might be longer for odd-length lists.</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="remove-duplicates-from-sorted-list">Remove Duplicates from
 Sorted List</h4>
 <ul>
-<li><em>Given the head of a sorted linked list, delete all duplicates
-such that each element appears only once. Return the linked list sorted
-as well.</em></li>
-<li>Iterate with a <code>curr</code> pointer while <code>curr</code> and
-<code>curr.next</code> exist. If <code>curr.val == curr.next.val</code>,
-set <code>curr.next = curr.next.next</code> (skipping the duplicate) and
-do not advance <code>curr</code>. Otherwise, move <code>curr</code>
-forward (<code>curr = curr.next</code>).</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> Given the head of a sorted linked list,
+delete all duplicates such that each element appears only once. Return
+the linked list sorted as well.</li>
+<li><strong>Task summary:</strong> Remove duplicate nodes from a sorted
+linked list.</li>
+<li><strong>Solution:</strong> Iterate with a <code>curr</code> pointer
+while <code>curr</code> and <code>curr.next</code> exist. If
+<code>curr.val == curr.next.val</code>, set
+<code>curr.next = curr.next.next</code> (skipping the duplicate) and do
+not advance <code>curr</code>. Otherwise, move <code>curr</code> forward
+(<code>curr = curr.next</code>).</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="remove-nth-node-from-end-of-list">Remove Nth Node From End of
 List</h4>
 <ul>
-<li><em>Given the head of a linked list, remove the nth node from the
-end of the list and return its head.</em></li>
-<li>Use two pointers, <code>p1</code> and <code>prev</code>. Initialize
-<code>p1 = head</code>. Move <code>p1</code> forward <code>n</code>
-times. Create a <code>dummyHead</code> and initialize
-<code>prev = dummyHead</code>. Then, move both <code>p1</code> and
-<code>prev</code> forward one step at a time until <code>p1</code>
-reaches the end of the list. At this point, <code>prev</code> will be
-pointing to the node <em>before</em> the one to be deleted. Delete the
-node by setting <code>prev.next = prev.next.next</code>. Return
+<li><strong>Task:</strong> Given the head of a linked list, remove the
+nth node from the end of the list and return its head.</li>
+<li><strong>Task summary:</strong> Remove the Nth node from the end of a
+linked list.</li>
+<li><strong>Solution:</strong> Use two pointers, <code>p1</code> and
+<code>prev</code>. Initialize <code>p1 = head</code>. Move
+<code>p1</code> forward <code>n</code> times. Create a
+<code>dummyHead</code> and initialize <code>prev = dummyHead</code>.
+Then, move both <code>p1</code> and <code>prev</code> forward one step
+at a time until <code>p1</code> reaches the end of the list. At this
+point, <code>prev</code> will be pointing to the node <em>before</em>
+the one to be deleted. Delete the node by setting
+<code>prev.next = prev.next.next</code>. Return
 <code>dummyHead.next</code>.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="swap-nodes-in-pairs">Swap Nodes in Pairs</h4>
 <ul>
-<li><em>Given a linked list, swap every two adjacent nodes and return
-its head. You must solve the problem without modifying the values in the
-list’s nodes (i.e., only nodes themselves may be changed).</em></li>
-<li>Create a <code>dummyHead</code> and set
+<li><strong>Task:</strong> Given a linked list, swap every two adjacent
+nodes and return its head. You must solve the problem without modifying
+the values in the list’s nodes (i.e., only nodes themselves may be
+changed).</li>
+<li><strong>Task summary:</strong> Swap every two adjacent nodes in a
+linked list.</li>
+<li><strong>Solution:</strong> Create a <code>dummyHead</code> and set
 <code>curr = dummyHead</code>. Iterate while <code>curr</code>,
 <code>curr.next</code>, and <code>curr.next.next</code> exist. Carefully
 re-link <code>curr</code>, <code>curr.next</code>, and
 <code>curr.next.next</code> to swap the pair, then move
 <code>curr</code> two steps forward.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="merge-two-sorted-lists">Merge Two Sorted Lists</h4>
 <ul>
-<li><em>You are given the heads of two sorted linked lists list1 and
-list2. Merge the two lists in a one sorted list. The list should be made
-by splicing together the nodes of the first two lists. Return the head
-of the merged linked list.</em></li>
-<li>Initialize <code>curr = dummyHead(0, nullptr)</code>. Iterate while
-both <code>list1</code> and <code>list2</code> exist. In each step,
-choose the smaller node from <code>list1</code> or <code>list2</code>,
-append it to <code>curr.next</code>, and then advance <code>curr</code>
-and the pointer of the list from which the node was taken. After the
-loop, append the remaining part of <code>list1</code> or
-<code>list2</code> to <code>curr.next</code> (no additional loop is
-needed for this step). Return <code>dummyHead.next</code>.</li>
-<li>Time complexity: O(m+n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> You are given the heads of two sorted linked
+lists list1 and list2. Merge the two lists in a one sorted list. The
+list should be made by splicing together the nodes of the first two
+lists. Return the head of the merged linked list.</li>
+<li><strong>Task summary:</strong> Merge two sorted linked lists into
+one sorted list.</li>
+<li><strong>Solution:</strong> Initialize
+<code>curr = dummyHead(0, nullptr)</code>. Iterate while both
+<code>list1</code> and <code>list2</code> exist. In each step, choose
+the smaller node from <code>list1</code> or <code>list2</code>, append
+it to <code>curr.next</code>, and then advance <code>curr</code> and the
+pointer of the list from which the node was taken. After the loop,
+append the remaining part of <code>list1</code> or <code>list2</code> to
+<code>curr.next</code> (no additional loop is needed for this step).
+Return <code>dummyHead.next</code>.</li>
+<li><strong>Time complexity:</strong> O(m+n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 <h4 id="linked-list-cycle">Linked List Cycle</h4>
 <ul>
-<li><em>Given head, the head of a linked list, determine if the linked
-list has a cycle in it. There is a cycle in a linked list if some node
-in the list can be reached again by continuously following the next
-pointer. Internally, pos is used to denote the index of the node that
-tail’s next pointer is connected to. Note that pos is not passed as a
-parameter. Return true if there is a cycle in the linked list.
-Otherwise, return false.</em></li>
-<li>Use fast and slow pointers. Move <code>fast</code> by one step in
-each iteration. Move <code>slow</code> by one step on every second
-iteration. If <code>fast</code> and <code>slow</code> meet, a cycle
-exists.</li>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li><strong>Task:</strong> Given head, the head of a linked list,
+determine if the linked list has a cycle in it. There is a cycle in a
+linked list if some node in the list can be reached again by
+continuously following the next pointer. Internally, pos is used to
+denote the index of the node that tail’s next pointer is connected to.
+Note that pos is not passed as a parameter. Return true if there is a
+cycle in the linked list. Otherwise, return false.</li>
+<li><strong>Task summary:</strong> Determine if a linked list has a
+cycle.</li>
+<li><strong>Solution:</strong> Use fast and slow pointers. Move
+<code>fast</code> by one step in each iteration. Move <code>slow</code>
+by one step on every second iteration. If <code>fast</code> and
+<code>slow</code> meet, a cycle exists.</li>
+<li><strong>Time complexity:</strong> O(n)</li>
+<li><strong>Space complexity:</strong> O(1)</li>
 </ul>
 </body>
 </html>

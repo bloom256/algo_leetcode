@@ -30,66 +30,86 @@
 <h3 id="dfs">DFS</h3>
 <h4 id="maximum-depth-of-binary-tree">Maximum Depth of Binary Tree</h4>
 <ul>
-<li><em>Given the root of a binary tree, return its maximum depth. A
-binary tree’s maximum depth is the number of nodes along the longest
-path from the root node down to the farthest leaf node.</em></li>
-<li><strong>Recursive post-order DFS:</strong> The depth of a node is
-<code>1 + max(left_depth, right_depth)</code>. The base case is a null
-node, which has a depth of 0. Time: O(N), where N is the number of
-nodes, as we visit each node once. Space: O(H), where H is the height of
+<li><strong>Task:</strong> Given the root of a binary tree, return its
+maximum depth. A binary tree’s maximum depth is the number of nodes
+along the longest path from the root node down to the farthest leaf
+node.</li>
+<li><strong>Task summary:</strong> Find the maximum depth of a binary
+tree.</li>
+<li><strong>Solution 1 (Recursive post-order DFS):</strong> The depth of
+a node is <code>1 + max(left_depth, right_depth)</code>. The base case
+is a null node, which has a depth of 0.</li>
+<li><strong>Time complexity:</strong> O(N), where N is the number of
+nodes, as we visit each node once.</li>
+<li><strong>Space complexity:</strong> O(H), where H is the height of
 the tree, due to the recursion stack. In the worst case (a skewed tree),
 this can be O(N).</li>
-<li><strong>Iterative DFS:</strong> Use a stack to store pairs of
-<code>(node, depth)</code>. Start with the root and a depth of 1. While
-the stack is not empty, pop a node, update the maximum depth found so
-far, and push its children with an incremented depth. Time: O(N). Space:
-O(H), for the stack.</li>
+<li><strong>Solution 2 (Iterative DFS):</strong> Use a stack to store
+pairs of <code>(node, depth)</code>. Start with the root and a depth of
+1. While the stack is not empty, pop a node, update the maximum depth
+found so far, and push its children with an incremented depth.</li>
+<li><strong>Time complexity:</strong> O(N).</li>
+<li><strong>Space complexity:</strong> O(H), for the stack.</li>
 </ul>
 <h4 id="invert-binary-tree">Invert Binary Tree</h4>
 <ul>
-<li><em>Given the root of a binary tree, invert the tree, and return its
-root.</em></li>
-<li><strong>Recursive DFS:</strong> For each node, swap its left and
-right children, then recursively call the function for the left and
-right children. The base case is a null node. Time: O(N), Space:
-O(H).</li>
-<li><strong>Iterative DFS:</strong> Use a stack. Push the root. While
-the stack is not empty, pop a node, swap its children, then push the new
-right and left children if they exist. Time: O(N), Space: O(H).</li>
+<li><strong>Task:</strong> Given the root of a binary tree, invert the
+tree, and return its root.</li>
+<li><strong>Task summary:</strong> Invert a binary tree (mirror its
+structure).</li>
+<li><strong>Solution 1 (Recursive DFS):</strong> For each node, swap its
+left and right children, then recursively call the function for the left
+and right children. The base case is a null node.</li>
+<li><strong>Time complexity:</strong> O(N), Space: O(H).</li>
+<li><strong>Space complexity:</strong> O(H).</li>
+<li><strong>Solution 2 (Iterative DFS):</strong> Use a stack. Push the
+root. While the stack is not empty, pop a node, swap its children, then
+push the new right and left children if they exist.</li>
+<li><strong>Time complexity:</strong> O(N).</li>
+<li><strong>Space complexity:</strong> O(H).</li>
 </ul>
 <h4 id="same-tree">Same Tree</h4>
 <ul>
-<li><em>Given the roots of two binary trees p and q, return true if they
-are the same tree, and false otherwise. Two binary trees are considered
-the same if they are structurally identical, and the nodes have the same
-value.</em></li>
-<li><strong>Iterative DFS:</strong> Use two stacks, one for each tree.
-Push the roots onto their respective stacks. While both stacks are not
-empty, pop a node from each. If one node is null and the other isn’t, or
-if their values are different, the trees are not the same. Then, push
-the left and right children of both nodes onto their stacks. If the
-stacks are both empty at the end, the trees are the same. Time: O(N),
-Space: O(H).</li>
+<li><strong>Task:</strong> Given the roots of two binary trees p and q,
+return true if they are the same tree, and false otherwise. Two binary
+trees are considered the same if they are structurally identical, and
+the nodes have the same value.</li>
+<li><strong>Task summary:</strong> Check if two binary trees are
+structurally and value-wise identical.</li>
+<li><strong>Solution:</strong> Use two stacks, one for each tree. Push
+the roots onto their respective stacks. While both stacks are not empty,
+pop a node from each. If one node is null and the other isn’t, or if
+their values are different, the trees are not the same. Then, push the
+left and right children of both nodes onto their stacks. If the stacks
+are both empty at the end, the trees are the same.</li>
+<li><strong>Time complexity:</strong> O(N), Space: O(H).</li>
+<li><strong>Space complexity:</strong> O(H).</li>
 </ul>
 <h4 id="symmetric-tree">Symmetric Tree</h4>
 <ul>
-<li><em>Given the root of a binary tree, check whether it is a mirror of
-itself (i.e., symmetric around its center).</em></li>
-<li><strong>Iterative DFS with Two Stacks:</strong> Use two stacks. Push
-the root onto both stacks. While the stacks are not empty, pop a node
-from each. If one node is null and the other isn’t, or if their values
-are different, the tree is not symmetric. For the first stack, push the
-left then the right child. For the second stack, push the right then the
-left child. If the stacks are both empty at the end, the tree is
-symmetric. Time: O(N), Space: O(H).</li>
+<li><strong>Task:</strong> Given the root of a binary tree, check
+whether it is a mirror of itself (i.e., symmetric around its
+center).</li>
+<li><strong>Task summary:</strong> Check if a binary tree is symmetric
+(a mirror of itself).</li>
+<li><strong>Solution:</strong> Use two stacks. Push the root onto both
+stacks. While the stacks are not empty, pop a node from each. If one
+node is null and the other isn’t, or if their values are different, the
+tree is not symmetric. For the first stack, push the left then the right
+child. For the second stack, push the right then the left child. If the
+stacks are both empty at the end, the tree is symmetric.</li>
+<li><strong>Time complexity:</strong> O(N), Space: O(H).</li>
+<li><strong>Space complexity:</strong> O(H).</li>
 </ul>
 <h4 id="path-sum">Path Sum</h4>
 <ul>
-<li><em>Given the root of a binary tree and an integer targetSum, return
-true if the tree has a root-to-leaf path such that adding up all the
-values along the path equals targetSum. A leaf is a node with no
-children.</em></li>
-<li><strong>Description:</strong> Iterative DFS. Use a
+<li><strong>Task:</strong> Given the root of a binary tree and an
+integer targetSum, return true if the tree has a root-to-leaf path such
+that adding up all the values along the path equals targetSum. A leaf is
+a node with no children.</li>
+<li><strong>Task summary:</strong> Check if there is a root-to-leaf path
+that sums to a target value.</li>
+<li><strong>Solution:</strong> Iterative DFS. Use a
 <code>std::vector</code> as a stack to store pairs of
 <code>(node, prev_sum)</code>. A leaf is a node where both its left and
 right children are null. In each iteration, calculate
@@ -106,10 +126,12 @@ O(N).</li>
 <h4 id="delete-leaves-with-a-given-value">Delete Leaves With a Given
 Value</h4>
 <ul>
-<li><em>Given the root of a binary tree and an integer target, delete
-all the leaf nodes with value target. Note that once a leaf node is
-deleted, its parent can become a leaf node and might need to be
-deleted.</em></li>
+<li><strong>Task:</strong> Given the root of a binary tree and an
+integer target, delete all the leaf nodes with value target. Note that
+once a leaf node is deleted, its parent can become a leaf node and might
+need to be deleted.</li>
+<li><strong>Task summary:</strong> Delete leaf nodes with a specific
+value; parent nodes can become new leaves.</li>
 <li><strong>Solution 1 (Post-order DFS):</strong> Use a recursive
 post-order traversal. For each node, recursively call the function on
 its left and right children and assign the results back to
@@ -134,12 +156,15 @@ solution to store all nodes.</li>
 <h4 id="lowest-common-ancestor-of-a-binary-tree">Lowest Common Ancestor
 of a Binary Tree</h4>
 <ul>
-<li><em>Given a binary tree, find the lowest common ancestor (LCA) of
-two given nodes in the tree. According to the definition of LCA on
-Wikipedia: “The lowest common ancestor is defined between two nodes p
-and q as the lowest node in T that has both p and q as descendants
-(where we allow a node to be a descendant of itself).”</em></li>
-<li><strong>Description:</strong> Use a post-order recursive DFS. The
+<li><strong>Task:</strong> Given a binary tree, find the lowest common
+ancestor (LCA) of two given nodes in the tree. According to the
+definition of LCA on Wikipedia: “The lowest common ancestor is defined
+between two nodes p and q as the lowest node in T that has both p and q
+as descendants (where we allow a node to be a descendant of
+itself).”</li>
+<li><strong>Task summary:</strong> Find the lowest common ancestor of
+two nodes in a binary tree.</li>
+<li><strong>Solution:</strong> Use a post-order recursive DFS. The
 function
 <code>TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)</code>
 returns the LCA. If the current node is <code>null</code>,
@@ -158,15 +183,17 @@ the tree, due to the recursion stack.</li>
 <h4 id="search-in-a-binary-search-tree">Search in a Binary Search
 Tree</h4>
 <ul>
-<li><em>You are given the root of a binary search tree (BST) and an
-integer val. Find the node in the BST that the node’s value equals val
-and return the subtree rooted with that node. If such a node does not
-exist, return null.</em></li>
-<li><strong>Description:</strong> Start at the root. While the current
-node is not null, compare its value with the target. If they match,
-return the node. If the target is smaller, move to the left child;
-otherwise, move to the right child. If the loop finishes, the value is
-not in the tree.</li>
+<li><strong>Task:</strong> You are given the root of a binary search
+tree (BST) and an integer val. Find the node in the BST that the node’s
+value equals val and return the subtree rooted with that node. If such a
+node does not exist, return null.</li>
+<li><strong>Task summary:</strong> Search for a value in a Binary Search
+Tree (BST).</li>
+<li><strong>Solution:</strong> Start at the root. While the current node
+is not null, compare its value with the target. If they match, return
+the node. If the target is smaller, move to the left child; otherwise,
+move to the right child. If the loop finishes, the value is not in the
+tree.</li>
 <li><strong>Time Complexity:</strong> O(H), where H is the height of the
 tree. For a balanced tree, this is O(log N). In the worst case of a
 skewed tree, it’s O(N).</li>
@@ -176,12 +203,14 @@ approach.</li>
 <h4 id="insert-into-a-binary-search-tree">Insert into a Binary Search
 Tree</h4>
 <ul>
-<li><em>You are given the root of a binary search tree (BST) and a value
-to insert into the tree. Return the root of the BST after the insertion.
-It is guaranteed that the new value does not exist in the original BST.
-There can be multiple valid ways for the insertion to happen; any of
-them will be accepted.</em></li>
-<li><strong>Description:</strong> If the root is null, create a new node
+<li><strong>Task:</strong> You are given the root of a binary search
+tree (BST) and a value to insert into the tree. Return the root of the
+BST after the insertion. It is guaranteed that the new value does not
+exist in the original BST. There can be multiple valid ways for the
+insertion to happen; any of them will be accepted.</li>
+<li><strong>Task summary:</strong> Insert a new value into a Binary
+Search Tree (BST).</li>
+<li><strong>Solution:</strong> If the root is null, create a new node
 and return it. Otherwise, start with <code>curr = root</code>. Loop as
 long as <code>curr</code> is not null. If the new value is less than
 <code>curr</code>’s value, check if <code>curr</code>’s left child is
@@ -198,13 +227,15 @@ approach.</li>
 </ul>
 <h4 id="validate-binary-search-tree">Validate Binary Search Tree</h4>
 <ul>
-<li><em>Given the root of a binary tree, determine if it is a valid
-binary search tree (BST). A valid BST is defined as follows: The left
-subtree of a node contains only nodes with keys less than the node’s
-key. The right subtree of a node contains only nodes with keys greater
-than the node’s key. Both the left and right subtrees must also be
-binary search trees.</em></li>
-<li><strong>Description (Iterative DFS with bounds):</strong> Use an
+<li><strong>Task:</strong> Given the root of a binary tree, determine if
+it is a valid binary search tree (BST). A valid BST is defined as
+follows: The left subtree of a node contains only nodes with keys less
+than the node’s key. The right subtree of a node contains only nodes
+with keys greater than the node’s key. Both the left and right subtrees
+must also be binary search trees.</li>
+<li><strong>Task summary:</strong> Determine if a binary tree is a valid
+Binary Search Tree (BST).</li>
+<li><strong>Solution 1 (Iterative DFS with bounds):</strong> Use an
 iterative DFS approach with a stack. The stack stores tuples of
 <code>(node, min_val, max_val)</code>. Start by pushing the root onto
 the stack with negative and positive infinity as the initial min and max
@@ -215,7 +246,7 @@ invalid. Then, push the left child onto the stack with an updated max
 bound of the current node’s value, and push the right child with an
 updated min bound of the current node’s value. If the loop completes,
 the tree is a valid BST.</li>
-<li><strong>Description (In-order Traversal):</strong> An in-order DFS
+<li><strong>Solution 2 (In-order Traversal):</strong> An in-order DFS
 traversal of a valid BST visits nodes in sorted order. Use a recursive
 in-order helper function that keeps track of the previously visited
 node’s value (<code>prev</code>). To enable early termination, the
@@ -232,12 +263,14 @@ tree.</li>
 </ul>
 <h4 id="balanced-binary-tree">Balanced Binary Tree</h4>
 <ul>
-<li><em>Given a binary tree, determine if it is height-balanced. For
-this problem, a height-balanced binary tree is defined as: a binary tree
-in which the depth of the two subtrees of every node never differs by
-more than one.</em></li>
-<li><strong>Description:</strong> Use post-order DFS to check if a
-binary tree is balanced. Implement a recursive helper function
+<li><strong>Task:</strong> Given a binary tree, determine if it is
+height-balanced. For this problem, a height-balanced binary tree is
+defined as: a binary tree in which the depth of the two subtrees of
+every node never differs by more than one.</li>
+<li><strong>Task summary:</strong> Determine if a binary tree is
+height-balanced.</li>
+<li><strong>Solution:</strong> Use post-order DFS to check if a binary
+tree is balanced. Implement a recursive helper function
 <code>checkHeight(node)</code> that returns the height of the subtree
 rooted at <code>node</code> if it’s balanced, or -1 if it’s unbalanced.
 The base case is a null node, which has a height of 0. For a non-null
@@ -255,13 +288,15 @@ the tree, due to the recursion stack.</li>
 </ul>
 <h4 id="diameter-of-binary-tree">Diameter of Binary Tree</h4>
 <ul>
-<li><em>Given the root of a binary tree, return the length of the
-diameter of the tree. The diameter of a binary tree is the length of the
-longest path between any two nodes in a tree. This path may or may not
-pass through the root. The length of a path between two nodes is
-represented by the number of edges between them.</em></li>
-<li><strong>Description:</strong> Use a recursive post-order DFS
-approach. Define a helper function
+<li><strong>Task:</strong> Given the root of a binary tree, return the
+length of the diameter of the tree. The diameter of a binary tree is the
+length of the longest path between any two nodes in a tree. This path
+may or may not pass through the root. The length of a path between two
+nodes is represented by the number of edges between them.</li>
+<li><strong>Task summary:</strong> Find the length of the diameter of a
+binary tree.</li>
+<li><strong>Solution:</strong> Use a recursive post-order DFS approach.
+Define a helper function
 <code>checkMaxDiameter(node, maxDiameter)</code> that returns the height
 of the subtree rooted at <code>node</code>. Inside the helper,
 recursively call <code>checkMaxDiameter</code> on the left and right
@@ -280,10 +315,12 @@ the tree, due to the recursion stack.</li>
 <h4 id="binary-tree-level-order-traversal">Binary Tree Level Order
 Traversal</h4>
 <ul>
-<li><em>Given the root of a binary tree, return the level order
-traversal of its nodes’ values. (i.e., from left to right, level by
-level).</em></li>
-<li><strong>Description:</strong> Use a <code>std::deque</code> for a
+<li><strong>Task:</strong> Given the root of a binary tree, return the
+level order traversal of its nodes’ values. (i.e., from left to right,
+level by level).</li>
+<li><strong>Task summary:</strong> Perform a level-order traversal of a
+binary tree.</li>
+<li><strong>Solution:</strong> Use a <code>std::deque</code> for a
 breadth-first search (BFS). Start by pushing the root node into the
 deque. While the deque is not empty, get the number of nodes at the
 current level. Iterate that many times, processing each node: pop it
@@ -299,12 +336,14 @@ level can contain up to N/2 nodes, so space is O(N).</li>
 <h4 id="find-largest-value-in-each-tree-row">Find Largest Value in Each
 Tree Row</h4>
 <ul>
-<li><em>Given the root of a binary tree, return an array of the largest
-value in each row of the tree (0-indexed).</em></li>
-<li><strong>Description:</strong> Use BFS with a
-<code>std::deque</code>. In each level of the traversal, keep track of
-the maximum value seen so far. After iterating through all nodes at a
-level, add the maximum value for that level to the result vector.</li>
+<li><strong>Task:</strong> Given the root of a binary tree, return an
+array of the largest value in each row of the tree (0-indexed).</li>
+<li><strong>Task summary:</strong> Find the largest value in each row of
+a binary tree.</li>
+<li><strong>Solution:</strong> Use BFS with a <code>std::deque</code>.
+In each level of the traversal, keep track of the maximum value seen so
+far. After iterating through all nodes at a level, add the maximum value
+for that level to the result vector.</li>
 <li><strong>Time Complexity:</strong> O(N), as each node is visited
 once.</li>
 <li><strong>Space Complexity:</strong> O(W), where W is the maximum
@@ -312,13 +351,14 @@ width of the tree.</li>
 </ul>
 <h4 id="binary-tree-right-side-view">Binary Tree Right Side View</h4>
 <ul>
-<li><em>Given the root of a binary tree, imagine yourself standing on
-the right side of it, return the values of the nodes you can see ordered
-from top to bottom.</em></li>
-<li><strong>Description:</strong> Use BFS with a
-<code>std::deque</code>. For each level, the rightmost node is the last
-one processed in that level’s loop. Store the value of this node in the
-result vector.</li>
+<li><strong>Task:</strong> Given the root of a binary tree, imagine
+yourself standing on the right side of it, return the values of the
+nodes you can see ordered from top to bottom.</li>
+<li><strong>Task summary:</strong> Return the values of the nodes
+visible from the right side of a binary tree.</li>
+<li><strong>Solution:</strong> Use BFS with a <code>std::deque</code>.
+For each level, the rightmost node is the last one processed in that
+level’s loop. Store the value of this node in the result vector.</li>
 <li><strong>Time Complexity:</strong> O(N), as each node is visited
 once.</li>
 <li><strong>Space Complexity:</strong> O(W), where W is the maximum
@@ -327,15 +367,17 @@ width of the tree.</li>
 <h4 id="populating-next-right-pointers-in-each-node-ii">Populating Next
 Right Pointers in Each Node II</h4>
 <ul>
-<li><em>Populate each next pointer to point to its next right node. If
-there is no next right node, the next pointer should be set to NULL. You
-may only use constant extra space. You may assume that it is a perfect
-binary tree (ie, all leaves are on the same level, and every parent has
-two children).</em></li>
-<li><strong>Description:</strong> Use BFS with a
-<code>std::deque</code>, without storing nulls. For each level, iterate
-through the nodes. For each node, if it’s not the last one in the level,
-set its <code>next</code> pointer to the next node in the deque
+<li><strong>Task:</strong> Populate each next pointer to point to its
+next right node. If there is no next right node, the next pointer should
+be set to NULL. You may only use constant extra space. You may assume
+that it is a perfect binary tree (ie, all leaves are on the same level,
+and every parent has two children).</li>
+<li><strong>Task summary:</strong> Populate the <code>next</code> right
+pointers for nodes in a binary tree.</li>
+<li><strong>Solution:</strong> Use BFS with a <code>std::deque</code>,
+without storing nulls. For each level, iterate through the nodes. For
+each node, if it’s not the last one in the level, set its
+<code>next</code> pointer to the next node in the deque
 (<code>q.front()</code>). Add non-null children to the queue for the
 next level’s processing.</li>
 <li><strong>Time Complexity:</strong> O(N), as each node is visited
@@ -345,14 +387,15 @@ width of the tree.</li>
 </ul>
 <h4 id="deepest-leaves-sum">Deepest Leaves Sum</h4>
 <ul>
-<li><em>Given the root of a binary tree, return the sum of values of its
-deepest leaves.</em></li>
-<li><strong>Description:</strong> Use BFS with a
-<code>std::deque</code>. Initialize <code>lastLevelSum = 0</code>. For
-each level, calculate the sum of its nodes. After processing all nodes
-in a level, update <code>lastLevelSum</code> with the current level’s
-sum. The final <code>lastLevelSum</code> will be the sum of the deepest
-leaves.</li>
+<li><strong>Task:</strong> Given the root of a binary tree, return the
+sum of values of its deepest leaves.</li>
+<li><strong>Task summary:</strong> Calculate the sum of values of the
+deepest leaves in a binary tree.</li>
+<li><strong>Solution:</strong> Use BFS with a <code>std::deque</code>.
+Initialize <code>lastLevelSum = 0</code>. For each level, calculate the
+sum of its nodes. After processing all nodes in a level, update
+<code>lastLevelSum</code> with the current level’s sum. The final
+<code>lastLevelSum</code> will be the sum of the deepest leaves.</li>
 <li><strong>Time Complexity:</strong> O(N), as each node is visited
 once.</li>
 <li><strong>Space Complexity:</strong> O(W), where W is the maximum
@@ -361,15 +404,17 @@ width of the tree.</li>
 <h4 id="binary-tree-zigzag-level-order-traversal">Binary Tree Zigzag
 Level Order Traversal</h4>
 <ul>
-<li><em>Given the root of a binary tree, return the zigzag level order
-traversal of its nodes’ values. (i.e., from left to right, then right to
-left for the next level and alternate between).</em></li>
-<li><strong>Description:</strong> Use BFS with a
-<code>std::deque</code>. Iterate nodes as usual in BFS. For each level,
-initialize an array of values
-<code>vector&lt;int&gt; values(levelLen)</code>. During iteration, fill
-it from left to right or from right to left depending on the level,
-using
+<li><strong>Task:</strong> Given the root of a binary tree, return the
+zigzag level order traversal of its nodes’ values. (i.e., from left to
+right, then right to left for the next level and alternate
+between).</li>
+<li><strong>Task summary:</strong> Perform a zigzag level order
+traversal of a binary tree.</li>
+<li><strong>Solution:</strong> Use BFS with a <code>std::deque</code>.
+Iterate nodes as usual in BFS. For each level, initialize an array of
+values <code>vector&lt;int&gt; values(levelLen)</code>. During
+iteration, fill it from left to right or from right to left depending on
+the level, using
 <code>int val_idx = (level % 2 == 0) ? i : levelLen - 1 - i</code>.</li>
 <li><strong>Time Complexity:</strong> O(N), as each node is visited
 once.</li>
