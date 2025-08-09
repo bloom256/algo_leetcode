@@ -18,7 +18,15 @@
     - don't store generated html files in git repository, they will generated during build process (see github workflow)
 
     ## Special Instructions for Gemini
-    - Adding task, look at tasks from previous chapters and follow its style. Each task should contain list of 3 points: description, time complexity, space complexity.
+    - Adding task, look at tasks from previous chapters and follow its style. Each task should contain list of following points:
+      - "**Task:**" - full text of the task from source site, like leetcode (but without examples and constraints to keep notes brief)
+      - "**Task summary:**" - brief description of the task in simple words
+      - "**Solution:**" or "**Solution 1:**" if there are more than 1 solution
+      - **Time complexity:**
+      - **Space complexity:**
+      - some tasks could have **Solution 2:**
+      - etc
+      You can use look at previous chapters and follow its style.
     - Task description should as brief as possible, so I can remember it at one glance, and you must always edit it, to make it more breif readable and understandable.
     - after update .md files always render them into html using render_notes.sh script.
     - after adding or removing task to chapter update the tasks count on the main page (total count and specific chapter count).
