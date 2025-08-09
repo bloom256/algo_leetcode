@@ -46,9 +46,7 @@ case.</li>
 input array - to make it max heap. Then K-1 times do
 <code>std::pop_heap(nums.begin(), nums.end() - i)</code> (notice -i).
 After this the first element will be K largest.</li>
-<li><strong>Time complexity:</strong> O(N) for <code>make_heap</code>,
-O(K log N) for K-1 <code>pop_heap</code> operations. Total: O(N + K log
-N).</li>
+<li><strong>Time complexity:</strong> O(N + K log N).</li>
 <li><strong>Space complexity:</strong> O(1).</li>
 <li><strong>Solution 3:</strong> Create
 <code>std::priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt;&gt; minPriorityQueue</code>
@@ -58,6 +56,31 @@ it. In the end the first element in heap will be K largest. This
 solution is good if we don’t want to change input array.</li>
 <li><strong>Time complexity:</strong> O(N log K).</li>
 <li><strong>Space complexity:</strong> O(K).</li>
+</ul>
+<h4 id="kth-largest-element-in-a-stream">Kth Largest Element in a
+Stream</h4>
+<ul>
+<li><strong>Task:</strong> <em>Design a class to find the kth largest
+element in a stream. Note that it is the kth largest element in the
+sorted order, not the kth distinct element. Implement KthLargest class:
+<code>KthLargest(int k, int[] nums)</code> Initializes the object with
+the integer k and the stream of integers nums.
+<code>int add(int val)</code> Appends the integer val to the stream and
+returns the element representing the kth largest element in the
+stream.</em></li>
+<li><strong>Task summary:</strong> Find the k-th largest element in a
+data stream.</li>
+<li><strong>Solution:</strong> Use
+<code>std::priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt;&gt; minHeap;</code>
+as a min-heap. In the constructor, iterate through the initial numbers
+and push them to the heap, while maintaining a heap size of at most
+<code>k</code>. In the <code>add</code> method, push the new value. If
+the heap size exceeds <code>k</code>, pop the smallest element. The top
+element of the heap is always the k-th largest.</li>
+<li><strong>Time complexity:</strong> O(N log K) for constructor, O(log
+K) for <code>add</code>, where N is the initial number of elements and K
+is the given parameter.</li>
+<li><strong>Space complexity:</strong> O(K) to store the heap.</li>
 </ul>
 </body>
 </html>
