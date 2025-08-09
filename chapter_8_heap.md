@@ -21,3 +21,11 @@
 *   **Solution:** Use `std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap;` as a min-heap. In the constructor, iterate through the initial numbers and push them to the heap, while maintaining a heap size of at most `k`. In the `add` method, push the new value. If the heap size exceeds `k`, pop the smallest element. The top element of the heap is always the k-th largest.
 *   **Time complexity:** O(N log K) for constructor, O(log K) for `add`, where N is the initial number of elements and K is the given parameter.
 *   **Space complexity:** O(K) to store the heap.
+
+#### Top K Frequent Elements
+
+*   **Task:** *Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.*
+*   **Task summary:** Find the k most frequent elements in an array.
+*   **Solution:** Use `std::unordered_map<int, int> counts` to count the frequency of each element. Then, create a min-heap of pairs (`std::vector<std::pair<int, int>> minHeap`). Iterate through the map and push pairs of `{frequency, number}` into the heap using `std::push_heap`. If the heap size exceeds `k`, remove the smallest element using `std::pop_heap`. A custom comparator `cmpGreater` for pairs is needed to make the min-heap work correctly. Finally, the heap will contain the k most frequent elements.
+*   **Time complexity:** O(N log K), where N is the number of elements in the input array.
+*   **Space complexity:** O(N) in the worst case for the hash map, and O(K) for the heap.
