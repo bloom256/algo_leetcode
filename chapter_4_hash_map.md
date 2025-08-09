@@ -23,3 +23,11 @@
 * **Solution:** Use 'visited' hash map
 * **Time complexity:** O(n)
 * **Space complexity:** O(n)
+
+#### Sort Characters By Frequency
+
+*   **Task:** *Given a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string. Return the sorted string.*
+*   **Task summary:** Sort a string by the frequency of its characters in descending order.
+*   **Solution:** Use a hash map (`std::unordered_map<char, int> counts`) to count the frequency of each character in the string. Then, sort the characters based on their frequencies. For a small alphabet, bucket sort is a good option. Otherwise, `std::sort` can be used on a vector of pairs (frequency, character). After sorting, build the result string by iterating through the sorted characters and appending each character `c` to the result string `counts[c]` times. A convenient way to do this is `result.append(counts[c], c)`.
+*   **Time complexity:** O(N), where N is the length of the string.
+*   **Space complexity:** O(N), where N is the length of the string.
