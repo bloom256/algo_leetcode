@@ -82,5 +82,28 @@ K) for <code>add</code>, where N is the initial number of elements and K
 is the given parameter.</li>
 <li><strong>Space complexity:</strong> O(K) to store the heap.</li>
 </ul>
+<h4 id="top-k-frequent-elements">Top K Frequent Elements</h4>
+<ul>
+<li><strong>Task:</strong> <em>Given an integer array nums and an
+integer k, return the k most frequent elements. You may return the
+answer in any order.</em></li>
+<li><strong>Task summary:</strong> Find the k most frequent elements in
+an array.</li>
+<li><strong>Solution:</strong> Use
+<code>std::unordered_map&lt;int, int&gt; counts</code> to count the
+frequency of each element. Then, create a min-heap of pairs
+(<code>std::vector&lt;std::pair&lt;int, int&gt;&gt; minHeap</code>).
+Iterate through the map and push pairs of
+<code>{frequency, number}</code> into the heap using
+<code>std::push_heap</code>. If the heap size exceeds <code>k</code>,
+remove the smallest element using <code>std::pop_heap</code>. A custom
+comparator <code>cmpGreater</code> for pairs is needed to make the
+min-heap work correctly. Finally, the heap will contain the k most
+frequent elements.</li>
+<li><strong>Time complexity:</strong> O(N log K), where N is the number
+of elements in the input array.</li>
+<li><strong>Space complexity:</strong> O(N) in the worst case for the
+hash map, and O(K) for the heap.</li>
+</ul>
 </body>
 </html>
