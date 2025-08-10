@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p site
+cp style.css site/
+
 pandoc -s index.md -o site/index.html --css style.css --include-in-header header.html
 pandoc -s chapter_1_two_pointers.md -o site/chapter_1_two_pointers.html --css style.css --include-in-header header.html
 pandoc -s chapter_2_sliding_window.md -o site/chapter_2_sliding_window.html --css style.css --include-in-header header.html
