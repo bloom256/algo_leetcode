@@ -29,3 +29,11 @@
 *   **Solution:** Use `std::unordered_map<int, int> counts` to count the frequency of each element. Then, create a min-heap of pairs (`std::vector<std::pair<int, int>> minHeap`). Iterate through the map and push pairs of `{frequency, number}` into the heap using `std::push_heap`. If the heap size exceeds `k`, remove the smallest element using `std::pop_heap`. A custom comparator `cmpGreater` for pairs is needed to make the min-heap work correctly. Finally, the heap will contain the k most frequent elements.
 *   **Time complexity:** O(N log K), where N is the number of elements in the input array.
 *   **Space complexity:** O(N) in the worst case for the hash map, and O(K) for the heap.
+
+#### Last Stone Weight
+
+*   **Task:** *You are given an array of integers stones where stones[i] is the weight of the ith stone. We are playing a game with the stones. On each turn, we choose the two heaviest stones and smash them together. Suppose the heaviest stones have weights x and y with x <= y. The result of this smash is: If x == y, both stones are destroyed. If x != y, the stone of weight x is destroyed, and the stone of weight y has new weight y - x. At the end of the game, there is at most one stone left. Return the weight of the last remaining stone, or 0 if no stones are left.*
+*   **Task summary:** In each step, we take two heaviest stones, smash them, and put the resulting stone back. We need to find the weight of the last stone.
+*   **Solution:** Use a max-heap (`std::priority_queue<int> maxHeap`) to efficiently find the two heaviest stones. Push all stone weights into the max-heap. While the heap has more than one stone, pop the two largest stones, calculate the difference, and if the difference is not zero, push it back to the heap. The final result is the last remaining stone's weight or 0 if the heap is empty. If we can change input array, use `std::make_heap` (O(N)) and `std::pop_heap` (O(logN)) and `std::push_heap` (O(logN)) to work with it directly.
+*   **Time complexity:** O(N log N) due to pushing N elements to the heap.
+*   **Space complexity:** O(N) for the heap, or O(1) if we modify the input array.
