@@ -134,5 +134,36 @@ elements to the heap.</li>
 <li><strong>Space complexity:</strong> O(N) for the heap, or O(1) if we
 modify the input array.</li>
 </ul>
+<h4 id="ipo">IPO</h4>
+<ul>
+<li><strong>Task:</strong> <em>Given n projects, where the i-th project
+has a pure profit profits[i] and a minimum capital capital[i] required
+to start it. Initially, you have w capital. When you finish a project,
+you will obtain its pure profit. You can only start a project if you
+have at least the capital required for it. At most, you can choose k
+projects to finish. Your goal is to find the maximum final capital you
+can achieve.</em></li>
+<li><strong>Task summary:</strong> Maximize capital by selecting at most
+k projects, given initial capital, project profits, and required
+capital.</li>
+<li><strong>Solution:</strong> Create
+<code>std::vector&lt;std::pair&lt;int, int&gt;&gt; projects</code>
+storing <code>{capital, profit}</code> pairs. Sort this vector by
+capital. Initialize <code>maxHeap</code> (a
+<code>std::priority_queue&lt;int&gt;</code>) for profits of affordable
+projects and <code>projectIdx = 0</code>. Iterate <code>k</code> times:
+in each iteration, add all projects whose capital requirement is met by
+<code>currCapital</code> to <code>maxHeap</code>. If
+<code>maxHeap</code> is empty, break (no more affordable projects).
+Otherwise, add the top profit from <code>maxHeap</code> to
+<code>currCapital</code> and remove it from <code>maxHeap</code>. Return
+<code>currCapital</code>.</li>
+<li><strong>Time complexity:</strong> O(N log N + K log N), where N is
+the number of projects and K is the number of projects to choose.
+Sorting takes O(N log N). In the loop, each project is added to the heap
+once (O(N log N) total), and K times we extract max (O(K log N)).</li>
+<li><strong>Space complexity:</strong> O(N) for storing projects and the
+heap.</li>
+</ul>
 </body>
 </html>
