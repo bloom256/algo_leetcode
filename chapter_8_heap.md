@@ -37,3 +37,11 @@
 *   **Solution:** Use a max-heap (`std::priority_queue<int> maxHeap`) to efficiently find the two heaviest stones. Push all stone weights into the max-heap. While the heap has more than one stone, pop the two largest stones, calculate the difference, and if the difference is not zero, push it back to the heap. The final result is the last remaining stone's weight or 0 if the heap is empty. If we can change input array, use `std::make_heap` (O(N)) and `std::pop_heap` (O(logN)) and `std::push_heap` (O(logN)) to work with it directly.
 *   **Time complexity:** O(N log N) due to pushing N elements to the heap.
 *   **Space complexity:** O(N) for the heap, or O(1) if we modify the input array.
+
+#### IPO
+
+*   **Task:** *Given n projects, where the i-th project has a pure profit profits[i] and a minimum capital capital[i] required to start it. Initially, you have w capital. When you finish a project, you will obtain its pure profit. You can only start a project if you have at least the capital required for it. At most, you can choose k projects to finish. Your goal is to find the maximum final capital you can achieve.*
+*   **Task summary:** Maximize capital by selecting at most k projects, given initial capital, project profits, and required capital.
+*   **Solution:** Create `std::vector<std::pair<int, int>> projects` storing `{capital, profit}` pairs. Sort this vector by capital. Initialize `maxHeap` (a `std::priority_queue<int>`) for profits of affordable projects and `projectIdx = 0`. Iterate `k` times: in each iteration, add all projects whose capital requirement is met by `currCapital` to `maxHeap`. If `maxHeap` is empty, break (no more affordable projects). Otherwise, add the top profit from `maxHeap` to `currCapital` and remove it from `maxHeap`. Return `currCapital`.
+*   **Time complexity:** O(N log N + K log N), where N is the number of projects and K is the number of projects to choose. Sorting takes O(N log N). In the loop, each project is added to the heap once (O(N log N) total), and K times we extract max (O(K log N)).
+*   **Space complexity:** O(N) for storing projects and the heap.
