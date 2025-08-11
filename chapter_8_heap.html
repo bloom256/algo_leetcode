@@ -231,5 +231,29 @@ number of piles. <code>make_heap</code> is O(N), and each of the
 <li><strong>Space complexity:</strong> O(1) if we modify the input
 array, or O(N) if we use a separate priority queue.</li>
 </ul>
+<h4 id="merge-k-sorted-lists">Merge k Sorted Lists</h4>
+<ul>
+<li><strong>Task:</strong> <em>You are given an array of k linked-lists
+<code>lists</code>, each linked-list is sorted in ascending order. Merge
+all the linked-lists into one sorted linked-list and return
+it.</em></li>
+<li><strong>Task summary:</strong> Merge k sorted linked lists into a
+single sorted linked list.</li>
+<li><strong>Solution:</strong> Use a min-heap
+(<code>std::priority_queue</code>) to store pairs of
+<code>{value, node_pointer}</code>.
+<code>std::greater&lt;std::pair&lt;int, ListNode*&gt;&gt;</code> can be
+used as the comparator to make it a min-heap based on the node’s value.
+First, iterate through all the input lists; if a list’s head is not
+null, push it to the min-heap. Then, while the heap is not empty, pop
+the element with the smallest value. Add this node to the result list.
+If this node has a non-null <code>next</code> node, push the
+<code>next</code> node into the heap. Continue this process until the
+heap is empty. A <code>dummyHead</code> is useful for building the-
+result list.</li>
+<li><strong>Time complexity:</strong> O(N log k), where N is the total
+number of nodes in all lists and k is the number of lists.</li>
+<li><strong>Space complexity:</strong> O(k) for the min-heap.</li>
+</ul>
 </body>
 </html>
