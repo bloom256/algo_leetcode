@@ -203,5 +203,33 @@ of their tops.</li>
 <code>findMedian</code> is O(1).</li>
 <li><strong>Space complexity:</strong> O(N) to store all numbers.</li>
 </ul>
+<h4 id="remove-stones-to-minimize-the-total">Remove Stones to Minimize
+the Total</h4>
+<ul>
+<li><strong>Task:</strong> <em>You are given a 0-indexed integer array
+<code>piles</code>, where <code>piles[i]</code> represents the number of
+stones in the <code>i</code>-th pile, and an integer <code>k</code>. You
+are allowed to apply the following operation exactly <code>k</code>
+times: Choose any <code>piles[i]</code> and subtract
+<code>floor(piles[i] / 2)</code> stones from it. Your goal is to
+minimize the total number of stones remaining in all piles. Return the
+minimum possible total number of stones remaining after applying the
+operation exactly <code>k</code> times.</em></li>
+<li><strong>Task summary:</strong> Minimize the total number of stones
+by repeatedly removing half the stones from the largest pile.</li>
+<li><strong>Solution:</strong> Create a max-heap from the
+<code>piles</code> array using <code>std::make_heap</code>. Then, loop
+<code>k</code> times. In each iteration, pop the largest pile from the
+heap using <code>std::pop_heap</code>, calculate the new pile size
+(<code>pile - floor(pile / 2)</code>), and push it back to the heap
+using <code>std::push_heap</code>. After the loop, the sum of all
+elements in the heap is the minimum total number of stones. This can be
+calculated using <code>std::accumulate</code>.</li>
+<li><strong>Time complexity:</strong> O(N + k log N), where N is the
+number of piles. <code>make_heap</code> is O(N), and each of the
+<code>k</code> operations (pop and push) is O(log N).</li>
+<li><strong>Space complexity:</strong> O(1) if we modify the input
+array, or O(N) if we use a separate priority queue.</li>
+</ul>
 </body>
 </html>
