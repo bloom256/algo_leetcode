@@ -45,5 +45,39 @@ step.</li>
 <li><strong>Space complexity:</strong> O(1) if sorting is done
 in-place.</li>
 </ul>
+<h4 id="merge-intervals">Merge Intervals</h4>
+<ul>
+<li><strong>Task:</strong> <em>Given an array of <code>intervals</code>
+where <code>intervals[i] = [starti, endi]</code>, merge all overlapping
+intervals, and return an array of the non-overlapping intervals that
+cover all the intervals in the input.</em></li>
+<li><strong>Task summary:</strong> Merge all overlapping intervals in a
+collection.</li>
+<li><strong>Solution:</strong> First, sort the input
+<code>intervals</code> array by their start times using
+<code>std::sort</code>. Then, iterate through the sorted intervals
+starting from the second interval (index 1). For each current interval
+(<code>intervals[i]</code>) and its previous interval
+(<code>intervals[i-1]</code>):
+<ul>
+<li>If <code>intervals[i].start &lt;= intervals[i-1].end</code> (meaning
+they overlap, including cases where
+<code>intervals[i].start == intervals[i-1].end</code>):
+<ul>
+<li>Update the current interval’s start to
+<code>intervals[i-1].start</code>.</li>
+<li>Update the current interval’s end to
+<code>std::max(intervals[i].end, intervals[i-1].end)</code>.</li>
+<li>Mark the previous interval as invalid by setting
+<code>intervals[i-1].start = -1</code>. After the loop, use
+<code>std::erase_if</code> to remove all intervals from the array whose
+start time is -1.</li>
+</ul></li>
+</ul></li>
+<li><strong>Time complexity:</strong> O(N log N) due to the initial
+sort. The iteration and <code>std::erase_if</code> are O(N).</li>
+<li><strong>Space complexity:</strong> O(1) if the modification is done
+in-place on the input array.</li>
+</ul>
 </body>
 </html>
