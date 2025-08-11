@@ -120,5 +120,32 @@ intervals once.</li>
 <li><strong>Space complexity:</strong> O(N) for the <code>result</code>
 vector.</li>
 </ul>
+<h4 id="meeting-rooms-ii">Meeting Rooms II</h4>
+<ul>
+<li><strong>Task:</strong> <em>Given an array of meeting time intervals
+<code>intervals</code> where <code>intervals[i] = [start, end]</code>,
+return the minimum number of conference rooms required.</em></li>
+<li><strong>Task summary:</strong> Find the minimum number of conference
+rooms needed to accommodate all meetings.</li>
+<li><strong>Solution:</strong> First, sort the input
+<code>intervals</code> array by their start times. Initialize a min-heap
+(e.g.,
+<code>std::priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt;&gt;</code>)
+to store the ending times of meetings currently occupying rooms. Iterate
+through the sorted meetings. For each meeting:
+<ul>
+<li>If the heap is not empty and the earliest ending meeting in the heap
+(<code>rooms.top()</code>) finishes at or before the current meeting
+starts (<code>rooms.top() &lt;= meeting.start</code>), it means that
+room can be reused. Pop the element from the heap.</li>
+<li>Always push the current meeting’s ending time
+(<code>meeting.end</code>) into the heap. The final size of the heap
+will be the minimum number of rooms required.</li>
+</ul></li>
+<li><strong>Time complexity:</strong> O(N log N) due to sorting and heap
+operations (N pushes/pops, each O(log N)).</li>
+<li><strong>Space complexity:</strong> O(N) in the worst case, as the
+heap could store all meeting end times if all meetings overlap.</li>
+</ul>
 </body>
 </html>
