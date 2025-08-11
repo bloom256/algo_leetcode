@@ -165,5 +165,43 @@ once (O(N log N) total), and K times we extract max (O(K log N)).</li>
 <li><strong>Space complexity:</strong> O(N) for storing projects and the
 heap.</li>
 </ul>
+<h4 id="find-median-from-data-stream">Find Median from Data Stream</h4>
+<ul>
+<li><strong>Task:</strong> <em>The median is the middle value in an
+ordered integer list. If the size of the list is even, there is no
+middle value, and the median is the mean of the two middle values. For
+example, for arr = [2,3,4], the median is 3. For arr = [2,3], the median
+is (2 + 3) / 2 = 2.5. Implement the MedianFinder class:
+<code>MedianFinder()</code> initializes the MedianFinder object.
+<code>void addNum(int num)</code> adds the integer num from the data
+stream to the data structure. <code>double findMedian()</code> returns
+the median of all elements so far.</em></li>
+<li><strong>Task summary:</strong> Design a data structure that supports
+adding numbers from a stream and finding the median of all numbers added
+so far.</li>
+<li><strong>Solution:</strong> Use two heaps: a max-heap
+(<code>firstHalf</code>) to store the smaller half of the numbers and a
+min-heap (<code>secondHalf</code>) to store the larger half. To add a
+new number (<code>addNum</code>):
+<ol type="1">
+<li>If <code>firstHalf</code> is empty (this is the first number added),
+add the number to <code>firstHalf</code>.</li>
+<li>Otherwise, compare the number to the top of <code>firstHalf</code>.
+If it’s less than or equal, add it to <code>firstHalf</code>; otherwise,
+add it to <code>secondHalf</code>.</li>
+<li>After adding the- number, rebalance the heaps. If one heap has two
+more elements than the other, move the top element from the larger heap
+to the smaller one. To find the median (<code>findMedian</code>):</li>
+<li>If <code>firstHalf</code> has more elements, its top is the
+median.</li>
+<li>If <code>secondHalf</code> has more elements, its top is the
+median.</li>
+<li>If they have the same number of elements, the median is the average
+of their tops.</li>
+</ol></li>
+<li><strong>Time complexity:</strong> <code>addNum</code> is O(log N),
+<code>findMedian</code> is O(1).</li>
+<li><strong>Space complexity:</strong> O(N) to store all numbers.</li>
+</ul>
 </body>
 </html>
