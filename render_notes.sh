@@ -12,3 +12,4 @@ pandoc -s chapter_5_stack_queue.md -o site/chapter_5_stack_queue.html --css styl
 pandoc -s chapter_6_binary_tree.md -o site/chapter_6_binary_tree.html --css style.css --include-in-header header.html
 pandoc -s chapter_7_trie.md -o site/chapter_7_trie.html --css style.css --include-in-header header.html
 pandoc -s chapter_8_heap.md -o site/chapter_8_heap.html --css style.css --include-in-header header.html
+pandoc -s chapter_9_intervals.md -o site/chapter_9_intervals.html --css style.css --include-in-header header.html
