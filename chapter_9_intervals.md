@@ -20,3 +20,15 @@
     After the loop, use `std::erase_if` to remove all intervals from the array whose start time is -1.
 *   **Time complexity:** O(N log N) due to the initial sort. The iteration and `std::erase_if` are O(N).
 *   **Space complexity:** O(1) if the modification is done in-place on the input array.
+
+#### Insert Interval
+
+*   **Task:** *You are given an array of non-overlapping intervals `intervals` where `intervals[i] = [starti, endi]` are sorted by their start times, and a new interval `newInterval = [start, end]`. Insert `newInterval` into `intervals` such that `intervals` is still sorted in ascending order by `starti` and `intervals` still does not have any overlapping intervals (merge overlapping intervals if necessary).*
+*   **Task summary:** Insert a new interval into a sorted list of non-overlapping intervals, merging if necessary.
+*   **Solution:** Initialize an empty `result` vector and an integer `i = 0` to iterate through the `intervals` array.
+    1.  **Before overlap:** While `i` is less than the size of `intervals` and `intervals[i][1] < newInterval[0]`, add `intervals[i]` to `result` and increment `i`.
+    2.  **Overlap:** While `i` is less than the size of `intervals` and `intervals[i][0] <= newInterval[1]`, merge `intervals[i]` into `newInterval`. Update `newInterval[0] = std::min(newInterval[0], intervals[i][0])` and `newInterval[1] = std::max(newInterval[1], intervals[i][1])`. Increment `i`.
+    3.  **Add merged/new interval:** Add the (potentially extended) `newInterval` to `result`.
+    4.  **After overlap:** While `i` is less than the size of `intervals`, add `intervals[i]` to `result` and increment `i`.
+*   **Time complexity:** O(N), as we iterate through the intervals once.
+*   **Space complexity:** O(N) for the `result` vector.

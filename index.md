@@ -1,7 +1,7 @@
 # Algorithm Notes (LeetCode & HackerRank)
 
 ::: {.total-tasks}
-Total tasks: 65
+Total tasks: 68
 :::
 
 ::: {.chapter-grid}
@@ -21,5 +21,5 @@ Total tasks: 65
 
 ## [8. Heap (8)](chapter_8_heap.html)
 
-## [9. Intervals (2)](chapter_9_intervals.html)
+## [9. Intervals (3)](chapter_9_intervals.html)
 :::
