@@ -79,5 +79,46 @@ sort. The iteration and <code>std::erase_if</code> are O(N).</li>
 <li><strong>Space complexity:</strong> O(1) if the modification is done
 in-place on the input array.</li>
 </ul>
+<h4 id="insert-interval">Insert Interval</h4>
+<ul>
+<li><strong>Task:</strong> <em>You are given an array of non-overlapping
+intervals <code>intervals</code> where
+<code>intervals[i] = [starti, endi]</code> are sorted by their start
+times, and a new interval <code>newInterval = [start, end]</code>.
+Insert <code>newInterval</code> into <code>intervals</code> such that
+<code>intervals</code> is still sorted in ascending order by
+<code>starti</code> and <code>intervals</code> still does not have any
+overlapping intervals (merge overlapping intervals if
+necessary).</em></li>
+<li><strong>Task summary:</strong> Insert a new interval into a sorted
+list of non-overlapping intervals, merging if necessary.</li>
+<li><strong>Solution:</strong> Initialize an empty <code>result</code>
+vector and an integer <code>i = 0</code> to iterate through the
+<code>intervals</code> array.
+<ol type="1">
+<li><strong>Before overlap:</strong> While <code>i</code> is less than
+the size of <code>intervals</code> and
+<code>intervals[i][1] &lt; newInterval[0]</code>, add
+<code>intervals[i]</code> to <code>result</code> and increment
+<code>i</code>.</li>
+<li><strong>Overlap:</strong> While <code>i</code> is less than the size
+of <code>intervals</code> and
+<code>intervals[i][0] &lt;= newInterval[1]</code>, merge
+<code>intervals[i]</code> into <code>newInterval</code>. Update
+<code>newInterval[0] = std::min(newInterval[0], intervals[i][0])</code>
+and
+<code>newInterval[1] = std::max(newInterval[1], intervals[i][1])</code>.
+Increment <code>i</code>.</li>
+<li><strong>Add merged/new interval:</strong> Add the (potentially
+extended) <code>newInterval</code> to <code>result</code>.</li>
+<li><strong>After overlap:</strong> While <code>i</code> is less than
+the size of <code>intervals</code>, add <code>intervals[i]</code> to
+<code>result</code> and increment <code>i</code>.</li>
+</ol></li>
+<li><strong>Time complexity:</strong> O(N), as we iterate through the
+intervals once.</li>
+<li><strong>Space complexity:</strong> O(N) for the <code>result</code>
+vector.</li>
+</ul>
 </body>
 </html>
