@@ -32,3 +32,14 @@
     4.  **After overlap:** While `i` is less than the size of `intervals`, add `intervals[i]` to `result` and increment `i`.
 *   **Time complexity:** O(N), as we iterate through the intervals once.
 *   **Space complexity:** O(N) for the `result` vector.
+
+#### Meeting Rooms II
+
+*   **Task:** *Given an array of meeting time intervals `intervals` where `intervals[i] = [start, end]`, return the minimum number of conference rooms required.*
+*   **Task summary:** Find the minimum number of conference rooms needed to accommodate all meetings.
+*   **Solution:** First, sort the input `intervals` array by their start times. Initialize a min-heap (e.g., `std::priority_queue<int, std::vector<int>, std::greater<int>>`) to store the ending times of meetings currently occupying rooms. Iterate through the sorted meetings. For each meeting:
+    -   If the heap is not empty and the earliest ending meeting in the heap (`rooms.top()`) finishes at or before the current meeting starts (`rooms.top() <= meeting.start`), it means that room can be reused. Pop the element from the heap.
+    -   Always push the current meeting's ending time (`meeting.end`) into the heap.
+    The final size of the heap will be the minimum number of rooms required.
+*   **Time complexity:** O(N log N) due to sorting and heap operations (N pushes/pops, each O(log N)).
+*   **Space complexity:** O(N) in the worst case, as the heap could store all meeting end times if all meetings overlap.
