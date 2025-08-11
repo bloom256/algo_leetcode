@@ -45,3 +45,19 @@
 *   **Solution:** Create `std::vector<std::pair<int, int>> projects` storing `{capital, profit}` pairs. Sort this vector by capital. Initialize `maxHeap` (a `std::priority_queue<int>`) for profits of affordable projects and `projectIdx = 0`. Iterate `k` times: in each iteration, add all projects whose capital requirement is met by `currCapital` to `maxHeap`. If `maxHeap` is empty, break (no more affordable projects). Otherwise, add the top profit from `maxHeap` to `currCapital` and remove it from `maxHeap`. Return `currCapital`.
 *   **Time complexity:** O(N log N + K log N), where N is the number of projects and K is the number of projects to choose. Sorting takes O(N log N). In the loop, each project is added to the heap once (O(N log N) total), and K times we extract max (O(K log N)).
 *   **Space complexity:** O(N) for storing projects and the heap.
+
+#### Find Median from Data Stream
+
+*   **Task:** *The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values. For example, for arr = [2,3,4], the median is 3. For arr = [2,3], the median is (2 + 3) / 2 = 2.5. Implement the MedianFinder class: `MedianFinder()` initializes the MedianFinder object. `void addNum(int num)` adds the integer num from the data stream to the data structure. `double findMedian()` returns the median of all elements so far.*
+*   **Task summary:** Design a data structure that supports adding numbers from a stream and finding the median of all numbers added so far.
+*   **Solution:** Use two heaps: a max-heap (`firstHalf`) to store the smaller half of the numbers and a min-heap (`secondHalf`) to store the larger half.
+    To add a new number (`addNum`):
+    1.  If `firstHalf` is empty (this is the first number added), add the number to `firstHalf`.
+    2.  Otherwise, compare the number to the top of `firstHalf`. If it's less than or equal, add it to `firstHalf`; otherwise, add it to `secondHalf`.
+    3.  After adding the- number, rebalance the heaps. If one heap has two more elements than the other, move the top element from the larger heap to the smaller one.
+    To find the median (`findMedian`):
+    1.  If `firstHalf` has more elements, its top is the median.
+    2.  If `secondHalf` has more elements, its top is the median.
+    3.  If they have the same number of elements, the median is the average of their tops.
+*   **Time complexity:** `addNum` is O(log N), `findMedian` is O(1).
+*   **Space complexity:** O(N) to store all numbers.

@@ -19,5 +19,5 @@ Total tasks: 60
 
 ## [7. Trie (2)](chapter_7_trie.html)
 
-## [8. Heap (5)](chapter_8_heap.html)
+## [8. Heap (6)](chapter_8_heap.html)
 :::
