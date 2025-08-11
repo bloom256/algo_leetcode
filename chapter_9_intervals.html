@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>index</title>
+  <title>chapter_9_intervals</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -26,28 +26,24 @@
   <base href="/algo_leetcode/">
 </head>
 <body>
-<h1 id="algorithm-notes-leetcode-hackerrank">Algorithm Notes (LeetCode
-&amp; HackerRank)</h1>
-<div class="total-tasks">
-<p>Total tasks: 65</p>
-</div>
-<div class="chapter-grid">
-<h2 id="two-pointers-11"><a href="chapter_1_two_pointers.html">1. Two
-Pointers (11)</a></h2>
-<h2 id="sliding-window-7"><a href="chapter_2_sliding_window.html">2.
-Sliding Window (7)</a></h2>
-<h2 id="linked-list-10"><a href="chapter_3_linked_list.html">3. Linked
-list (10)</a></h2>
-<h2 id="hash-map-4"><a href="chapter_4_hash_map.html">4. Hash Map
-(4)</a></h2>
-<h2 id="stackqueue-5"><a href="chapter_5_stack_queue.html">5.
-Stack/Queue (5)</a></h2>
-<h2 id="binary-tree-18"><a href="chapter_6_binary_tree.html">6. Binary
-Tree (18)</a></h2>
-<h2 id="trie-2"><a href="chapter_7_trie.html">7. Trie (2)</a></h2>
-<h2 id="heap-8"><a href="chapter_8_heap.html">8. Heap (8)</a></h2>
-<h2 id="intervals-1"><a href="chapter_9_intervals.html">9. Intervals
-(1)</a></h2>
-</div>
+<h2 id="intervals">Intervals</h2>
+<h4 id="meeting-rooms">Meeting Rooms</h4>
+<ul>
+<li><strong>Task:</strong> <em>Given an array of meeting time intervals
+where intervals[i] = [start, end], determine if a person could attend
+all meetings.</em></li>
+<li><strong>Task summary:</strong> Check if any meetings in a list of
+time intervals overlap.</li>
+<li><strong>Solution:</strong> Sort the intervals by their start times.
+Then, iterate through the sorted intervals from the second interval. If
+the start time of the current meeting is less than the end time of the
+previous meeting, it means there is an overlap, and we return
+<code>false</code>. If the loop completes without finding any overlaps,
+it means no meetings overlap, and we return <code>true</code>.</li>
+<li><strong>Time complexity:</strong> O(N log N) due to the sorting
+step.</li>
+<li><strong>Space complexity:</strong> O(1) if sorting is done
+in-place.</li>
+</ul>
 </body>
 </html>
