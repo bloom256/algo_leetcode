@@ -69,3 +69,11 @@
 *   **Solution:** Create a max-heap from the `piles` array using `std::make_heap`. Then, loop `k` times. In each iteration, pop the largest pile from the heap using `std::pop_heap`, calculate the new pile size (`pile - floor(pile / 2)`), and push it back to the heap using `std::push_heap`. After the loop, the sum of all elements in the heap is the minimum total number of stones. This can be calculated using `std::accumulate`.
 *   **Time complexity:** O(N + k log N), where N is the number of piles. `make_heap` is O(N), and each of the `k` operations (pop and push) is O(log N).
 *   **Space complexity:** O(1) if we modify the input array, or O(N) if we use a separate priority queue.
+
+#### Merge k Sorted Lists
+
+*   **Task:** *You are given an array of k linked-lists `lists`, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it.*
+*   **Task summary:** Merge k sorted linked lists into a single sorted linked list.
+*   **Solution:** Use a min-heap (`std::priority_queue`) to store pairs of `{value, node_pointer}`. `std::greater<std::pair<int, ListNode*>>` can be used as the comparator to make it a min-heap based on the node's value. First, iterate through all the input lists; if a list's head is not null, push it to the min-heap. Then, while the heap is not empty, pop the element with the smallest value. Add this node to the result list. If this node has a non-null `next` node, push the `next` node into the heap. Continue this process until the heap is empty. A `dummyHead` is useful for building the- result list.
+*   **Time complexity:** O(N log k), where N is the total number of nodes in all lists and k is the number of lists.
+*   **Space complexity:** O(k) for the min-heap.
