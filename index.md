@@ -21,5 +21,5 @@ Total tasks: 65
 
 ## [8. Heap (8)](chapter_8_heap.html)
 
-## [9. Intervals (0)](chapter_9_intervals.html)
+## [9. Intervals (1)](chapter_9_intervals.html)
 :::
