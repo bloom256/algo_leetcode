@@ -61,3 +61,11 @@
     3.  If they have the same number of elements, the median is the average of their tops.
 *   **Time complexity:** `addNum` is O(log N), `findMedian` is O(1).
 *   **Space complexity:** O(N) to store all numbers.
+
+#### Remove Stones to Minimize the Total
+
+*   **Task:** *You are given a 0-indexed integer array `piles`, where `piles[i]` represents the number of stones in the `i`-th pile, and an integer `k`. You are allowed to apply the following operation exactly `k` times: Choose any `piles[i]` and subtract `floor(piles[i] / 2)` stones from it. Your goal is to minimize the total number of stones remaining in all piles. Return the minimum possible total number of stones remaining after applying the operation exactly `k` times.*
+*   **Task summary:** Minimize the total number of stones by repeatedly removing half the stones from the largest pile.
+*   **Solution:** Create a max-heap from the `piles` array using `std::make_heap`. Then, loop `k` times. In each iteration, pop the largest pile from the heap using `std::pop_heap`, calculate the new pile size (`pile - floor(pile / 2)`), and push it back to the heap using `std::push_heap`. After the loop, the sum of all elements in the heap is the minimum total number of stones. This can be calculated using `std::accumulate`.
+*   **Time complexity:** O(N + k log N), where N is the number of piles. `make_heap` is O(N), and each of the `k` operations (pop and push) is O(log N).
+*   **Space complexity:** O(1) if we modify the input array, or O(N) if we use a separate priority queue.
