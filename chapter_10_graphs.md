@@ -2,6 +2,14 @@
 
 ### Graph Traversal
 
+#### Clone Graph
+
+* **Task:** Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a value (int) and a list of its neighbors.
+* **Task summary:** Create a deep copy of a graph.
+* **Solution:** Use BFS (or DFS) to traverse the graph. Store cloned nodes in a visited hash map like this - unordered_map<Node*, Node*>. When we visit a node, we create its clone and store the mapping. For each neighbor of the current node, we check if it has been cloned already. If not, we create a clone and add it to the queue/stack. Finally, we connect the cloned nodes according to the original graph structure.
+* **Time complexity:** O(N + M) where N is the number of nodes and M is the number of edges.
+* **Space complexity:** O(N) for the hash map and the BFS/DFS queue/stack.
+
 #### Find if Path Exists in Graph
 
 * **Task:** There is a bi-directional graph with n vertices, where each vertex is labeled from 0 to n - 1. The edges in the graph are represented by a given 2D integer array edges, where edges[i] = [ui, vi] indicates that there is an edge between vertex ui and vertex vi. Every vertex pair is connected by at most one edge, and no vertex has an edge to itself. You want to determine if there is a valid path that exists from vertex source to vertex destination.
