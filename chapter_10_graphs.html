@@ -28,6 +28,28 @@
 <body>
 <h2 id="graphs">Graphs</h2>
 <h3 id="graph-traversal">Graph Traversal</h3>
+<h4 id="find-if-path-exists-in-graph">Find if Path Exists in Graph</h4>
+<ul>
+<li><strong>Task:</strong> There is a bi-directional graph with n
+vertices, where each vertex is labeled from 0 to n - 1. The edges in the
+graph are represented by a given 2D integer array edges, where edges[i]
+= [ui, vi] indicates that there is an edge between vertex ui and vertex
+vi. Every vertex pair is connected by at most one edge, and no vertex
+has an edge to itself. You want to determine if there is a valid path
+that exists from vertex source to vertex destination.</li>
+<li><strong>Task summary:</strong> Determine if there is a path between
+two vertices in a graph.</li>
+<li><strong>Solution:</strong> Parse the input array to create an
+adjacency list using unordered_map&lt;int,vector<int>&gt;. Then use
+classical BFS starting from the source vertex to find if a path exists
+to the destination vertex.</li>
+<li><strong>Time complexity:</strong> O(V + E) where V is the number of
+vertices and E is the number of edges.</li>
+<li><strong>Space complexity:</strong> O(V + E) where O(V) is for
+storing the visited set and the BFS queue (in the worst case, all
+vertices might be in the queue), and O(E) is for storing the adjacency
+list representation of the graph.</li>
+</ul>
 <h4 id="keys-and-rooms">Keys and Rooms</h4>
 <ul>
 <li><strong>Task:</strong> There are n rooms labeled from 0 to n - 1 and
