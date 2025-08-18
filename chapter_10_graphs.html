@@ -28,6 +28,24 @@
 <body>
 <h2 id="graphs">Graphs</h2>
 <h3 id="graph-traversal">Graph Traversal</h3>
+<h4 id="clone-graph">Clone Graph</h4>
+<ul>
+<li><strong>Task:</strong> Given a reference of a node in a connected
+undirected graph, return a deep copy (clone) of the graph. Each node in
+the graph contains a value (int) and a list of its neighbors.</li>
+<li><strong>Task summary:</strong> Create a deep copy of a graph.</li>
+<li><strong>Solution:</strong> Use BFS (or DFS) to traverse the graph.
+Store cloned nodes in a visited hash map like this -
+unordered_map&lt;Node<em>, Node</em>&gt;. When we visit a node, we
+create its clone and store the mapping. For each neighbor of the current
+node, we check if it has been cloned already. If not, we create a clone
+and add it to the queue/stack. Finally, we connect the cloned nodes
+according to the original graph structure.</li>
+<li><strong>Time complexity:</strong> O(N + M) where N is the number of
+nodes and M is the number of edges.</li>
+<li><strong>Space complexity:</strong> O(N) for the hash map and the
+BFS/DFS queue/stack.</li>
+</ul>
 <h4 id="find-if-path-exists-in-graph">Find if Path Exists in Graph</h4>
 <ul>
 <li><strong>Task:</strong> There is a bi-directional graph with n
