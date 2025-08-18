@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>chapter_10_graphs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <base href="/algo_leetcode/">
+</head>
+<body>
+<h2 id="graphs">Graphs</h2>
+<h3 id="graph-traversal">Graph Traversal</h3>
+<h4 id="keys-and-rooms">Keys and Rooms</h4>
+<ul>
+<li><strong>Task:</strong> There are n rooms labeled from 0 to n - 1 and
+all the rooms are locked except for room 0. Your goal is to visit all
+the rooms. However, you cannot enter a locked room without having its
+key. When you visit a room, you may find a set of distinct keys in it.
+Each key has a number on it, denoting which room it unlocks, and you can
+take all of them with you to unlock the next rooms. Given an array rooms
+where rooms[i] is the set of keys that you can obtain if you visited
+room i, return true if you can visit all the rooms, or false
+otherwise.</li>
+<li><strong>Task summary:</strong> Determine if all rooms can be visited
+starting from room 0.</li>
+<li><strong>Solution:</strong> Use BFS or DFS starting from room 0. Keep
+track of visited rooms in a set. At the end, if the size of the visited
+set equals the total number of rooms, return true; otherwise, return
+false.</li>
+<li><strong>Time complexity:</strong> O(N + E) where N is the number of
+rooms and E is the total number of keys.</li>
+<li><strong>Space complexity:</strong> O(N) for the visited set and the
+queue/stack.</li>
+</ul>
+</body>
+</html>
