@@ -46,6 +46,25 @@ nodes and M is the number of edges.</li>
 <li><strong>Space complexity:</strong> O(N) for the hash map and the
 BFS/DFS queue/stack.</li>
 </ul>
+<h4 id="minimum-number-of-vertices-to-reach-all-nodes">Minimum Number of
+Vertices to Reach All Nodes</h4>
+<ul>
+<li><strong>Task:</strong> Given a directed acyclic graph, with n
+vertices numbered from 0 to n-1, and an array edges where edges[i] =
+[fromi, toi] represents a directed edge from node fromi to node toi.
+Find the smallest set of vertices from which all nodes in the graph are
+reachable. It’s guaranteed that a unique solution exists.</li>
+<li><strong>Task summary:</strong> Find the minimum set of vertices from
+which all nodes in a directed graph are reachable.</li>
+<li><strong>Solution:</strong> The trick is that all nodes with
+in-degree equal to 0 form the required set. Initialize vector<bool>
+hasInEdges(n, false). Then iterate all input edges filling hasInEdges.
+Finally iterate 0..n to find nodes that has hasInEdges[i] == false.</li>
+<li><strong>Time complexity:</strong> O(E + V) where E is the number of
+edges and V is the number of vertices.</li>
+<li><strong>Space complexity:</strong> O(V) for the hasInEdges
+vector.</li>
+</ul>
 <h4 id="find-if-path-exists-in-graph">Find if Path Exists in Graph</h4>
 <ul>
 <li><strong>Task:</strong> There is a bi-directional graph with n
